@@ -1,15 +1,566 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <title>Malik Boboev</title>
-    <script type="module" crossorigin src="/assets/index-D8U61SCz.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CNi5oQBQ.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Malik Boboev — Mr.Myorser</title>
+  <meta name="description" content="Malik Boboev (Mr.Myorser) — 3D-художник, 2D-аниматор и разработчик инструментов для Moho и Blender. Фильмы, арт, плагины и программы.">
+  <meta name="theme-color" content="#121516">
+  <meta property="og:title" content="Malik Boboev — Mr.Myorser">
+  <meta property="og:description" content="3D-художник, 2D-аниматор и разработчик инструментов для аниматоров.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="is-loading">
 
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__mark" viewBox="-4 -4 204 108">
+        <defs><linearGradient id="pg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0b7a5c"/><stop offset=".55" stop-color="#14b88a"/><stop offset="1" stop-color="#7ef0b8"/></linearGradient></defs>
+        <g fill="url(#pg)">
+          <circle class="p-c" cx="34.3" cy="66.2" r="34.3"/>
+          <path class="p-s" d="M 88.9 0 L 112.2 0 L 135.1 59.4 A 29.9 29.9 0 0 1 107.2 100 L 83.9 100 L 61 40.6 A 29.9 29.9 0 0 1 88.9 0 Z"/>
+          <rect class="p-r" x="136.4" y="0" width="58.9" height="100"/>
+        </g>
+      </svg>
+      <div class="preloader__meta">
+        <span>MR.MYORSER</span>
+        <span class="preloader__bar"><i></i></span>
+        <span class="preloader__count">000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Mr.Myorser — наверх" data-en-label="Mr.Myorser — to top">
+        <img class="brand__mark" src="assets/img/brand/mark-gradient.svg" alt="" width="46" height="25">
+        <span class="brand__word">MR<span>.</span>MYORSER</span>
+      </a>
+      <nav class="nav__links" aria-label="Разделы">
+        <a class="nav__link" href="#work"><span data-en="Work">Работы</span></a>
+        <a class="nav__link" href="#lab"><span data-en="Lab">Лаборатория</span></a>
+        <a class="nav__link" href="#software"><span data-en="Software">Софт</span></a>
+        <a class="nav__link" href="#experience"><span data-en="Experience">Опыт</span></a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--primary btn--sm" href="#contact" data-magnetic><span data-en="Contact">Связаться</span></a>
+        <button class="burger" type="button" aria-label="Меню" data-en-label="Menu" aria-expanded="false"><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" aria-label="Меню">
+    <a href="#work"><span data-en="Work">Работы</span></a>
+    <a href="#lab"><span data-en="Lab">Лаборатория</span></a>
+    <a href="#software"><span data-en="Software">Софт</span></a>
+    <a href="#experience"><span data-en="Experience">Опыт</span></a>
+    <a href="#contact"><span data-en="Contact">Контакт</span></a>
+    <div class="menu__foot">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__hud mono">
+          <div class="hud-block" data-hero style="--d:0">
+            <span class="status"><span class="status__dot"></span><span data-en="Open for projects">Открыт для проектов</span></span>
+          </div>
+        </div>
+
+        <div class="hero__main">
+          <div class="hero__kicker eyebrow" data-hero style="--d:0">
+            <span class="idx">MR.MYORSER</span><span class="bar"></span><span data-en="Portfolio · 2026">Портфолио · 2026</span>
+          </div>
+          <h1 class="hero__title" aria-label="Malik Boboev">
+            <span class="line"><span style="--d:0">Malik</span></span>
+            <span class="line line--2"><span class="outline" style="--d:120">Boboev</span><span class="dot" style="--d:120">.</span></span>
+          </h1>
+
+          <div class="hero__bottom">
+            <p class="lead hero__desc" data-hero style="--d:300" data-en="3D artist, 2D animator and tool developer. I build characters, worlds — and the plugins that make animating them faster.">3D-художник, 2D-аниматор и разработчик инструментов. Создаю персонажей, миры — и плагины, которые ускоряют их анимацию.</p>
+            <div class="hero__cta" data-hero style="--d:420">
+              <a class="btn btn--primary" href="#work" data-magnetic><span data-en="View work">Смотреть работы</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="btn btn--ghost" href="#lab" data-magnetic><span data-en="Moho plugins">Плагины для Moho</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__foot mono" data-hero style="--d:600">
+          <span class="scroll-cue"><span class="scroll-cue__line"></span><span data-en="Scroll">Листай</span></span>
+          <span>3D · 2D · Moho · Blender</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DISCIPLINES ============ -->
+    <section class="section section--tight" id="disciplines">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <div class="eyebrow" data-reveal><span class="idx">01</span><span class="bar"></span><span data-en="What I do">Что я делаю</span></div>
+            <h2 class="h-lg" data-reveal data-en="Three crafts.<br><span class=&quot;h-light&quot;>One pipeline.</span>">Три ремесла.<br><span class="h-light">Один пайплайн.</span></h2>
+          </div>
+          <p class="section__note" data-reveal data-en="Ten years at the crossroads of art and code: characters, animation and the tools behind them.">Десять лет на стыке искусства и кода: персонажи, анимация и инструменты для них.</p>
+        </div>
+        <div class="disc">
+          <article class="card" data-reveal style="--d:0">
+            <div class="disc__num mono"><span>01</span><span>3D</span></div>
+            <div class="disc__icon" aria-hidden="true">
+              <svg viewBox="0 0 92 92" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M46 6 82 26v40L46 86 10 66V26z"/><path d="M46 46 82 26M46 46 10 26M46 46v40" opacity=".55"/><circle cx="46" cy="46" r="3" fill="currentColor"/></svg>
+            </div>
+            <h3 class="h-md disc__title" data-en="3D &amp; Sculpt">3D и скульпт</h3>
+            <p class="disc__text" data-en="From organic sculpt to final render: film-ready characters, anatomy, environments and assets.">От органического скульпта до финального рендера: персонажи для кино, анатомия, окружение и ассеты.</p>
+            <div class="tags"><span class="tag">ZBrush</span><span class="tag">Blender</span><span class="tag">Maya</span><span class="tag">Substance</span><span class="tag">Mudbox</span></div>
+          </article>
+          <article class="card" data-reveal style="--d:120">
+            <div class="disc__num mono"><span>02</span><span>2D</span></div>
+            <div class="disc__icon" aria-hidden="true">
+              <svg viewBox="0 0 92 92" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="46" cy="22" r="10"/><path d="M46 32v26M46 58 32 82M46 58l14 24M46 40 24 30M46 40l22-14"/><circle cx="46" cy="40" r="2.5" fill="currentColor"/><circle cx="46" cy="58" r="2.5" fill="currentColor"/><circle cx="24" cy="30" r="2.5" fill="currentColor"/><circle cx="68" cy="26" r="2.5" fill="currentColor"/></svg>
+            </div>
+            <h3 class="h-md disc__title" data-en="2D Animation &amp; Rigging">2D-анимация и риггинг</h3>
+            <p class="disc__text" data-en="Character rigs, smart bones, facial systems, motion design and VFX for YouTube series and film.">Риги персонажей, smart bones, лицевые системы, моушн-дизайн и VFX для YouTube-сериалов и кино.</p>
+            <div class="tags"><span class="tag tag--accent">Moho</span><span class="tag">TVPaint</span><span class="tag">After Effects</span><span class="tag">Photoshop</span></div>
+          </article>
+          <article class="card" data-reveal style="--d:240">
+            <div class="disc__num mono"><span>03</span><span>CODE</span></div>
+            <div class="disc__icon" aria-hidden="true">
+              <svg viewBox="0 0 92 92" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="8" y="16" width="76" height="60" rx="8"/><path d="M8 30h76" opacity=".55"/><path d="m30 46-10 8 10 8M62 46l10 8-10 8M50 42l-8 24"/></svg>
+            </div>
+            <h3 class="h-md disc__title" data-en="Tools &amp; Software">Инструменты и софт</h3>
+            <p class="disc__text" data-en="Plugins, pipeline scripts and standalone apps built for animators and creative teams.">Плагины, скрипты для пайплайна и самостоятельные приложения для аниматоров и креативных команд.</p>
+            <div class="tags"><span class="tag">Lua</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">C#</span><span class="tag">React</span><span class="tag">Electron</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK: FILMS ============ -->
+    <section class="section section--solid" id="work">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <div class="eyebrow" data-reveal><span class="idx">02</span><span class="bar"></span><span data-en="Selected work">Избранные работы</span></div>
+            <h2 class="h-xl" data-reveal data-en="Films &amp;<br><span class=&quot;grad-text&quot;>rigs.</span>">Фильмы<br>и <span class="grad-text">риги.</span></h2>
+          </div>
+          <p class="section__note" data-reveal data-en="Anatomy, muscle systems and character rigging — from ZBrush to Moho.">Анатомия, мышечные системы и риггинг персонажей — от ZBrush до Moho.</p>
+        </div>
+
+        <div class="work">
+          <a class="work__item work__item--wide" href="https://youtu.be/1vF_r26le1o" data-youtube="1vF_r26le1o" data-caption="Dinosaur Muscle Physics" data-cursor="PLAY" data-reveal>
+            <div class="work__media">
+              <span class="work__chip chip"><i></i>Rigging · Muscles</span>
+              <img src="https://i.ytimg.com/vi/1vF_r26le1o/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/1vF_r26le1o/hqdefault.jpg'" alt="" loading="lazy">
+              <span class="work__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+            </div>
+            <div class="work__meta">
+              <div><h3 class="work__title" data-en="Dinosaur Muscle Physics">Физика мышц динозавра</h3><p class="work__sub" data-en="Paleontology &amp; biomechanical muscle systems">Палеонтология и биомеханические мышечные системы</p></div>
+              <span class="work__year mono">FILM · 01</span>
+            </div>
+          </a>
+          <a class="work__item work__item--7" href="https://youtu.be/ON63As-oap4" data-youtube="ON63As-oap4" data-caption="Advanced Facial Rigging" data-cursor="PLAY" data-reveal>
+            <div class="work__media">
+              <span class="work__chip chip"><i></i>Maya</span>
+              <img src="https://i.ytimg.com/vi/ON63As-oap4/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/ON63As-oap4/hqdefault.jpg'" alt="" loading="lazy">
+              <span class="work__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+            </div>
+            <div class="work__meta">
+              <div><h3 class="work__title" data-en="Advanced Facial Rigging">Продвинутый лицевой риггинг</h3><p class="work__sub" data-en="Human anatomy &amp; digital character rigging">Анатомия человека и риггинг цифровых персонажей</p></div>
+              <span class="work__year mono">FILM · 02</span>
+            </div>
+          </a>
+          <a class="work__item work__item--5" href="https://youtu.be/wqY_CTPTYd0" data-youtube="wqY_CTPTYd0" data-caption="Moho Character Rigging" data-cursor="PLAY" data-reveal style="--d:120">
+            <div class="work__media">
+              <span class="work__chip chip"><i></i>Moho</span>
+              <img src="https://i.ytimg.com/vi/wqY_CTPTYd0/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/wqY_CTPTYd0/hqdefault.jpg'" alt="" loading="lazy">
+              <span class="work__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+            </div>
+            <div class="work__meta">
+              <div><h3 class="work__title" data-en="Moho Character Rigging">Риггинг персонажа в Moho</h3><p class="work__sub" data-en="2D puppet mechanics">Механика 2D-марионеток</p></div>
+              <span class="work__year mono">FILM · 03</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ART ============ -->
+    <section class="section section--solid section--flush" id="art">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+                        <h2 class="h-lg" data-reveal data-en="Characters<br><span class=&quot;h-light&quot;>&amp; sculpts.</span>">Персонажи<br><span class="h-light">и скульпты.</span></h2>
+          </div>
+          <div class="filters" role="group" aria-label="Фильтр" data-reveal>
+            <button type="button" class="filter" data-filter="all" aria-pressed="true"><span data-en="All">Все</span> <sup>15</sup></button>
+            <button type="button" class="filter" data-filter="3d" aria-pressed="false">3D <sup>6</sup></button>
+            <button type="button" class="filter" data-filter="2d" aria-pressed="false">2D <sup>9</sup></button>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="art art--big" data-cat="3d" data-reveal><button type="button" data-zoom="assets/img/art/giant-horn-2.webp" data-caption="Ancient Titan — ZBrush" data-cursor="VIEW"><img src="assets/img/art/giant-horn-2-sm.webp" alt="Ancient Titan, скульпт ZBrush" loading="lazy"><figcaption><b>Ancient Titan</b><span class="mono">ZBrush · Hyper-realism</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal style="--d:80"><button type="button" data-zoom="assets/img/art/hippo-boss.webp" data-caption="The Patriarch — Photoshop" data-cursor="VIEW"><img src="assets/img/art/hippo-boss-sm.webp" alt="The Patriarch, концепт-арт" loading="lazy"><figcaption><b>The Patriarch</b><span class="mono">Concept · Photoshop</span></figcaption></button></figure>
+          <figure class="art" data-cat="3d" data-reveal style="--d:160"><button type="button" data-zoom="assets/img/art/alien-sculpt.webp" data-caption="Xenomorph Prime — Mudbox" data-cursor="VIEW"><img src="assets/img/art/alien-sculpt-sm.webp" alt="Xenomorph Prime, 3D-скульпт" loading="lazy"><figcaption><b>Xenomorph Prime</b><span class="mono">3D Sculpt · Mudbox</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal><button type="button" data-zoom="assets/img/art/ninja-cat.webp" data-caption="Shinobi Protocol" data-cursor="VIEW"><img src="assets/img/art/ninja-cat-sm.webp" alt="Shinobi Protocol, экшн-кадр" loading="lazy"><figcaption><b>Shinobi Protocol</b><span class="mono">Action keyframe</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal style="--d:80"><button type="button" data-zoom="assets/img/art/coffee-girl.webp" data-caption="Morning Interval" data-cursor="VIEW"><img src="assets/img/art/coffee-girl-sm.webp" alt="Morning Interval, живописный арт" loading="lazy"><figcaption><b>Morning Interval</b><span class="mono">Painterly art</span></figcaption></button></figure>
+          <figure class="art" data-cat="3d" data-reveal style="--d:160"><button type="button" data-zoom="assets/img/art/orc-sculpt.webp" data-caption="Warlord Aspect — ZBrush" data-cursor="VIEW"><img src="assets/img/art/orc-sculpt-sm.webp" alt="Warlord Aspect, скульпт ZBrush" loading="lazy"><figcaption><b>Warlord Aspect</b><span class="mono">3D Sculpt · ZBrush</span></figcaption></button></figure>
+          <figure class="art art--big" data-cat="2d" data-reveal><button type="button" data-zoom="assets/img/art/batman-noir.webp" data-caption="Gotham Noir" data-cursor="VIEW"><img src="assets/img/art/batman-noir-sm.webp" alt="Gotham Noir, фан-арт" loading="lazy"><figcaption><b>Gotham Noir</b><span class="mono">Fan art · Concept</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal style="--d:80"><button type="button" data-zoom="assets/img/art/cat-art.webp" data-caption="The Guardian" data-cursor="VIEW"><img src="assets/img/art/cat-art-sm.webp" alt="The Guardian, иллюстрация" loading="lazy"><figcaption><b>The Guardian</b><span class="mono">Digital art</span></figcaption></button></figure>
+          <figure class="art" data-cat="3d" data-reveal style="--d:160"><button type="button" data-zoom="assets/img/art/house-3d.webp" data-caption="Nordic Shelter — Blender" data-cursor="VIEW"><img src="assets/img/art/house-3d-sm.webp" alt="Nordic Shelter, 3D Blender" loading="lazy"><figcaption><b>Nordic Shelter</b><span class="mono">3D · Blender</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal><button type="button" data-zoom="assets/img/art/mask-guy.webp" data-caption="Ghost Agent" data-cursor="VIEW"><img src="assets/img/art/mask-guy-sm.webp" alt="Ghost Agent, концепт" loading="lazy"><figcaption><b>Ghost Agent</b><span class="mono">Techwear concept</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal style="--d:80"><button type="button" data-zoom="assets/img/art/cyber-girl-1.webp" data-caption="Neon Muse" data-cursor="VIEW"><img src="assets/img/art/cyber-girl-1-sm.webp" alt="Neon Muse, цифровой портрет" loading="lazy"><figcaption><b>Neon Muse</b><span class="mono">Digital portrait</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal style="--d:160"><button type="button" data-zoom="assets/img/art/glass-girl.webp" data-caption="Optic Vision" data-cursor="VIEW"><img src="assets/img/art/glass-girl-sm.webp" alt="Optic Vision, фэшн-концепт" loading="lazy"><figcaption><b>Optic Vision</b><span class="mono">Fashion concept</span></figcaption></button></figure>
+          <figure class="art" data-cat="2d" data-reveal><button type="button" data-zoom="assets/img/art/cyber-girl-2.webp" data-caption="Future Echo" data-cursor="VIEW"><img src="assets/img/art/cyber-girl-2-sm.webp" alt="Future Echo, цифровая живопись" loading="lazy"><figcaption><b>Future Echo</b><span class="mono">Digital painting</span></figcaption></button></figure>
+          <figure class="art" data-cat="3d" data-reveal style="--d:80"><button type="button" data-zoom="assets/img/art/giant-horn-1.webp" data-caption="Ancient Titan — anatomy" data-cursor="VIEW"><img src="assets/img/art/giant-horn-1-sm.webp" alt="Ancient Titan, анатомия" loading="lazy"><figcaption><b>Ancient Titan</b><span class="mono">Anatomy study</span></figcaption></button></figure>
+          <figure class="art" data-cat="3d" data-reveal style="--d:160"><button type="button" data-zoom="assets/img/art/giant-horn-3.webp" data-caption="Ancient Titan — texture detail" data-cursor="VIEW"><img src="assets/img/art/giant-horn-3-sm.webp" alt="Ancient Titan, детализация" loading="lazy"><figcaption><b>Ancient Titan</b><span class="mono">Texture detail</span></figcaption></button></figure>
+        </div>
+        <div class="center-link" data-reveal><a class="link-arrow" href="https://www.artstation.com/maxbobi66" target="_blank" rel="noopener"><span data-en="Full gallery on ArtStation">Вся галерея на ArtStation</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+      </div>
+    </section>
+
+    <!-- ============ LAB ============ -->
+    <section class="section lab" id="lab">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <div class="eyebrow" data-reveal><span class="idx">03</span><span class="bar"></span><span data-en="Lab · Moho Pro 14.4">Лаборатория · Moho Pro 14.4</span></div>
+            <h2 class="h-xl" data-reveal data-en="Tools that<br><span class=&quot;grad-text&quot;>animate faster.</span>">Инструменты,<br>которые <span class="grad-text">ускоряют.</span></h2>
+          </div>
+          <p class="section__note" data-reveal data-en="My own plugins for Moho — born from real studio production. Tap any card for details.">Мои плагины для Moho — родились из реального студийного продакшена. Нажмите на карточку, чтобы узнать больше.</p>
+        </div>
+
+        <!-- Pose Library -->
+        <article class="product" id="pose-library">
+          <div class="product__grid">
+            <div class="product__info">
+              <div class="product__badges" data-reveal>
+                <span class="chip chip--warn"><i></i>PRO</span>
+                <span class="chip" data-en="Coming soon">Скоро</span>
+                <span class="chip">Moho Pro 14.4</span>
+              </div>
+              <div class="product__icon" data-reveal aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="13" height="17" rx="2.5"/><path d="M8 6.5h9.5a2.5 2.5 0 0 1 2.5 2.5v11.5"/><circle cx="10.5" cy="8.5" r="1.4"/><path d="M10.5 10v4m0 0-2 3m2-3 2 3m-4.5-5.5 2.5 1 2.5-1"/></svg>
+              </div>
+              <h3 class="h-lg product__name" data-reveal>Pose Library<span class="ver">3.0</span></h3>
+              <p class="product__tagline" data-reveal data-en="Character poses — in one click.">Позы персонажа — в один клик.</p>
+              <p class="product__desc" data-reveal data-en="A pose library inside a native floating Moho window: cards with thumbnails, search, categories and favourites. Save a pose once — apply it on any frame.">Библиотека поз в родном плавающем окне Moho: карточки с превью, поиск, категории и избранное. Сохрани позу один раз — применяй на любом кадре.</p>
+              <ul class="features" data-reveal>
+                <li data-en="<b>Visual cards</b>Thumbnail of every pose"><b>Карточки с фото</b>Превью каждой позы</li>
+                <li data-en="<b>Search &amp; categories</b>Gestures, emotions, motion"><b>Поиск и категории</b>Жесты, эмоции, движение</li>
+                <li data-en="<b>Blend strength</b>25 / 50 / 100% mix"><b>Сила применения</b>Смешивание 25 / 50 / 100%</li>
+                <li data-en="<b>Only selected</b>Apply to chosen bones"><b>Только выделенное</b>Применить к нужным костям</li>
+              </ul>
+              <div class="product__cta" data-reveal>
+                <button class="btn btn--primary" type="button" data-detail="pose-library" data-magnetic><span data-en="Learn more">Подробнее</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button>
+                <span class="btn btn--disabled" aria-disabled="true"><span data-en="On sale soon">Скоро в продаже</span></span>
+              </div>
+              <p class="product__fine mono" data-reveal data-en="Paid plugin · release date will be announced">Платный плагин · дата релиза будет объявлена</p>
+            </div>
+            <div class="stage" data-reveal="scale">
+              <div class="stage__glow" aria-hidden="true"></div>
+              <div class="stage__main" data-detail="pose-library" data-cursor="OPEN">
+                <span class="stage__video chip chip--warn"><i></i><span data-en="Video coming to YouTube">Видео скоро на YouTube</span></span>
+                <img src="assets/img/work/pose-promo.webp" alt="Pose Library 3.0 — промо" loading="lazy">
+              </div>
+              <div class="stage__float" data-parallax="-50"><img src="assets/img/work/pose-reels.webp" alt="" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="shots">
+            <figure class="shot" data-reveal data-zoom="assets/img/work/pose-window.webp" data-caption="Pose Library 3.0 — окно" data-cursor="VIEW"><img src="assets/img/work/pose-window.webp" alt="Окно Pose Library" loading="lazy"><figcaption><span class="chip" data-en="Plugin window">Окно плагина</span></figcaption></figure>
+            <figure class="shot" data-reveal style="--d:100" data-zoom="assets/img/work/pose-poses.webp" data-caption="«Мо» — библиотека поз" data-cursor="VIEW"><img src="assets/img/work/pose-poses.webp" alt="Библиотека поз персонажа Мо" loading="lazy"><figcaption><span class="chip" data-en="16 presets">16 пресетов</span></figcaption></figure>
+            <figure class="shot" data-reveal style="--d:200" data-zoom="assets/img/work/pose-tutorial.webp" data-caption="Pose Library 3.0 — урок" data-cursor="VIEW"><img src="assets/img/work/pose-tutorial.webp" alt="Урок Pose Library" loading="lazy"><figcaption><span class="chip" data-en="Tutorial · soon">Урок · скоро</span></figcaption></figure>
+          </div>
+        </article>
+
+        <!-- Rig Controllers -->
+        <article class="product product--flip product--pro" id="rig-controllers">
+          <div class="product__grid">
+            <div class="product__info">
+              <div class="product__badges" data-reveal>
+                <span class="chip chip--warn"><i></i>PRO</span>
+                <span class="chip" data-en="Coming soon">Скоро</span>
+                <span class="chip">Moho Pro 14.4</span>
+              </div>
+              <div class="product__icon" data-reveal aria-hidden="true" style="color:var(--warn)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="6" r="2.5"/><path d="M12 8.5V15"/><ellipse cx="12" cy="17" rx="7" ry="2.6"/><path d="M5 17v1.5c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V17"/></svg>
+              </div>
+              <h3 class="h-lg product__name" data-reveal>Rig Controllers<span class="ver">2.0</span></h3>
+              <p class="product__tagline" data-reveal data-en="One gesture. Two axes.">Один жест. Две оси.</p>
+              <p class="product__desc" data-reveal data-en="XY joysticks and sliders drawn right over the bone layer to drive Smart Bones. Turn the head, change emotions, blink — straight on the canvas.">XY-джойстики и ползунки поверх костного слоя для управления Smart Bones. Поворот головы, эмоции, моргание — прямо на холсте.</p>
+              <ul class="features" data-reveal>
+                <li data-en="<b>XY joysticks</b>Two axes in one move"><b>XY-джойстики</b>Две оси одним движением</li>
+                <li data-en="<b>Sliders</b>Precise single-axis control"><b>Ползунки</b>Точное управление одной осью</li>
+                <li data-en="<b>Smart Bones</b>Controller → driver → action"><b>Smart Bones</b>Контроллер → driver → action</li>
+                <li data-en="<b>Works with Pose Library</b>«Poses» button opens it"><b>Связка с Pose Library</b>Кнопка «Позы» открывает окно</li>
+              </ul>
+              <div class="product__cta" data-reveal>
+                <button class="btn btn--primary btn--warn" type="button" data-detail="rig-controllers" data-magnetic><span data-en="Learn more">Подробнее</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button>
+                <span class="btn btn--disabled" aria-disabled="true"><span data-en="On sale soon">Скоро в продаже</span></span>
+              </div>
+              <p class="product__fine mono" data-reveal data-en="Paid plugin · release date will be announced">Платный плагин · дата релиза будет объявлена</p>
+            </div>
+            <div class="stage" data-reveal="scale">
+              <div class="stage__glow" aria-hidden="true"></div>
+              <div class="stage__main" data-detail="rig-controllers" data-cursor="OPEN">
+                <span class="stage__video chip chip--warn"><i></i><span data-en="Video coming to YouTube">Видео скоро на YouTube</span></span>
+                <img src="assets/img/work/rig-promo.webp" alt="Rig Controllers 2.0 — промо" loading="lazy">
+              </div>
+              <div class="stage__float" data-parallax="-50"><img src="assets/img/work/rig-reels.webp" alt="" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="shots">
+            <figure class="shot" data-reveal data-zoom="assets/img/work/rig-flow.webp" data-caption="Rig Controllers — схема" data-cursor="VIEW"><img src="assets/img/work/rig-flow.webp" alt="Схема работы Rig Controllers" loading="lazy"><figcaption><span class="chip" data-en="How it works">Как это работает</span></figcaption></figure>
+            <figure class="shot" data-reveal style="--d:100" data-zoom="assets/img/work/rig-face.webp" data-caption="«Мо» — лицо" data-cursor="VIEW"><img src="assets/img/work/rig-face.webp" alt="Мимика и поворот головы" loading="lazy"><figcaption><span class="chip" data-en="Head turn · emotions">Поворот · эмоции</span></figcaption></figure>
+            <figure class="shot" data-reveal style="--d:200" data-zoom="assets/img/work/rig-tutorial.webp" data-caption="Rig Controllers 2.0 — урок" data-cursor="VIEW"><img src="assets/img/work/rig-tutorial.webp" alt="Урок Rig Controllers" loading="lazy"><figcaption><span class="chip" data-en="Tutorial · soon">Урок · скоро</span></figcaption></figure>
+          </div>
+        </article>
+
+        <div class="combo" data-reveal>
+          <p data-en="<b>Better together.</b> The plugins don't overwrite each other's files. With both installed, the «Poses» button on the Rig Controllers panel opens the Pose Library window."><b>Вместе — сильнее.</b> Плагины не заменяют файлы друг друга. Если установлены оба, кнопка «Позы» на панели Rig Controllers открывает окно Pose Library.</p>
+          <a class="link-arrow" href="#pose-library"><span>Pose Library 3.0</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+
+        <!-- Free tools -->
+        <div class="tools-head" data-reveal>
+          <h3 class="h-md" data-en="Free scripts &amp; add-ons">Бесплатные скрипты и аддоны</h3>
+          <span class="mono" style="color:var(--ink-3)">OPEN SOURCE · 4</span>
+        </div>
+        <div class="tools">
+          <button type="button" class="tool card" data-detail="show-all-layers" data-cursor="OPEN" data-reveal>
+            <span class="tool__app mono">Moho · Lua</span>
+            <h4 class="tool__name">Show All Layers</h4>
+            <p class="tool__text" data-en="Reveal every hidden layer of a project in one click. Essential for complex rigs.">Мгновенно показывает все скрытые слои проекта. Незаменим для сложных ригов.</p>
+            <span class="tool__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <button type="button" class="tool card" data-detail="magic-bone" data-cursor="OPEN" data-reveal style="--d:80">
+            <span class="tool__app mono">Blender · Python</span>
+            <h4 class="tool__name">Magic Bone</h4>
+            <p class="tool__text" data-en="Generate bones from mesh geometry: by normals, world axes or between two vertices.">Генерация костей из геометрии меша: по нормалям, мировым осям или между двумя вершинами.</p>
+            <span class="tool__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <button type="button" class="tool card" data-detail="piano-rig-pro" data-cursor="OPEN" data-reveal style="--d:160">
+            <span class="tool__app mono">Blender · Python</span>
+            <h4 class="tool__name">Piano Rig Pro</h4>
+            <p class="tool__text" data-en="Full auto-rig of piano mechanics: bones and constraints in one click.">Полный авто-риг механики пианино: кости и ограничения в один клик.</p>
+            <span class="tool__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <button type="button" class="tool card" data-detail="mrm-metrics" data-cursor="OPEN" data-reveal style="--d:240">
+            <span class="tool__app mono">Blender · Python</span>
+            <h4 class="tool__name">MRM Metrics Pro</h4>
+            <p class="tool__text" data-en="Distance, angle and diameter with a clean real-time HUD in the viewport.">Расстояние, угол и диаметр с чистым HUD прямо во вьюпорте.</p>
+            <span class="tool__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOFTWARE ============ -->
+    <section class="section section--solid" id="software">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <div class="eyebrow" data-reveal><span class="idx">04</span><span class="bar"></span><span data-en="Software">Программы</span></div>
+            <h2 class="h-xl" data-reveal data-en="Apps &amp;<br><span class=&quot;h-light&quot;>platforms.</span>">Приложения<br><span class="h-light">и платформы.</span></h2>
+          </div>
+          <p class="section__note" data-reveal data-en="Standalone apps for artists, gamers and business.">Самостоятельные приложения для художников, геймеров и бизнеса.</p>
+        </div>
+
+        <div class="apps">
+          <article data-detail="prisma" role="button" tabindex="0" data-cursor="OPEN" class="app app--feature card" data-reveal>
+            <div class="app__top mono"><span class="more" aria-hidden="true">+</span><span class="chip"><i></i>v1.0.0 · Windows</span><span>React · Electron</span></div>
+            <div class="app__body">
+              <h3 class="app__name">Prisma</h3>
+              <p class="app__short" data-en="Infinite canvas &amp; reference board.">Бесконечный холст и доска референсов.</p>
+              <p class="app__text" data-en="A fast, local-first infinite canvas for artists and designers — an alternative to Miro and PureRef with Blender-style hotkeys.">Быстрый локальный бесконечный холст для художников и дизайнеров — альтернатива Miro и PureRef с горячими клавишами в стиле Blender.</p>
+              <div class="keys" aria-hidden="true"><kbd>G</kbd><kbd>R</kbd><kbd>S</kbd></div>
+            </div>
+            <div class="app__cta">
+              <a class="btn btn--primary btn--sm" href="https://github.com/Maxi000001/prisma-desktop/releases/download/v1.0.0/Prisma_Setup_v1.0.0.exe" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download · 113 MB">Скачать · 113 MB</span></a>
+              <a class="link-arrow" href="https://maxi000001.github.io/prisma-desktop/" target="_blank" rel="noopener"><span data-en="Website">Сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+          </article>
+          <article data-detail="niceshoots" role="button" tabindex="0" data-cursor="OPEN" class="app card" data-reveal style="--d:80">
+            <div class="app__top mono"><span class="more" aria-hidden="true">+</span><span class="chip"><i></i>v1.0.0</span><span>C# · WPF</span></div>
+            <div class="app__body">
+              <h3 class="app__name">NiceShoots</h3>
+              <p class="app__text" data-en="Custom crosshair overlay for competitive gaming. Zero latency, global hotkeys.">Настраиваемый прицел поверх всех окон для соревновательных игр. Нулевая задержка, глобальные хоткеи.</p>
+            </div>
+            <div class="app__cta">
+              <a class="link-arrow" href="https://github.com/Maxi000001/NiceShoots/releases/download/v1.0.0/NiceShoot.Setup.1.0.0.exe"><span data-en="Download · 78 MB">Скачать · 78 MB</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg></a>
+            </div>
+          </article>
+          <article data-detail="playtime" role="button" tabindex="0" data-cursor="OPEN" class="app card" data-reveal style="--d:160">
+            <div class="app__top mono"><span class="more" aria-hidden="true">+</span><span class="chip"><i></i>v2.0.0</span><span>C# · .NET</span></div>
+            <div class="app__body">
+              <h3 class="app__name">PlayTime Pro</h3>
+              <p class="app__text" data-en="Time tracking and management system for billiard clubs: tables, dynamic pricing, reports.">Система учёта времени для бильярдных клубов: столы, динамические цены, отчёты.</p>
+            </div>
+            <div class="app__cta"><span class="mono" style="color:var(--ink-3)" data-en="Commercial · on request">Коммерческая · по запросу</span></div>
+          </article>
+          <article data-detail="stb-studio" role="button" tabindex="0" data-cursor="OPEN" class="app card" data-reveal>
+            <div class="app__top mono"><span class="more" aria-hidden="true">+</span><span class="chip chip--warn"><i></i>Alpha</span><span>C++ · Qt</span></div>
+            <div class="app__body">
+              <h3 class="app__name">STB Studio</h3>
+              <p class="app__text" data-en="3-in-1 suite: storyboarding, drawing and 2D animation in one pipeline.">Пакет 3-в-1: сторибординг, рисование и 2D-анимация в едином пайплайне.</p>
+            </div>
+            <div class="app__cta"><span class="mono" style="color:var(--ink-3)" data-en="In development">В разработке</span></div>
+          </article>
+          <article data-detail="tjobs" role="button" tabindex="0" data-cursor="OPEN" class="app card" data-reveal style="--d:80">
+            <div class="app__top mono"><span class="more" aria-hidden="true">+</span><span class="chip chip--warn"><i></i>Beta</span><span>React Native</span></div>
+            <div class="app__body">
+              <h3 class="app__name">TJOBS</h3>
+              <p class="app__text" data-en="Next-generation job search platform and mobile app.">Платформа и мобильное приложение для поиска работы нового поколения.</p>
+            </div>
+            <div class="app__cta"><span class="mono" style="color:var(--ink-3)" data-en="In development">В разработке</span></div>
+          </article>
+          <article data-detail="time-out" role="button" tabindex="0" data-cursor="OPEN" class="app card" data-reveal style="--d:160">
+            <div class="app__top mono"><span class="more" aria-hidden="true">+</span><span class="chip chip--warn"><i></i>Alpha</span><span>Electron</span></div>
+            <div class="app__body">
+              <h3 class="app__name">Time OUT</h3>
+              <p class="app__text" data-en="Smart PC shutdown timer with an interactive robot companion.">Умный таймер выключения ПК с интерактивным роботом-компаньоном.</p>
+            </div>
+            <div class="app__cta"><span class="mono" style="color:var(--ink-3)" data-en="In development">В разработке</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <div class="eyebrow" data-reveal><span class="idx">05</span><span class="bar"></span><span data-en="Experience">Опыт</span></div>
+            <h2 class="h-xl" data-reveal data-en="Studios<br><span class=&quot;h-light&quot;>&amp; school.</span>">Студии<br><span class="h-light">и школа.</span></h2>
+          </div>
+          <p class="section__note mono" data-reveal>2015 — 2026</p>
+        </div>
+        <div class="xp">
+          <div class="xp__row" data-reveal>
+            <div class="xp__when mono" data-en="2021 — now">2021 — сейчас</div>
+            <div><h3 class="xp__co">RA Zvezda</h3><div class="xp__role" data-en="Lead digital artist &amp; 2D animator">Ведущий цифровой художник и 2D-аниматор</div></div>
+            <div class="xp__desc">
+              <p data-en="Animation for YouTube series and custom Moho scripts that streamline and speed up the studio pipeline.">Анимация для YouTube-сериалов и собственные скрипты для Moho, ускоряющие студийный пайплайн.</p>
+              <div class="tags">
+                <a class="tag" href="https://www.youtube.com/@lichnyj.dnevnik" target="_blank" rel="noopener">Личный дневник ↗</a>
+                <a class="tag" href="https://www.youtube.com/@scp9608" target="_blank" rel="noopener">SCP: Хроники ↗</a>
+                <a class="tag" href="https://www.youtube.com/@%D0%90%D0%9D%D0%9E%D0%9D%D0%9F%D0%9B%D0%98%D0%97" target="_blank" rel="noopener">АНОН ПЛИЗ ↗</a>
+              </div>
+            </div>
+            <span class="xp__arrow" aria-hidden="true">→</span>
+          </div>
+          <div class="xp__row" data-reveal>
+            <div class="xp__when mono">2020</div>
+            <div><h3 class="xp__co">Fardo Studio®</h3><div class="xp__role" data-en="Concept artist &amp; animator">Концепт-художник и аниматор</div></div>
+            <div class="xp__desc">
+              <p data-en="A creative studio focused on high-end animation and digital content. Concept art, 2D animation, rigging and VFX.">Креативная студия высококачественной анимации и цифрового контента. Концепт-арт, 2D-анимация, риггинг и VFX.</p>
+              <div class="tags"><a class="tag" href="https://www.youtube.com/@fardostudio" target="_blank" rel="noopener">YouTube ↗</a></div>
+            </div>
+            <span class="xp__arrow" aria-hidden="true">→</span>
+          </div>
+          <div class="xp__row" data-reveal>
+            <div class="xp__when mono">2017 — 2019</div>
+            <div><h3 class="xp__co" data-en="Tajikfilm">Таджикфильм</h3><div class="xp__role" data-en="Character artist &amp; 3D generalist">Художник персонажей и 3D-универсал</div></div>
+            <div class="xp__desc">
+              <p data-en="The national film studio of Tajikistan. Character and concept art, animation, 3D modelling and rigging.">Государственная киностудия Таджикистана. Персонажи и концепт-арт, анимация, 3D-моделирование и риггинг.</p>
+              <div class="tags"><a class="tag" href="https://tojikfilm.tj/" target="_blank" rel="noopener">tojikfilm.tj ↗</a></div>
+            </div>
+            <span class="xp__arrow" aria-hidden="true">→</span>
+          </div>
+          <div class="xp__row" data-reveal>
+            <div class="xp__when mono">2015 — 2018</div>
+            <div><h3 class="xp__co" data-en="M. Olimov Art College">Художественное училище им. М. Олимова</h3><div class="xp__role" data-en="Fine arts &amp; design">Изобразительное искусство и дизайн</div></div>
+            <div class="xp__desc">
+              <p data-en="Classical art education, followed by advanced CG training.">Классическое художественное образование, затем продвинутые курсы CG.</p>
+              <div class="tags"><span class="tag">XYZ School</span><span class="tag">AnimationSchool</span></div>
+            </div>
+            <span class="xp__arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
+
+        <div class="support card" data-reveal>
+          <div>
+            <div class="eyebrow"><span class="idx">♥</span><span class="bar"></span><span data-en="Support">Поддержка</span></div>
+            <p class="support__text" data-en="My free tools stay free thanks to people who support them. If a script saved you an hour — you can buy me a coffee.">Бесплатные инструменты остаются бесплатными благодаря поддержке. Если скрипт сэкономил вам час — можно угостить меня кофе.</p>
+          </div>
+          <div class="support__cta">
+            <a class="btn btn--ghost" href="https://boosty.to/malikjan/donate" target="_blank" rel="noopener" data-magnetic>Boosty</a>
+            <a class="btn btn--ghost" href="https://buymeacoffee.com/maxbobi" target="_blank" rel="noopener" data-magnetic>Buy me a coffee</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal><span class="idx">06</span><span class="bar"></span><span data-en="Contact">Контакт</span></div>
+        <h2 class="contact__title" data-reveal data-en="Let's build<br><span class=&quot;outline&quot;>something</span><br><span class=&quot;grad-text&quot;>bold.</span>">Создадим<br><span class="outline">что-то</span><br><span class="grad-text">смелое.</span></h2>
+        <div class="contact__row">
+          <div data-reveal>
+            <p class="lead" style="margin-bottom:28px" data-en="Commissions, studio work, rigs or a custom tool for your pipeline — write to me, I reply fast.">Заказы, работа в студии, риги или свой инструмент под ваш пайплайн — пишите, отвечаю быстро.</p>
+            <a class="mail" href="https://t.me/Malik_anim" target="_blank" rel="noopener" data-cursor="WRITE">t.me/Malik_anim<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+          <div class="socials" data-reveal style="--d:120">
+            <a href="https://www.instagram.com/mr.myorser.art" target="_blank" rel="noopener">Instagram<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://www.artstation.com/maxbobi66" target="_blank" rel="noopener">ArtStation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://www.youtube.com/@maxart8531" target="_blank" rel="noopener">YouTube<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://github.com/Maxi000001" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner mono">
+      <span class="footer__brand"><img src="assets/img/brand/mark-gradient.svg" alt="" width="34" height="18">© <span data-year>2026</span> Malik Boboev · Mr.Myorser</span>
+      <a class="totop" href="#top" data-top><span data-en="Back to top">Наверх</span> ↑</a>
+    </div>
+  </footer>
+
+  <div class="sheet" aria-hidden="true">
+    <div class="sheet__backdrop"></div>
+    <article class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" data-lenis-prevent>
+      <button class="sheet__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="sheet__content"></div>
+    </article>
+  </div>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="lightbox__body"></div>
+    <div class="lightbox__cap mono"></div>
+  </div>
+
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="assets/js/field.js" defer></script>
+  <script src="assets/js/details.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
