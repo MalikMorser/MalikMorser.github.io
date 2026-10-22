@@ -213,9 +213,10 @@ window.DETAILS = {
   },
 
   'magic-bone': {
-    name: 'Magic Bone', version: '1.0', accent: '#ff9a3c',
+    name: 'Magic Bone', version: '1.0', accent: '#ff9a3c', video: '6W-SdrC8QXs', image: 'https://i.ytimg.com/vi/6W-SdrC8QXs/hqdefault.jpg',
     links: [
       { href: 'https://github.com/MalikMorser/Magic-Bone-Blender/archive/refs/heads/main.zip', icon: 'download', primary: true, ru: 'Скачать бесплатно', en: 'Download free' },
+      { href: 'https://youtu.be/6W-SdrC8QXs', icon: 'youtube', ru: 'Урок на YouTube', en: 'Tutorial on YouTube' },
       { href: 'https://github.com/MalikMorser/Magic-Bone-Blender', icon: 'github', ru: 'GitHub', en: 'GitHub' },
     ],
     ru: {

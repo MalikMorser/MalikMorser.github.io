@@ -289,3 +289,54 @@
 
 .ios-tip { display: grid; gap: 4px; margin-top: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(182, 160, 205, 0.3); background: rgba(182, 160, 205, 0.07); font-size: 14px; color: var(--ink-2); line-height: 1.5; }
 .ios-tip b { color: #d9c9f0; font-weight: 600; }
+
+/* ---------- Boosty: a warm, clearly visible support band on every page ---------- */
+.boosty { position: relative; z-index: 2; padding: clamp(64px, 8vw, 110px) 0 0; background: #15181a; }
+.boosty__card {
+  --b: #f15f2c;
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: center;
+  padding: clamp(28px, 4vw, 60px); border-radius: clamp(22px, 3vw, 34px);
+  background: linear-gradient(120deg, #2a1810 0%, #1b1513 45%, #17181a 100%);
+  border: 1px solid rgba(241, 95, 44, 0.45);
+  box-shadow: 0 40px 120px -50px rgba(241, 95, 44, 0.55);
+}
+.boosty__glow {
+  position: absolute; z-index: -1; right: -10%; top: -40%; width: 60%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(241, 95, 44, 0.45), transparent 70%); filter: blur(30px);
+  animation: boosty-breathe 6s ease-in-out infinite;
+}
+@keyframes boosty-breathe { 50% { transform: scale(1.12); opacity: 0.75; } }
+.boosty__badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px;
+  background: rgba(241, 95, 44, 0.14); border: 1px solid rgba(241, 95, 44, 0.5); color: #ff9a70;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.boosty__badge svg { width: 13px; height: 13px; color: var(--b); animation: boosty-beat 1.6s ease-in-out infinite; }
+@keyframes boosty-beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.25); } 30% { transform: scale(1); } 45% { transform: scale(1.18); } }
+.boosty__title { font-family: var(--f-display); font-weight: 700; font-size: clamp(32px, 4.4vw, 68px); letter-spacing: -0.04em; line-height: 1; margin: 22px 0 18px; }
+.boosty__title span { color: var(--b); }
+.boosty__lead { color: #d8cfc9; font-size: clamp(16px, 1.3vw, 18px); line-height: 1.6; margin: 0; max-width: 52ch; }
+.boosty__cta { display: grid; gap: 16px; justify-items: start; }
+.boosty__btn {
+  --h: 68px; padding: 0 34px; font-size: 14px; background: var(--b); color: #fff;
+  box-shadow: 0 18px 50px -14px rgba(241, 95, 44, 0.8);
+}
+.boosty__btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: #ff7a4d; border-radius: inherit; transform: translateY(101%); transition: transform 0.55s var(--ease); }
+.boosty__btn:hover::before { transform: none; }
+.boosty__btn:hover { box-shadow: 0 0 0 6px rgba(241, 95, 44, 0.18), 0 22px 60px -14px rgba(241, 95, 44, 0.9); }
+.boosty__btn svg { width: 18px; height: 18px; }
+.boosty .link-arrow:hover { color: #ff9a70; }
+
+.nav__boosty { border: 1px solid rgba(241, 95, 44, 0.55); color: #ff9a70; background: rgba(241, 95, 44, 0.08); }
+.nav__boosty svg { width: 13px; height: 13px; color: #f15f2c; }
+.nav__boosty:hover { background: #f15f2c; color: #fff; border-color: #f15f2c; }
+.nav__boosty:hover svg { color: #fff; }
+.menu .menu__boosty { color: #ff9a70; }
+.site-foot__cta { padding-top: clamp(48px, 6vw, 80px); }
+
+@media (max-width: 860px) {
+  .boosty__card { grid-template-columns: 1fr; }
+  .boosty__btn { width: 100%; }
+}
+@media (max-width: 1100px) { .nav__boosty span { display: none; } .nav__boosty { padding: 0 14px; } }
