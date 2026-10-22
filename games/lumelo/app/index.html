@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f0ea">
+  <meta name="description" content="Лумело — рисуй цветом и слушай свою мелодию. Музыкальный холст Малика Бобоева.">
+  <title>Lumelo — рисуй музыку</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/icon-64.png">
+  <link rel="apple-touch-icon" href="./assets/icon-180.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Lumelo">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="canonical" href="https://myorser.com/games/lumelo/app/">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./theme.css">
+  <link rel="stylesheet" href="./files.css">
+  <link rel="stylesheet" href="./rhythm.css">
+  <link rel="stylesheet" href="./workspace.css">
+  <link rel="stylesheet" href="./help.css">
+  <link rel="stylesheet" href="./editor.css">
+  <link rel="stylesheet" href="./studio.css">
+  <link rel="stylesheet" href="./mobile.css">
+  <script src="./theme.js"></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="4"/><path d="m6 7 12-4M15 11h3M15 15h3"/><circle cx="8" cy="14" r="2.5"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M18 6H8a4 4 0 0 0-4 4v1M6 18h10a4 4 0 0 0 4-4v-1M15 3l3 3-3 3M9 15l-3 3 3 3"/></symbol>
+    <symbol id="i-select" viewBox="0 0 24 24"><path d="M8 4H4v4M16 4h4v4M20 16v4h-4M8 20H4v-4M12 4h.01M20 12v.01M12 20h.01M4 12v.01"/></symbol>
+    <symbol id="i-select-brush" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-dasharray="3 3"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-lasso" viewBox="0 0 24 24"><path d="M6 17C-2 7 9 2 16 5c9 4 6 13-3 13H8M7 16c-4-1-6 4-1 5 3 1 5-4 1-5Z"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M10 17V5l9-2v12M10 9l9-2"/><ellipse cx="7" cy="18" rx="3" ry="2"/><ellipse cx="16" cy="16" rx="3" ry="2"/></symbol>
+    <symbol id="i-dj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 7a5 5 0 0 1 5 5M3 3v7M3 10l4 3"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 10 6 6 6-6"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17h.01"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="m3 11 18-7-4 16-5-5-4 3 1-6 8-5-6 7-3-2Z"/></symbol>
+    <symbol id="i-pixels" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.3"/><rect x="14" y="4" width="6" height="6" rx="1.3"/><rect x="4" y="14" width="6" height="6" rx="1.3"/><rect x="14" y="14" width="6" height="6" rx="1.3"/></symbol>
+    <symbol id="i-parts" viewBox="0 0 24 24"><rect x="3" y="5" width="7" height="14" rx="2"/><rect x="14" y="5" width="7" height="14" rx="2"/><path d="M10 12h4m-2-2 2 2-2 2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M15 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5c0-.7.8-1.1 1.4-.7l10 6.4a1 1 0 0 1 0 1.6l-10 6.4c-.6.4-1.4 0-1.4-.7Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.6" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1.6" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="m9 6-5 5 5 5M4 11h10a5 5 0 0 1 0 10" transform="translate(0 -3)"/></symbol>
+    <symbol id="i-redo" viewBox="0 0 24 24"><path d="m15 6 5 5-5 5M20 11H10a5 5 0 0 0 0 10" transform="translate(0 -3)"/></symbol>
+    <symbol id="i-eraser" viewBox="0 0 24 24"><path d="m14.2 4.6 5.2 5.2a2 2 0 0 1 0 2.8L12 20H8l-4-4a2 2 0 0 1 0-2.8l7.4-8.6a2 2 0 0 1 2.8 0ZM8 9l7 7M12 20h8"/></symbol>
+    <symbol id="i-clear" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 5-5 4H3v6h3l5 4ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="m11 5-5 4H3v6h3l5 4ZM16 9l5 6M21 9l-5 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-fullscreen" viewBox="0 0 24 24"><path d="M8 4H4v4M16 4h4v4M20 16v4h-4M8 20H4v-4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.4A8.5 8.5 0 0 1 9.6 4a8.5 8.5 0 1 0 10.4 10.4Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 8V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2ZM3 9h18"/></symbol>
+    <symbol id="i-drum" viewBox="0 0 24 24"><ellipse cx="12" cy="11" rx="8" ry="3"/><path d="M4 11v6c0 4 16 4 16 0v-6M8 13v6M16 13v6M6 3l5 5M18 3l-5 5"/></symbol>
+    <symbol id="i-piano" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2.5"/><path d="M9 5v14M15 5v14"/><path d="M8 5v7M14 5v7" stroke-width="3"/></symbol>
+    <symbol id="i-air" viewBox="0 0 24 24"><path d="M3 9h12a3 3 0 1 0-3-3M5 13h13a3 3 0 1 1-3 3M3 17h5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 15c2-3 1-8 6-8s4 5 6 8l1 2H5ZM10 20h4M12 4v3"/></symbol>
+    <symbol id="i-strings" viewBox="0 0 24 24"><path d="M6 19V8M10 19V5M14 19V8M18 19V5M4 19h16M4 5l16 3"/></symbol>
+    <symbol id="i-canvas" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="M6 14q3-8 6-2t6-2"/></symbol>
+    <symbol id="i-pluck" viewBox="0 0 24 24"><path d="m14 10 5-6M16 3l5 5M13 9c-3-2-5 0-5 2-4 0-6 4-4 7s6 4 9 1c2-2 1-4 0-5 2-1 3-3 0-5Z"/><circle cx="10" cy="14" r="1.5"/></symbol>
+    <symbol id="i-marimba" viewBox="0 0 24 24"><path d="M4 12v7h4v-7ZM10 10v9h4v-9ZM16 8v11h4V8ZM6 4l5 3M18 3l-4 4"/><circle cx="5" cy="3" r="1"/><circle cx="19" cy="2" r="1"/></symbol>
+    <symbol id="i-chime" viewBox="0 0 24 24"><path d="M4 5h16M7 5v10M12 5v14M17 5v8M5 15h4M10 19h4M15 13h4"/></symbol>
+    <symbol id="i-bass" viewBox="0 0 24 24"><path d="M17 4v12M17 4l-8 2v12"/><ellipse cx="6" cy="18" rx="3" ry="2.5"/><ellipse cx="14" cy="16" rx="3" ry="2.5"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><path d="M3 16V8h6v8h6V8h6M7 21h10"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-broom" viewBox="0 0 24 24"><path d="m14 3 7 7M17.5 6.5 9 15M9 15c-3-1-6 1-6 4 0 1 .5 2 2 2 3 0 5-3 4-6ZM5 21l2.5-2.5M8.5 21.5 11 19"/></symbol>
+  </svg>
+  <main class="studio">
+    <header class="topbar">
+      <div class="brand" aria-label="Лумело"><img class="brand-logo" src="./assets/icon-192.png" width="44" height="44" alt=""><span>lumelo<span class="brand-dot">.</span></span></div>
+      <div class="top-actions">
+        <div class="style-control">
+          <button class="style-button" id="style-button" aria-label="Музыкальный стиль: Стандартный" aria-haspopup="menu" aria-expanded="false" aria-controls="style-options" data-tip="Стиль звучания"><svg class="icon"><use id="style-icon" href="#i-canvas"/></svg><span id="style-label">Стандартный</span><svg class="style-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button>
+          <div class="style-options" id="style-options" role="menu" aria-label="Музыкальные стили" hidden></div>
+        </div>
+        <div class="rhythm-control">
+          <button class="icon-button" id="rhythm-button" aria-label="Ритм: выключен" aria-haspopup="menu" aria-expanded="false" aria-controls="rhythm-options" data-tip="Ритм"><svg class="icon" aria-hidden="true"><use href="#i-drum"/></svg></button>
+          <div class="style-options rhythm-options" id="rhythm-options" role="menu" aria-label="Барабанные ритмы" hidden></div>
+        </div>
+        <button class="icon-button theme-toggle" id="theme-toggle" aria-label="Тёмная тема" aria-pressed="false" data-tip="Тёмная тема"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+        <button class="icon-button" id="settings-button" aria-label="Настройки" aria-haspopup="dialog" aria-controls="settings-dialog" data-tip="Настройки"><svg class="icon" aria-hidden="true"><use href="#i-gear"/></svg></button>
+        <div class="file-control">
+          <button class="icon-button" id="file-button" aria-label="Рисунок и музыка" aria-haspopup="menu" aria-expanded="false" aria-controls="file-options" data-tip="Рисунок и музыка"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></button>
+          <div class="file-options" id="file-options" role="menu" aria-label="Рисунок и музыка" hidden>
+            <button id="save-file" role="menuitem" tabindex="-1">Сохранить рисунок</button>
+            <button id="open-file" role="menuitem" tabindex="-1">Открыть рисунок</button>
+            <button id="save-music" role="menuitem" tabindex="-1" aria-label="Скачать музыку в WAV, 24 бита, 48 кГц">Скачать музыку</button>
+            <button id="save-image" role="menuitem" tabindex="-1">Скачать картинку</button>
+          </div>
+          <input id="project-file" type="file" accept=".lumelo,.meloder,application/json" hidden>
+        </div>
+        <div class="volume-control"><button class="icon-button" id="mute" aria-label="Выключить звук" data-tip="Звук"><svg class="icon"><use href="#i-volume"/></svg></button><input id="volume" type="range" min="0" max="100" value="60" aria-label="Громкость"></div>
+        <button class="icon-button" id="help-button" aria-label="Как пользоваться Lumelo" aria-haspopup="dialog" aria-controls="help-dialog" data-tip="Как рисовать музыку · F1"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg></button>
+        <button class="icon-button" id="fullscreen" aria-label="На весь экран" data-tip="На весь экран"><svg class="icon"><use href="#i-fullscreen"/></svg></button>
+      </div>
+    </header>
+    <div class="canvas-bar">
+      <div class="draw-modes" role="group" aria-label="Режим рисования">
+        <button class="icon-button" id="ink-mode" aria-label="Показать рисунок мелодии" aria-pressed="true" data-tip="Рисунок"><svg class="icon"><use href="#i-canvas"/></svg></button>
+        <button class="icon-button" id="pixel-mode" aria-label="Показать музыкальные клетки рисунка" aria-pressed="false" data-tip="Музыкальная сетка"><svg class="icon"><use href="#i-pixels"/></svg></button>
+      </div>
+      <button class="icon-button" id="notes-toggle" aria-label="Показать шкалу нот" aria-pressed="true" data-tip="Ноты и высота"><svg class="icon"><use href="#i-piano"/></svg></button>
+      <div class="tonality-control"><button class="icon-button" id="tonality-button" aria-label="Настроить тональность" aria-expanded="false" aria-controls="tonality-panel" data-tip="Тональность"><svg class="icon"><use href="#i-note"/></svg></button><div class="editor-panel" id="tonality-panel" hidden role="group" aria-label="Тональность всей композиции"><label>Основная нота<select id="tonality-root" aria-label="Основная нота"></select></label><label>Гамма<select id="tonality-scale" aria-label="Гамма"></select></label><label>Октава<select id="tonality-octave" aria-label="Перенос на октаву"><option value="-1">Ниже</option><option value="0" selected>Обычная</option><option value="1">Выше</option></select></label><small>Для всей композиции</small></div></div>
+      <button class="icon-button" id="select-tool" aria-label="Выделять музыкальные клетки" aria-pressed="false" data-tip="Выделение · V"><svg class="icon"><use href="#i-select"/></svg></button>
+      <button class="icon-button selection-options" id="selection-options" aria-label="Способ выделения" aria-haspopup="menu" aria-expanded="false" aria-controls="selection-menu" data-tip="Способ выделения · правая кнопка" hidden><svg class="icon"><use href="#i-select"/></svg></button>
+      <button class="icon-button" id="dj-button" aria-label="Открыть панель эффектов" aria-expanded="false" aria-controls="dj-panel" data-tip="Эффекты"><svg class="icon"><use href="#i-dj"/></svg></button>
+      <button class="icon-button parts-toggle" id="parts-toggle" aria-label="Части композиции" aria-expanded="false" aria-controls="timeline" data-tip="Композиция"><svg class="icon"><use href="#i-parts"/></svg></button>
+    </div>
+    <div class="workspace">
+    <aside class="pitch-scale" id="pitch-scale" aria-label="Шкала высоты нот"></aside>
+    <section class="paper" aria-label="Музыкальный холст">
+      <canvas id="canvas" tabindex="0" aria-label="Рисуйте мышью. Цвет выбирает инструмент. Пробел — воспроизведение. Клавиши от 1 до 9 — цвета."></canvas>
+      <div class="empty-mark" id="empty-mark" aria-hidden="true"><svg viewBox="0 0 96 50"><path class="empty-a" d="M5 31Q18 4 34 24T68 19"/><path class="empty-b" d="M24 37Q40 15 55 32T90 27"/></svg><span class="empty-dot"></span></div>
+      <div class="playhead" id="playhead" hidden><span></span></div>
+      <div class="paper-corner" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="cursor" id="cursor" aria-hidden="true"></div>
+      <div class="pitch-hint" id="pitch-hint" hidden aria-hidden="true"><span id="pitch-note"></span><small id="pitch-register"></small></div>
+    </section>
+    <div class="selection-bar" id="selection-bar" hidden role="group" aria-label="Редактировать выбранные ноты"><span class="selection-summary"><strong id="selection-count">0</strong><span class="selection-notes" id="selection-notes"></span></span><div class="edit-group"><button class="icon-button" data-note-edit="up" aria-label="Выбранные ноты выше" data-tip="Выше · ↑"><svg class="icon"><use href="#i-up"/></svg></button><button class="icon-button" data-note-edit="down" aria-label="Выбранные ноты ниже" data-tip="Ниже · ↓"><svg class="icon"><use href="#i-down"/></svg></button></div><div class="edit-group"><button class="icon-button" data-note-edit="left" aria-label="Выбранные ноты раньше" data-tip="Раньше · ←"><svg class="icon"><use href="#i-left"/></svg></button><button class="icon-button" data-note-edit="right" aria-label="Выбранные ноты позже" data-tip="Позже · →"><svg class="icon"><use href="#i-right"/></svg></button></div><select id="selection-color" aria-label="Инструмент выбранных нот"><option value="">Разные</option></select><button class="icon-button" data-note-edit="copy" aria-label="Дублировать выбранные ноты" data-tip="Копировать"><svg class="icon"><use href="#i-copy"/></svg></button><button class="icon-button" data-note-edit="delete" aria-label="Удалить выбранные ноты" data-tip="Удалить · Delete"><svg class="icon"><use href="#i-clear"/></svg></button><button class="icon-button" id="selection-dismiss" aria-label="Снять выделение" data-tip="Снять выделение · Esc"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    </div>
+    <section class="timeline" id="timeline" aria-label="Последовательность частей композиции" hidden>
+      <button class="sequence-play" id="play-all" aria-label="Воспроизвести всю композицию с начала" aria-pressed="false" data-tip="Вся композиция с начала"><svg class="icon"><use href="#i-play"/></svg><small id="sequence-time">0:08</small></button>
+      <div class="part-list" id="part-list" role="tablist" aria-label="Части композиции"></div>
+      <div class="part-actions" role="group" aria-label="Управление частями">
+        <button class="icon-button" id="add-part" aria-label="Добавить часть" data-tip="Добавить"><svg class="icon"><use href="#i-plus"/></svg></button>
+        <button class="icon-button" id="copy-part" aria-label="Копировать часть" data-tip="Копировать"><svg class="icon"><use href="#i-copy"/></svg></button>
+        <button class="icon-button" id="part-enabled" aria-label="Включить часть в композицию" aria-pressed="true" data-tip="Включить / пропустить"><svg class="icon"><use href="#i-eye"/></svg></button>
+        <button class="icon-button" id="part-left" aria-label="Переместить часть влево" data-tip="Раньше"><svg class="icon"><use href="#i-left"/></svg></button>
+        <button class="icon-button" id="part-right" aria-label="Переместить часть вправо" data-tip="Позже"><svg class="icon"><use href="#i-right"/></svg></button>
+        <button class="icon-button" id="delete-part" aria-label="Удалить часть" data-tip="Удалить часть"><svg class="icon"><use href="#i-clear"/></svg></button>
+      </div>
+    </section>
+    <footer class="bottom-area">
+      <div class="dock">
+        <div class="palette-area"><div class="bank-slots" id="bank-slots" role="tablist" aria-label="Наборы инструментов"></div><div class="palette" id="instrument-palette" role="group" aria-label="Цвета и инструменты"></div></div>
+        <span class="divider"></span>
+        <div class="drawing-tools"><button class="icon-button" id="eraser" aria-label="Ластик" aria-pressed="false" data-tip="Ластик · E"><svg class="icon"><use href="#i-eraser"/></svg></button><button class="icon-button" id="undo" aria-label="Отменить последний штрих" data-tip="Отменить · Ctrl Z" disabled><svg class="icon"><use href="#i-undo"/></svg></button><button class="icon-button" id="redo" aria-label="Вернуть отменённое действие" data-tip="Вернуть · Ctrl Y" disabled><svg class="icon"><use href="#i-redo"/></svg></button></div>
+        <button class="play-button" id="play" aria-label="Воспроизвести" aria-pressed="false" data-tip="Играть · пробел"><svg class="icon"><use href="#i-play"/></svg><span class="play-orbit" aria-hidden="true"></span></button>
+        <div class="dock-end"><div class="time-control"><button class="time-button" id="duration-button" aria-label="Длительность круга: 8 секунд" aria-expanded="false" aria-controls="duration-options" data-tip="Длительность круга"><svg class="icon"><use href="#i-clock"/></svg><span id="duration-label">8 с</span></button><div class="time-options" id="duration-options" hidden role="group" aria-label="Длительность круга"><button data-duration="8" aria-pressed="true">8 с</button><button data-duration="12">12 с</button><button data-duration="24">24 с</button><button data-duration="36">36 с</button><button data-duration="48">48 с</button><button data-duration="60">60 с</button></div></div>
+        <span class="divider"></span>
+        <button class="icon-button clear-button" id="clear" aria-label="Очистить холст" data-tip="Очистить" disabled><svg class="icon"><use href="#i-clear"/></svg></button></div>
+      </div>
+      <div class="loop-progress" aria-hidden="true"><span id="progress"></span></div>
+    </footer>
+    <div class="toast" id="toast" role="status" hidden></div>
+    <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+  </main>
+  <div class="selection-menu" id="selection-menu" role="menu" aria-label="Способ выделения" hidden><button role="menuitemradio" data-selection-mode="box" aria-checked="true"><svg class="icon"><use href="#i-select"/></svg>Прямоугольник</button><button role="menuitemradio" data-selection-mode="brush" aria-checked="false"><svg class="icon"><use href="#i-select-brush"/></svg>Кисть</button><button role="menuitemradio" data-selection-mode="lasso" aria-checked="false"><svg class="icon"><use href="#i-lasso"/></svg>Лассо</button><select class="selection-operation" id="selection-operation" aria-label="Действие выделения"><option value="replace">Заменить</option><option value="add">Добавить +</option><option value="subtract">Убрать −</option></select></div>
+  <section class="dj-panel" id="dj-panel" hidden aria-label="Эффекты и скретч-диск">
+    <header class="dj-header"><svg class="icon" aria-hidden="true"><use href="#i-dj"/></svg><span>Эффекты</span><button class="icon-button" id="fx-reset" aria-label="Сбросить эффекты" data-tip="Сбросить"><svg class="icon"><use href="#i-undo"/></svg></button><button class="icon-button" id="dj-close" aria-label="Закрыть эффекты"><svg class="icon"><use href="#i-close"/></svg></button></header>
+    <div class="dj-body"><button class="dj-jog" id="dj-jog" role="slider" aria-label="Скретч-диск: двигай вперёд и назад во время музыки" aria-valuemin="-400" aria-valuemax="400" aria-valuenow="0" aria-valuetext="Скретч: удерживай и вращай" title="Удерживай и вращай — скретч"><span class="disc-label" aria-hidden="true"><svg class="icon"><use href="#i-note"/></svg></span></button>
+      <div class="fx-controls"><label>Фильтр<input type="range" id="fx-filter" min="-100" max="100" value="0" aria-label="Фильтр: низкие и высокие частоты"></label><label>Эхо<input type="range" id="fx-echo" min="0" max="100" value="0" aria-label="Эхо"></label><label>Пространство<input type="range" id="fx-space" min="0" max="100" value="0" aria-label="Пространство"></label><label>Тепло<input type="range" id="fx-drive" min="0" max="100" value="0" aria-label="Мягкое насыщение"></label></div>
+    </div>
+    <div class="dj-pads"><button id="pad-gate" aria-label="Пульс — удерживай" aria-pressed="false" data-tip="Пульс · удерживай"><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg></button><button id="pad-radio" aria-label="Радио — удерживай" aria-pressed="false" data-tip="Радио · удерживай"><svg class="icon" aria-hidden="true"><use href="#i-radio"/></svg></button><button id="pad-repeat" aria-label="Повтор — удерживай" aria-pressed="false" data-tip="Повтор · удерживай"><svg class="icon" aria-hidden="true"><use href="#i-repeat"/></svg></button></div>
+  </section>
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <header class="settings-header"><svg class="icon" aria-hidden="true"><use href="#i-gear"/></svg><h2 id="settings-title">Настройки</h2><button class="icon-button" id="settings-close" aria-label="Закрыть настройки"><svg class="icon"><use href="#i-close"/></svg></button></header>
+    <div class="settings-body">
+      <section class="settings-group" aria-label="Вид">
+        <h3>Вид</h3>
+        <div class="settings-row"><span>Тема</span><div class="seg" role="group" aria-label="Тема оформления"><button data-appearance="system" aria-pressed="true">Система</button><button data-appearance="light" aria-pressed="false">Светлая</button><button data-appearance="dark" aria-pressed="false">Тёмная</button></div></div>
+        <div class="settings-row"><span>Масштаб интерфейса</span><div class="seg" role="group" aria-label="Масштаб интерфейса"><button data-setting="scale" data-value="compact" aria-pressed="false">Мелкий</button><button data-setting="scale" data-value="normal" aria-pressed="true">Обычный</button><button data-setting="scale" data-value="large" aria-pressed="false">Крупный</button></div></div>
+        <div class="settings-row"><span>Анимации</span><div class="seg" role="group" aria-label="Анимации"><button data-setting="motion" data-value="system" aria-pressed="true">Как в системе</button><button data-setting="motion" data-value="reduce" aria-pressed="false">Меньше</button></div></div>
+        <div class="settings-row"><span>Всплывающие подсказки</span><button class="switch" data-setting="tooltips" aria-pressed="true" aria-label="Всплывающие подсказки"></button></div>
+      </section>
+      <section class="settings-group" aria-label="Холст">
+        <h3>Холст</h3>
+        <div class="settings-row"><span>Подсветка звучащих нот</span><div class="seg" role="group" aria-label="Подсветка звучащих нот"><button data-setting="glow" data-value="bright" aria-pressed="true">Яркая</button><button data-setting="glow" data-value="soft" aria-pressed="false">Мягкая</button><button data-setting="glow" data-value="off" aria-pressed="false">Выкл</button></div></div>
+        <div class="settings-row"><span>Подсказка ноты у курсора</span><button class="switch" data-setting="pitchHint" aria-pressed="true" aria-label="Подсказка ноты у курсора"></button></div>
+        <div class="settings-row"><span>Подтверждать очистку холста</span><button class="switch" data-setting="confirmClear" aria-pressed="true" aria-label="Подтверждать очистку холста"></button></div>
+      </section>
+      <section class="settings-group" aria-label="Звук">
+        <h3>Звук</h3>
+        <div class="settings-row"><span>Качество файла WAV</span><div class="seg" role="group" aria-label="Качество файла WAV"><button data-setting="wavQuality" data-value="studio" aria-pressed="true">Студия</button><button data-setting="wavQuality" data-value="compact" aria-pressed="false">Компактно</button></div></div>
+        <div class="settings-row"><span>Задержка наушников</span><span class="settings-range"><input id="setting-latency" type="range" min="0" max="300" step="25" value="0" aria-label="Задержка беспроводных наушников в миллисекундах"><output id="setting-latency-value">выкл</output></span></div>
+        <div class="settings-row"><span>Упрощённый звук<small>для очень старых устройств</small></span><button class="switch" data-setting="audioCompat" aria-pressed="false" aria-label="Упрощённый звук"></button></div>
+      </section>
+      <section class="settings-group" aria-label="Система">
+        <h3>Система</h3>
+        <div class="settings-row" id="settings-desktop-row" hidden><span>Окно при запуске</span><div class="seg" role="group" aria-label="Окно при запуске"><button data-setting="windowMode" data-value="maximized" aria-pressed="true">Развёрнутое</button><button data-setting="windowMode" data-value="remember" aria-pressed="false">Помнить размер</button></div></div>
+        <div class="settings-row" id="settings-android-row" hidden><span>Не гасить экран при игре</span><button class="switch" data-setting="keepAwake" aria-pressed="true" aria-label="Не гасить экран во время воспроизведения"></button></div>
+        <div class="settings-row settings-actions"><button id="settings-wipe"><svg class="icon" aria-hidden="true"><use href="#i-broom"/></svg><span id="settings-wipe-label">Стереть сохранённый холст</span></button><button id="settings-reset">Сбросить настройки</button></div>
+      </section>
+    </div>
+  </dialog>
+  <dialog class="clear-dialog" id="clear-dialog" aria-labelledby="clear-title" aria-describedby="clear-description"><span class="clear-emblem" aria-hidden="true"><svg class="icon"><use href="#i-clear"/></svg></span><h2 id="clear-title">Очистить холст?</h2><p id="clear-description">Все линии и ноты на этом холсте будут удалены.</p><div class="clear-actions"><button id="clear-cancel" autofocus>Отмена</button><button id="clear-confirm">Очистить</button></div></dialog>
+  <dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title">
+    <header class="help-header"><img src="./assets/icon-192.png" width="64" height="64" alt=""><div><h1 id="help-title">Рисуй музыку</h1><p>Lumelo · Лумело</p></div><button class="icon-button help-close" id="help-close" aria-label="Закрыть справку" autofocus><svg class="icon"><use href="#i-close"/></svg></button></header>
+    <div class="help-cards">
+      <section class="help-card"><svg class="icon" aria-hidden="true"><use href="#i-canvas"/></svg><h2>1. Нарисуй</h2><p>Выбери набор 1–5, затем цвет инструмента. Первый набор — стандартный. Ранее нарисованные партии сохраняют свой звук. Выше — высокие ноты, ниже — низкие. Слева направо — время мелодии.</p></section>
+      <section class="help-card"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><h2>2. Послушай</h2><p>Нажми Play: сканер читает рисунок по кругу. Рисуй дальше — новые линии звучат при пересечении. Сама кисть молчит.</p></section>
+      <section class="help-card"><svg class="icon" aria-hidden="true"><use href="#i-parts"/></svg><h2>3. Собери</h2><p>Клетки показывают ноты того же рисунка. Кнопка частей открывает композицию; перетаскивай миниатюры, чтобы менять порядок. Отдельный Play читает части с начала по порядку.</p></section>
+      <section class="help-card"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><h2>4. Сохрани</h2><p>В папке — проект, музыка WAV и картинка. Проект можно открыть и продолжить. Рисунок также сохраняется на устройстве автоматически.</p></section>
+    </div>
+    <details class="help-details"><summary>Ноты, выделение и эффекты</summary><p>Кнопка ноты выбирает основную ноту, гамму и октаву всей композиции. Инструмент выделения выбирает отдельные клетки: щёлкни одну, обведи прямоугольником, кистью или лассо. Правая кнопка открывает список способов у курсора; на телефоне нажми соседнюю кнопку.</p><p>Shift добавляет к выделению, Ctrl убирает. Панель внизу холста меняет высоту, время и инструмент только выбранных клеток. В прямоугольном режиме перетаскивай выбранные ноты; стрелки двигают их, Delete удаляет, Ctrl A выбирает всё. На телефоне используй кнопки панели и список «Добавить / Убрать».</p><p>В рисовании левая кнопка рисует, правая работает ластиком. Кнопка диска открывает эффекты: фильтр, эхо, пространство и тепло сохраняются в проекте и WAV. Пульс, радио и повтор работают, пока ты удерживаешь кнопку. Двигай диск вперёд и назад — скорость и направление дают скретч. После отпускания музыка плавно возвращается. Кнопка темы выбирает системное, светлое или тёмное оформление, остальные параметры — в настройках (шестерёнка).</p><p>На телефоне: короткий тап двумя пальцами — отмена, тремя — возврат; свайп двумя пальцами влево или вправо листает части композиции; второй палец на холсте отменяет текущий штрих. Миниатюры частей переставляются удержанием и переносом.</p></details>
+    <div class="help-shortcuts"><span><kbd>Пробел</kbd> Play / пауза</span><span><kbd>1–9</kbd> цвета</span><span><kbd>E</kbd> ластик</span><span><kbd>Ctrl Z</kbd> отмена</span></div>
+    <footer class="help-author"><div><span>Разработчик</span><strong>Малик Бобоев</strong></div><a href="https://t.me/+992900300393" target="_blank" rel="noopener noreferrer" aria-label="Telegram разработчика Малика Бобоева, +992 900 300 393"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span style="font-size:inherit;opacity:1;margin:0">Telegram · +992 900 300 393</span></a></footer>
+  </dialog>
+  <script type="module" src="./app.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+</body>
+</html>
