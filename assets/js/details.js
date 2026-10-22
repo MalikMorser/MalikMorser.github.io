@@ -5,7 +5,7 @@ const DL = 'https://github.com/MalikMorser/downloads/releases/download/';
 window.DETAILS = {
   /* ======================= MOHO ======================= */
   'pose-library': {
-    name: 'Pose Library', version: '3.0', accent: '#9b6bff',
+    name: 'Pose Library', version: '3.0', accent: '#9b6bff', video: 'EPBy7-sN-aI',
     image: '/assets/img/work/pose-promo.webp',
     gallery: ['/assets/img/work/pose-window.webp', '/assets/img/work/pose-poses.webp', '/assets/img/work/pose-install.webp', '/assets/img/work/pose-tutorial.webp'],
     links: [
@@ -35,7 +35,7 @@ window.DETAILS = {
   },
 
   'rig-controllers': {
-    name: 'Rig Controllers', version: '2.0', accent: '#ffb547',
+    name: 'Rig Controllers', version: '2.0', accent: '#ffb547', video: '9efL1hT4iKk',
     image: '/assets/img/work/rig-promo.webp',
     gallery: ['/assets/img/work/rig-flow.webp', '/assets/img/work/rig-face.webp', '/assets/img/work/rig-moho.webp', '/assets/img/work/rig-tutorial.webp'],
     links: [
@@ -65,10 +65,14 @@ window.DETAILS = {
   },
 
   'tgs-exporter': {
-    name: 'TGS Exporter', version: '1.0', accent: '#5aa2ff', pro: true,
+    name: 'TGS Exporter', version: '1.0', accent: '#5aa2ff', pro: true, video: 'H-c8Q3QxJk4',
     image: '/assets/img/work/tgs-promo.webp',
     gallery: ['/assets/img/work/tgs-reels.webp', '/assets/img/work/tgs-install.webp'],
-    links: [{ href: 'https://t.me/Malik_anim', icon: 'tg', primary: true, ru: 'Купить · написать в Telegram', en: 'Buy · message on Telegram' }],
+    links: [
+      { href: 'https://t.me/Malik_anim', icon: 'tg', primary: true, ru: 'Купить · написать в Telegram', en: 'Buy · message on Telegram' },
+      { href: 'https://youtu.be/H-c8Q3QxJk4', icon: 'youtube', ru: 'Урок на YouTube', en: 'Tutorial on YouTube' },
+      { href: 'https://www.youtube.com/shorts/jwGIbD-sH9A', icon: 'youtube', ru: 'Промо · Shorts', en: 'Promo · Shorts' },
+    ],
     ru: {
       kind: 'Плагин · Moho Pro 14.4', status: 'PRO · $9',
       short: 'Анимация Moho → живой стикер Telegram.',
