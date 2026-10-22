@@ -233,8 +233,8 @@ window.DETAILS = {
   /* ======================= SOFTWARE ======================= */
   'flect': {
     name: 'FLECT', version: '0.1', accent: '#8f7bff',
-    image: '/assets/img/software/flect/ui.webp',
-    gallery: ['/assets/img/software/flect/bones.webp', '/assets/img/software/flect/graph.webp', '/assets/img/software/flect/vector.webp', '/assets/img/software/flect/switch.webp'],
+    image: '/assets/img/software/flect/ui-clean.webp',
+    gallery: ['/assets/img/software/flect/panel-timeline.webp', '/assets/img/software/flect/panel-bones.webp', '/assets/img/software/flect/panel-props.webp'],
     links: [{ href: 'https://t.me/Malik_anim', icon: 'tg', primary: true, ru: 'Следить в Telegram', en: 'Follow on Telegram' }],
     ru: {
       kind: 'Программа · Windows', status: 'В разработке', soon: 'Релиз — позже',
