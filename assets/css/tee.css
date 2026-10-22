@@ -1,0 +1,91 @@
+/* ==========================================================================
+   The Empty Earth — quiet, foggy, wordless. Its own palette inside the site.
+   ========================================================================== */
+
+body.tee {
+  --tee-bg: #0b0e14;
+  --tee-bg-2: #11151d;
+  --tee-fog: #7b8597;
+  --tee-pale: #c9d0da;
+  --tee-glow: #eef2f8;
+  --tee-warm: #e8d2a8;
+  background: var(--tee-bg);
+  color: var(--tee-pale);
+}
+body.tee .nav.is-scrolled { background: rgba(11, 14, 20, 0.7); }
+body.tee .site-foot { background: var(--tee-bg-2); }
+
+.tee-hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: hidden; }
+.tee-hero__img { position: absolute; inset: -6% 0 0; width: 100%; height: 106%; object-fit: cover; object-position: 50% 40%; }
+.tee-hero__fog {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 14, 20, 0.55) 0%, transparent 28%, transparent 55%, var(--tee-bg) 100%),
+    radial-gradient(70% 40% at 50% 62%, rgba(238, 242, 248, 0.12), transparent 70%);
+}
+.tee-hero__inner { position: relative; padding-bottom: clamp(90px, 15vh, 160px); text-align: center; }
+.tee-kicker { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--tee-pale); margin: 0 0 26px; }
+.tee-title {
+  font-family: "Jost", var(--f-body); font-weight: 200; color: var(--tee-glow);
+  font-size: clamp(38px, 8.4vw, 132px); letter-spacing: 0.26em; line-height: 1; margin: 0;
+  padding-left: 0.26em; text-shadow: 0 0 60px rgba(238, 242, 248, 0.25);
+}
+.tee-title small { display: block; font-size: 0.26em; letter-spacing: 0.9em; margin-bottom: 0.7em; }
+.tee-sub { font-family: "Jost", var(--f-body); font-weight: 300; font-size: clamp(14px, 1.2vw, 17px); letter-spacing: 0.5em; text-transform: uppercase; color: var(--tee-fog); margin: 28px 0 0; }
+.tee-scroll { position: absolute; left: 50%; bottom: 34px; width: 1px; height: 54px; background: rgba(201, 208, 218, 0.2); transform: translateX(-50%); overflow: hidden; }
+.tee-scroll span { position: absolute; left: 0; top: -40%; width: 1px; height: 40%; background: var(--tee-glow); animation: cue 2.6s var(--ease-in-out) infinite; }
+
+/* Drifting dust */
+.tee-dust {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.55;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 30%, rgba(238, 242, 248, 0.8), transparent),
+    radial-gradient(1px 1px at 28% 70%, rgba(238, 242, 248, 0.7), transparent),
+    radial-gradient(1.2px 1.2px at 44% 22%, rgba(238, 242, 248, 0.6), transparent),
+    radial-gradient(1px 1px at 63% 58%, rgba(238, 242, 248, 0.7), transparent),
+    radial-gradient(1.6px 1.6px at 79% 36%, rgba(238, 242, 248, 0.5), transparent),
+    radial-gradient(1px 1px at 90% 76%, rgba(238, 242, 248, 0.6), transparent);
+  background-size: 640px 520px;
+  animation: dust 40s linear infinite;
+}
+@keyframes dust { from { background-position: 0 0; } to { background-position: 640px -520px; } }
+
+.tee-narrow { max-width: 760px; }
+.tee-story { padding: clamp(100px, 16vw, 220px) 0 clamp(80px, 12vw, 160px); text-align: center; }
+.tee-lead { font-family: "Jost", var(--f-body); font-weight: 300; font-size: clamp(24px, 3vw, 42px); line-height: 1.35; color: var(--tee-glow); margin: 0 0 34px; letter-spacing: 0.01em; }
+.tee-text { font-size: clamp(16px, 1.3vw, 19px); line-height: 1.75; color: var(--tee-fog); margin: 0; }
+.tee-text--center { text-align: center; margin-top: 44px; }
+
+.tee-pano { padding: 0 0 clamp(80px, 10vw, 140px); }
+.tee-pano__track { display: flex; gap: 14px; overflow-x: auto; padding: 0 var(--gutter); scroll-snap-type: x mandatory; scrollbar-width: none; }
+.tee-pano__track::-webkit-scrollbar { display: none; }
+.tee-pano__track figure { flex: none; width: min(88vw, 1100px); aspect-ratio: 3 / 1; margin: 0; border-radius: 6px; overflow: hidden; scroll-snap-align: center; cursor: zoom-in; background: var(--tee-bg-2); }
+.tee-pano__track img { width: 100%; height: 100%; object-fit: cover; }
+.tee-caption { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(123, 133, 151, 0.8); margin: 18px 0 0; }
+
+.tee-engine { padding: 0 0 clamp(90px, 12vw, 160px); }
+.tee-engine__grid { display: grid; grid-template-columns: 0.75fr 1fr; gap: 14px; align-items: stretch; }
+.tee-engine__col { display: grid; gap: 14px; align-content: start; }
+.tee-frame { margin: 0; border-radius: 6px; overflow: hidden; background: var(--tee-bg-2); cursor: zoom-in; }
+.tee-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.tee-frame:hover img { transform: scale(1.03); }
+.tee-frame--tall { aspect-ratio: auto; }
+.tee-engine__col .tee-frame { aspect-ratio: 16 / 9; }
+
+.tee-facts { padding: 0 0 clamp(90px, 12vw, 160px); }
+.tee-dl { display: grid; gap: 0; margin: 0; border-top: 1px solid rgba(201, 208, 218, 0.12); }
+.tee-dl div { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid rgba(201, 208, 218, 0.12); }
+.tee-dl dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--tee-fog); padding-top: 3px; }
+.tee-dl dd { margin: 0; color: var(--tee-glow); font-family: "Jost", var(--f-body); font-weight: 300; font-size: 18px; }
+.tee-back { display: flex; justify-content: center; margin-top: 40px; }
+body.tee .link-arrow:hover { color: var(--tee-warm); }
+
+/* Slow, soft reveals on this page */
+body.tee .js [data-reveal], .js body.tee [data-reveal] { transition-duration: 1.8s, 2s; }
+
+@media (max-width: 760px) {
+  .tee-engine__grid { grid-template-columns: 1fr; }
+  .tee-dl div { grid-template-columns: 1fr; gap: 6px; }
+  .tee-title { letter-spacing: 0.16em; padding-left: 0.16em; }
+  .tee-pano__track figure { aspect-ratio: 2 / 1; }
+}

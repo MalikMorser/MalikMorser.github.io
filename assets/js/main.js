@@ -134,7 +134,8 @@
 
   const nav = $('.nav');
   const progress = $('.progress');
-  const links = $$('.nav__link');
+  // Scroll-spy only applies to in-page anchors; page links are marked with aria-current by tools/build.py.
+  const links = $$('.nav__link').filter((l) => (l.getAttribute('href') || '').startsWith('#'));
   const sections = links.map((l) => $(l.getAttribute('href'))).filter(Boolean);
   let lastY = window.scrollY;
 
@@ -323,8 +324,10 @@
     let hero;
     if (d.image) {
       const play = d.video ? '<span class="work__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>' : '';
-      const attr = d.video ? `data-youtube="${d.video}" data-caption="${esc(d.name)}" data-cursor="PLAY"` : `data-zoom="${d.image}" data-caption="${esc(d.name)}" data-cursor="VIEW"`;
-      hero = `<button type="button" class="dt__hero" ${attr}><img src="${d.image}" alt="${esc(d.name)}">${play}</button>`;
+      // Videos open on YouTube itself, not in an embedded player.
+      hero = d.video
+        ? `<a class="dt__hero" href="https://youtu.be/${d.video}" target="_blank" rel="noopener" data-cursor="YOUTUBE"><img src="${d.image}" alt="${esc(d.name)}">${play}</a>`
+        : `<button type="button" class="dt__hero" data-zoom="${d.image}" data-caption="${esc(d.name)}" data-cursor="VIEW"><img src="${d.image}" alt="${esc(d.name)}"></button>`;
     } else {
       const keys = d.keys ? `<div class="keys">${d.keys.map((k) => `<kbd>${k}</kbd>`).join('')}</div>` : '<span></span>';
       hero = `<div class="dt__hero"><div class="dt__poster"><span class="mono"><span>${esc(t.kind)}</span><span>v${esc(d.version)}</span></span><b>${esc(d.name)}</b>${keys}</div></div>`;
@@ -340,8 +343,13 @@
       const fill = l.icon === 'youtube' ? 'currentColor' : 'none';
       return `<a class="btn ${l.primary ? 'btn--primary' : 'btn--ghost'}" href="${l.href}"${ext}><svg viewBox="0 0 24 24" fill="${fill}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[l.icon] || ICONS.site}</svg><span>${esc(l[lang])}</span></a>`;
     }).join('');
-    const soon = d.pro ? `<span class="btn btn--disabled" aria-disabled="true">${lang === 'en' ? 'On sale soon' : 'Скоро в продаже'}</span>` : '';
-    const note = d.pro ? `<p class="dt__note mono">${lang === 'en' ? 'Paid plugin · price and release date will be announced' : 'Платный плагин · цена и дата релиза будут объявлены'}</p>` : '';
+    // Optional per-product extras: a disabled "not yet" button, a fine-print note and the archive checksum.
+    const soon = t.soon ? `<span class="btn btn--disabled" aria-disabled="true">${esc(t.soon)}</span>` : '';
+    const notes = [];
+    if (d.pro) notes.push(lang === 'en' ? 'Paid · write to me on Telegram, I send the plugin after payment' : 'Платно · напиши мне в Telegram, пришлю плагин после оплаты');
+    if (t.note) notes.push(t.note);
+    if (d.sha) notes.push('SHA-256 ' + d.sha);
+    const note = notes.map((n) => `<p class="dt__note mono">${esc(n)}</p>`).join('');
 
     sheetBody.innerHTML = `
       <div class="dt">
@@ -429,6 +437,23 @@
   sheet && sheet.addEventListener('click', (e) => {
     if (e.target.closest('.sheet__close') || e.target.classList.contains('sheet__backdrop')) closeSheet();
   });
+
+  /* ---------- Category tabs (inner pages) ---------- */
+
+  const tabs = $$('.tab[data-tab]');
+  function showTab(name, scroll) {
+    if (!tabs.some((t) => t.dataset.tab === name)) return;
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === name)));
+    $$('.cat[data-cat]').forEach((c) => { c.hidden = c.dataset.cat !== name; });
+    $$('.cat[data-cat]:not([hidden]) [data-reveal]').forEach((el) => el.classList.add('is-in'));
+    if (scroll) {
+      const bar = $('.tabs');
+      scrollToTarget(bar.getBoundingClientRect().top + window.scrollY - (parseFloat(getComputedStyle(doc).getPropertyValue('--nav-h')) || 76) + 1);
+      history.replaceState(null, '', '#' + name);
+    }
+  }
+  tabs.forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab, true)));
+  if (tabs.length) showTab(tabs.some((t) => '#' + t.dataset.tab === location.hash) ? location.hash.slice(1) : tabs[0].dataset.tab, false);
 
   /* ---------- Gallery filter ---------- */
 

@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Плагины для Moho и Blender — Mr.Myorser</title>
+  <meta name="description" content="Бесплатные плагины для Moho (Pose Library, Rig Controllers) и аддоны для Blender (MRM Metrics Pro, Piano Rig Pro, Texture Scatter, Material Cleaner) от Malik Boboev.">
+  <meta name="theme-color" content="#121516">
+  <meta property="og:title" content="Плагины для Moho и Blender — Mr.Myorser">
+  <meta property="og:url" content="https://myorser.com/plugins/">
+  <link rel="canonical" href="https://myorser.com/plugins/">
+  <link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="plugins">
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- partial:header -->
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="Mr.Myorser — на главную" data-en-label="Mr.Myorser — home">
+        <img class="brand__mark" src="/assets/img/brand/mark-gradient.svg" alt="" width="46" height="25">
+        <span class="brand__word">MR<span>.</span>MYORSER</span>
+      </a>
+      <nav class="nav__links" aria-label="Разделы" data-en-label="Sections">
+        <a class="nav__link" href="/" data-nav="home"><span data-en="Home">Главная</span></a>
+        <a class="nav__link" href="/plugins/" data-nav="plugins" aria-current="page"><span data-en="Plugins">Плагины</span></a>
+        <a class="nav__link" href="/software/" data-nav="software"><span data-en="Software">Софт</span></a>
+        <a class="nav__link" href="/games/" data-nav="games"><span data-en="Games">Игры</span></a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--primary btn--sm" href="#contact" data-magnetic><span data-en="Contact">Связаться</span></a>
+        <button class="burger" type="button" aria-label="Меню" data-en-label="Menu" aria-expanded="false"><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" aria-label="Меню" data-en-label="Menu">
+    <a href="/" data-nav="home"><span data-en="Home">Главная</span></a>
+    <a href="/plugins/" data-nav="plugins" aria-current="page"><span data-en="Plugins">Плагины</span></a>
+    <a href="/software/" data-nav="software"><span data-en="Software">Софт</span></a>
+    <a href="/games/" data-nav="games"><span data-en="Games">Игры</span></a>
+    <a href="#contact"><span data-en="Contact">Контакт</span></a>
+    <div class="menu__foot">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+  <!-- /partial:header -->
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal><span class="idx">01</span><span class="bar"></span><span data-en="Plugins &amp; add-ons">Плагины и аддоны</span></div>
+        <h1 class="page-hero__title" data-reveal data-en="Tools for<br><span class=&quot;grad-text&quot;>animators.</span>">Инструменты<br>для <span class="grad-text">аниматоров.</span></h1>
+        <p class="page-hero__lead" data-reveal data-en="Plugins for Moho and add-ons for Blender, born from real studio production. Most of them are free — download, install, animate faster.">Плагины для Moho и аддоны для Blender, рождённые в реальном студийном продакшене. Большинство — бесплатно: скачай, установи и анимируй быстрее.</p>
+      </div>
+    </section>
+
+    <div class="tabs" role="tablist" aria-label="Категории" data-en-label="Categories">
+      <div class="wrap tabs__row">
+        <button class="tab" type="button" role="tab" aria-selected="true" data-tab="moho">Moho <sup>4</sup></button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="blender">Blender <sup>5</sup></button>
+      </div>
+    </div>
+
+    <!-- ============ MOHO ============ -->
+    <section class="cat" id="moho" data-cat="moho">
+      <div class="wrap">
+        <div class="cat__head">
+          <h2 class="cat__title" data-en="Plugins for Moho Pro 14.4">Плагины для Moho Pro 14.4</h2>
+          <p class="cat__note" data-en="Windows · Russian and English editions — install one of them.">Windows · русская и английская версии — установи одну из них.</p>
+        </div>
+        <div class="pgrid">
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="pose-library" data-cursor="OPEN">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <img src="/assets/img/work/pose-promo.webp" alt="Pose Library 3.0" loading="lazy">
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Moho · Lua</span><span class="chip chip--plain" data-en="Release 3.0">Релиз 3.0</span></div>
+              <h3 class="pcard__name">Pose Library<sup>3.0</sup></h3>
+              <p class="pcard__text" data-en="Character poses in one click: a native Moho window with thumbnail cards, search, categories, favourites and blend strength.">Позы персонажа в один клик: родное окно Moho с карточками-превью, поиском, категориями, избранным и силой применения.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/downloads/releases/download/pose-library-3.0/Pose_Library_3.0_for_Moho_14.4.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span>RU · 1.9 MB</span></a>
+                <a class="btn btn--ghost" href="https://github.com/MalikMorser/downloads/releases/download/pose-library-3.0/Pose_Library_3.0_EN_for_Moho_14.4.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span>EN · 0.2 MB</span></a>
+                <a class="btn btn--yt" href="https://youtu.be/EPBy7-sN-aI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span>YouTube</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="pose-library"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="rig-controllers" data-cursor="OPEN">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <img src="/assets/img/work/rig-promo.webp" alt="Rig Controllers 2.0" loading="lazy">
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Moho · Lua</span><span class="chip chip--plain" data-en="Release 2.0">Релиз 2.0</span></div>
+              <h3 class="pcard__name">Rig Controllers<sup>2.0</sup></h3>
+              <p class="pcard__text" data-en="One gesture — two axes: XY joysticks and sliders right over the bone layer drive Smart Bones. Example rigs included.">Один жест — две оси: XY-джойстики и ползунки прямо поверх костного слоя управляют Smart Bones. Примеры ригов в комплекте.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/downloads/releases/download/rig-controllers-2.0/Rig_Controllers_2.0_for_Moho_14.4.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span>RU · 1.8 MB</span></a>
+                <a class="btn btn--ghost" href="https://github.com/MalikMorser/downloads/releases/download/rig-controllers-2.0/Rig_Controllers_2.0_EN_for_Moho_14.4.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span>EN · 0.15 MB</span></a>
+                <a class="btn btn--yt" href="https://youtu.be/9efL1hT4iKk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span>YouTube</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="rig-controllers"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="tgs-exporter" data-cursor="OPEN">
+              <span class="chip chip--paid"><i></i>PRO · $5</span>
+              <img src="/assets/img/work/tgs-promo.webp" alt="TGS Exporter 1.0" loading="lazy">
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Moho · Lua</span><span class="chip chip--plain" data-en="Release 1.0">Релиз 1.0</span></div>
+              <h3 class="pcard__name">TGS Exporter<sup>1.0</sup></h3>
+              <p class="pcard__text" data-en="Moho animation → a live Telegram sticker. Bones, Smart Bones and masks are baked to clean vector, fit into 64 KB and checked — no After Effects needed.">Анимация Moho → живой стикер Telegram. Кости, Smart Bones и маски запекаются в чистый вектор, укладываются в 64 КБ и проверяются — без After Effects.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary btn--warn" href="https://t.me/Malik_anim" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m21 4-18 7.5 6.5 2L12 20l3-5 5 4z"/></svg><span data-en="Buy · Telegram">Купить · Telegram</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="tgs-exporter"><span data-en="Details">Подробнее</span></button>
+              </div>
+              <p class="pcard__fine" data-en="Write to me on Telegram — I'll send the plugin after payment.">Напиши мне в Telegram — пришлю плагин после оплаты.</p>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="show-all-layers" data-cursor="OPEN" style="--c:#2fe0a6">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <span class="pcard__poster"><b>Show All<br>Layers</b></span>
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Moho · Lua</span><span class="chip chip--plain">1.0.0</span></div>
+              <h3 class="pcard__name">Show All Layers</h3>
+              <p class="pcard__text" data-en="Reveal every hidden layer of a project in one click. Essential for complex rigs and big scenes.">Мгновенно показывает все скрытые слои проекта. Незаменим для сложных ригов и больших сцен.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/Show-All-Layers-Moho/archive/refs/heads/main.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download">Скачать</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="show-all-layers"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BLENDER ============ -->
+    <section class="cat" id="blender" data-cat="blender">
+      <div class="wrap">
+        <div class="cat__head">
+          <h2 class="cat__title" data-en="Add-ons for Blender">Аддоны для Blender</h2>
+          <p class="cat__note" data-en="Install: Edit → Preferences → Add-ons → Install from Disk.">Установка: Edit → Preferences → Add-ons → Install from Disk.</p>
+        </div>
+        <div class="pgrid">
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="mrm-metrics" data-cursor="OPEN">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <img src="/assets/img/work/mrm-banner.webp" alt="MRM Metrics Pro" loading="lazy">
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Blender 4.5+ · Python</span><span class="chip chip--plain" data-en="New 10.1">Новая 10.1</span></div>
+              <h3 class="pcard__name">MRM Metrics Pro<sup>10.1</sup></h3>
+              <p class="pcard__text" data-en="Live measurements right in the viewport: distance, angle, diameter, radius and a Click Meter that snaps to the surface. Updates as you model.">Живые измерения прямо во вьюпорте: расстояние, угол, диаметр, радиус и Click Meter с привязкой к поверхности. Обновляются, пока ты моделируешь.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/downloads/releases/download/mrm-metrics-pro-10.1.0/mrm_metrics_pro_10.1.0.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download · 31 KB">Скачать · 31 KB</span></a>
+                <a class="btn btn--yt" href="https://youtu.be/jzIKiHBdppc?list=PLFqEIbySjhq5mVgTODciVDuC3GXPv-ddu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span>YouTube</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="mrm-metrics"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="piano-rig-pro" data-cursor="OPEN">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <img src="/assets/img/work/piano-banner.webp" alt="Piano Rig Pro" loading="lazy">
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Blender 3.0+ · Python</span><span class="chip chip--plain">0.14</span></div>
+              <h3 class="pcard__name">Piano Rig Pro<sup>0.14</sup></h3>
+              <p class="pcard__text" data-en="Animate piano playing with physics: spheres follow the finger bones and press the keys of a ready rigged piano.">Анимация игры на пианино с физикой: сферы следуют за костями пальцев и нажимают клавиши готового рига пианино.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/downloads/releases/download/piano-rig-pro-0.14/piano_rig_pro_0.14.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download · 5.7 MB">Скачать · 5.7 MB</span></a>
+                <a class="btn btn--yt" href="https://youtu.be/HVE_EVkQ3ec" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span>YouTube</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="piano-rig-pro"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="texture-scatter" data-cursor="OPEN" style="--c:#d6b46a">
+              <span class="chip chip--dev"><i></i>Alpha</span>
+              <span class="pcard__poster pcard__poster--img"><b>Texture<br>Scatter</b><img src="/assets/img/work/scatter-leaf.webp" alt="" loading="lazy"></span>
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Blender 5.2+ · Extension</span><span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span></div>
+              <h3 class="pcard__name">Texture Scatter<sup>0.1 α</sup></h3>
+              <p class="pcard__text" data-en="Scatter leaves, stains, dirt and decals inside the material itself — non-destructive shader-node layers, no extra objects.">Разбрасывает листья, пятна, грязь и декали прямо внутри материала — неразрушающими слоями из нод, без лишних объектов.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/downloads/releases/download/texture-scatter-0.1.0-alpha.1/texture_scatter-0.1.0-alpha.1.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download · 62 KB">Скачать · 62 KB</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="texture-scatter"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="material-cleaner" data-cursor="OPEN" style="--c:#7ab8ff">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <span class="pcard__poster"><b>Material<br>Cleaner</b></span>
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Blender 4.0+ · Python</span><span class="chip chip--plain">1.0.0</span></div>
+              <h3 class="pcard__name">Material Cleaner<sup>1.0</sup></h3>
+              <p class="pcard__text" data-en="Strip all materials from the selected objects in one click — or remove slots one by one. Clean scenes before export or re-texturing.">Убирает все материалы с выделенных объектов в один клик — или слоты по одному. Чистая сцена перед экспортом или новой текстурой.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/downloads/releases/download/material-cleaner-1.0.0/material_cleaner_1.0.0.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download · 2 KB">Скачать · 2 KB</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="material-cleaner"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pcard">
+            <button class="pcard__cover" type="button" data-detail="magic-bone" data-cursor="OPEN" style="--c:#ff9a3c">
+              <span class="chip chip--free"><i></i><span data-en="Free">Бесплатно</span></span>
+              <span class="pcard__poster"><b>Magic<br>Bone</b></span>
+            </button>
+            <div class="pcard__body">
+              <div class="pcard__top"><span class="pcard__kind">Blender · Python</span><span class="chip chip--plain">1.0.0</span></div>
+              <h3 class="pcard__name">Magic Bone</h3>
+              <p class="pcard__text" data-en="Rapid rigging: bones straight from mesh geometry — by normals, world axes or between two vertices.">Быстрый риггинг: кости прямо из геометрии меша — по нормалям, мировым осям или между двумя вершинами.</p>
+              <div class="pcard__actions">
+                <a class="btn btn--primary" href="https://github.com/MalikMorser/Magic-Bone-Blender/archive/refs/heads/main.zip" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download">Скачать</span></a>
+                <button class="btn btn--ghost" type="button" data-detail="magic-bone"><span data-en="Details">Подробнее</span></button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- partial:footer -->
+  <footer class="site-foot" id="contact">
+    <div class="wrap">
+      <div class="site-foot__cta">
+        <div>
+          <div class="eyebrow"><span class="idx">✦</span><span class="bar"></span><span data-en="Contact">Контакт</span></div>
+          <h2 class="site-foot__title" data-en="Have a project?<br><span class=&quot;grad-text&quot;>Let's talk.</span>">Есть проект?<br><span class="grad-text">Давай обсудим.</span></h2>
+          <p class="site-foot__lead" data-en="Commissions, rigs, studio work, a custom tool for your pipeline or a paid plugin — write to me on Telegram, I reply fast.">Заказы, риги, работа в студии, свой инструмент под пайплайн или покупка платного плагина — пиши в Telegram, отвечаю быстро.</p>
+          <a class="mail" href="https://t.me/Malik_anim" target="_blank" rel="noopener">t.me/Malik_anim<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@maxart8531" target="_blank" rel="noopener">YouTube<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://www.instagram.com/mr.myorser.art" target="_blank" rel="noopener">Instagram<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://www.artstation.com/maxbobi66" target="_blank" rel="noopener">ArtStation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://github.com/MalikMorser" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://boosty.to/malikjan/donate" target="_blank" rel="noopener">Boosty<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://buymeacoffee.com/maxbobi" target="_blank" rel="noopener">Buy me a coffee<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="site-foot__bar mono">
+        <span class="footer__brand"><img src="/assets/img/brand/mark-gradient.svg" alt="" width="34" height="18">© <span data-year>2026</span> Malik Boboev · Mr.Myorser</span>
+        <nav class="site-foot__nav">
+          <a href="/plugins/" data-en="Plugins">Плагины</a>
+          <a href="/software/" data-en="Software">Софт</a>
+          <a href="/games/" data-en="Games">Игры</a>
+        </nav>
+        <a class="totop" href="#top" data-top><span data-en="Back to top">Наверх</span> ↑</a>
+      </div>
+    </div>
+  </footer>
+  <!-- /partial:footer -->
+
+  <!-- partial:overlays -->
+  <div class="sheet" aria-hidden="true">
+    <div class="sheet__backdrop"></div>
+    <article class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" data-lenis-prevent>
+      <button class="sheet__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="sheet__content"></div>
+    </article>
+  </div>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="lightbox__body"></div>
+    <div class="lightbox__cap mono"></div>
+  </div>
+  <!-- /partial:overlays -->
+
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/assets/js/details.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
