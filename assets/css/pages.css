@@ -340,3 +340,29 @@
   .boosty__btn { width: 100%; }
 }
 @media (max-width: 1100px) { .nav__boosty span { display: none; } .nav__boosty { padding: 0 14px; } }
+
+/* ---------- Home: new product band (CUBI) ---------- */
+.newband {
+  --lime: #c8f03c;
+  position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 60px); align-items: center;
+  padding: clamp(28px, 4vw, 56px); border-radius: var(--radius-lg); background: linear-gradient(160deg, #1b1e1c, #131516); border: 1px solid var(--line-2);
+}
+.newband__glow { position: absolute; inset: -40% -10% auto auto; width: 70%; height: 140%; background: radial-gradient(closest-side, rgba(200, 240, 60, 0.16), transparent); pointer-events: none; }
+.newband > :not(.newband__glow) { position: relative; }
+.newband em { font-style: normal; color: var(--lime); }
+.newband__chip { display: inline-flex; align-items: center; gap: 9px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); padding: 7px 12px; border-radius: 99px; background: rgba(200, 240, 60, 0.1); }
+.newband__chip i { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
+.newband__name { display: flex; align-items: center; gap: 0.25em; font-family: var(--f-body); font-weight: 800; font-size: clamp(48px, 6vw, 92px); letter-spacing: -0.05em; line-height: 1; margin: 22px 0 10px; }
+.newband__name img { width: 0.68em; height: 0.68em; filter: drop-shadow(0 14px 30px rgba(200, 240, 60, 0.3)); }
+.newband__tag { font-weight: 700; font-size: clamp(20px, 1.9vw, 28px); letter-spacing: -0.02em; margin: 0 0 14px; }
+.newband__text { color: var(--ink-2); margin: 0 0 28px; max-width: 520px; }
+.newband__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.newband__btn { background: var(--lime); color: #141a04; }
+.newband__btn:hover { box-shadow: 0 0 0 6px rgba(200, 240, 60, 0.14), 0 16px 50px -12px rgba(200, 240, 60, 0.5); }
+.newband__art { display: block; border-radius: 18px; overflow: hidden; box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08); transform: perspective(1400px) rotateY(-8deg) rotateX(3deg); transition: transform 1s var(--ease); }
+.newband__art img { display: block; width: 100%; }
+.newband:hover .newband__art { transform: perspective(1400px) rotateY(-3deg) rotateX(1deg); }
+@media (max-width: 900px) {
+  .newband { grid-template-columns: 1fr; }
+  .newband__art { transform: none; order: -1; }
+}

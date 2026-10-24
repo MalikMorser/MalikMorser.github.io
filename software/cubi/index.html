@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CUBI — лаунчер-остров для Windows 11 · Mr.Myorser</title>
+  <meta name="description" content="CUBI — карманный лаунчер для Windows 11. Маленький остров у края экрана: наведи курсор — он раскрывается и показывает твои программы и игры. Жидкое стекло, скины, анимации с характером, игровой режим. Бесплатно.">
+  <meta name="theme-color" content="#111315">
+  <meta property="og:title" content="CUBI — все программы в одном острове">
+  <meta property="og:description" content="Карманный лаунчер для Windows 11: жидкое стекло, скины, анимации с характером и игровой режим. Бесплатно.">
+  <meta property="og:image" content="https://myorser.com/assets/img/software/cubi/og.jpg">
+  <meta property="og:url" content="https://myorser.com/software/cubi/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://myorser.com/software/cubi/">
+  <link rel="icon" href="/assets/img/software/cubi/cubi-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <link rel="stylesheet" href="/assets/css/cubi.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="software" class="cubi">
+
+  <!-- partial:header -->
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="Mr.Myorser — на главную" data-en-label="Mr.Myorser — home">
+        <img class="brand__mark" src="/assets/img/brand/mark-gradient.svg" alt="" width="46" height="25">
+        <span class="brand__word">MR<span>.</span>MYORSER</span>
+      </a>
+      <nav class="nav__links" aria-label="Разделы" data-en-label="Sections">
+        <a class="nav__link" href="/" data-nav="home"><span data-en="Home">Главная</span></a>
+        <a class="nav__link" href="/plugins/" data-nav="plugins"><span data-en="Plugins">Плагины</span></a>
+        <a class="nav__link" href="/software/" data-nav="software" aria-current="page"><span data-en="Software">Софт</span></a>
+        <a class="nav__link" href="/games/" data-nav="games"><span data-en="Games">Игры</span></a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--sm nav__boosty" href="https://boosty.to/malikjan/donate" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support">Поддержать</span></a>
+        <a class="btn btn--primary btn--sm" href="#contact" data-magnetic><span data-en="Contact">Связаться</span></a>
+        <button class="burger" type="button" aria-label="Меню" data-en-label="Menu" aria-expanded="false"><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" aria-label="Меню" data-en-label="Menu">
+    <a href="/" data-nav="home"><span data-en="Home">Главная</span></a>
+    <a href="/plugins/" data-nav="plugins"><span data-en="Plugins">Плагины</span></a>
+    <a href="/software/" data-nav="software" aria-current="page"><span data-en="Software">Софт</span></a>
+    <a href="/games/" data-nav="games"><span data-en="Games">Игры</span></a>
+    <a href="#contact"><span data-en="Contact">Контакт</span></a>
+    <a href="#support" class="menu__boosty"><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+    <div class="menu__foot">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+  <!-- /partial:header -->
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="cb-hero">
+      <div class="cb-hero__glow" aria-hidden="true"></div>
+      <div class="wrap cb-hero__grid">
+        <div class="cb-hero__copy">
+          <p class="cb-kicker" data-hero style="--d:0"><span class="cb-dot"></span><span data-en="New · for Windows 11">Новинка · для Windows 11</span></p>
+          <h1 class="cb-title" data-hero style="--d:120"><img src="/assets/img/software/cubi/cubi-icon.svg" alt="" width="88" height="88">CUBI</h1>
+          <p class="cb-tagline" data-hero style="--d:240" data-en="All your apps — in <em>one</em> island.">Все программы — в <em>одном</em> острове.</p>
+          <p class="cb-lead" data-hero style="--d:360" data-en="A pocket launcher for Windows 11. A little island lives at the edge of the screen: hover it and it smoothly opens with your apps and games. Move the cursor away — it folds back and stays out of the way.">Карманный лаунчер для Windows 11. У края экрана живёт маленький остров: наведи курсор — он плавно раскрывается и показывает твои программы и игры. Убрал курсор — снова свернулся и не мешает.</p>
+          <div class="cb-actions" data-hero style="--d:480">
+            <a class="btn cb-btn" href="https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe" data-magnetic>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>
+              <span data-en="Download for Windows 11">Скачать для Windows 11</span>
+            </a>
+            <a class="btn btn--ghost" href="#video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span data-en="Watch the film">Смотреть ролик</span></a>
+          </div>
+          <p class="cb-meta mono" data-hero style="--d:600"><span data-en="Free">Бесплатно</span> · v1.0.0 · 74 <span data-en="MB">МБ</span> · <span data-en="no admin rights">без прав администратора</span></p>
+        </div>
+
+        <div class="cb-hero__stage" data-hero style="--d:300">
+          <div class="cb-screen" data-demo>
+            <div class="cb-wall" aria-hidden="true"><i></i><i></i></div>
+            <div class="cb-island" data-island data-skin="dark" data-style="gradient"></div>
+            <div class="cb-win" aria-hidden="true">
+              <div class="cb-win__bar"><span>Музыка</span><b></b><b></b><b></b></div>
+              <div class="cb-win__body">
+                <div class="cb-win__art"></div>
+                <div class="cb-win__list"><strong>Midnight Drive</strong><small>Neon Waves · 2026</small><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="cb-win__prog"><i></i></div>
+            </div>
+            <div class="cb-group-tag mono" aria-hidden="true"></div>
+            <div class="cb-taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <svg class="cb-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6.2 1.6L10 19z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <p class="cb-hint mono" aria-hidden="true" data-en="hover the island">наведи на остров</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Film ===== -->
+    <section class="cb-sec cb-film" id="video">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Film · 48 seconds">Ролик · 48 секунд</p>
+          <h2 class="cb-h2" data-en="See it <em>live</em>.">Посмотри <em>вживую</em>.</h2>
+        </div>
+        <div class="cb-player" data-reveal="scale">
+          <button class="cb-player__poster" type="button" data-yt="lxHR4iR8bY4" aria-label="Смотреть ролик CUBI" data-en-label="Watch the CUBI film">
+            <img src="/assets/img/software/cubi/poster.webp" alt="" loading="lazy" decoding="async">
+            <span class="cb-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          </button>
+        </div>
+        <p class="cb-film__alt"><a class="link-arrow" href="https://youtu.be/lxHR4iR8bY4" target="_blank" rel="noopener"><span data-en="Open on YouTube">Открыть на YouTube</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section class="cb-sec">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="How it works">Как это работает</p>
+          <h2 class="cb-h2" data-en="Three moves. <em>That's it</em>.">Три движения. <em>И всё</em>.</h2>
+        </div>
+        <div class="cb-steps">
+          <figure class="cb-step" data-reveal>
+            <button type="button" class="cb-step__img" data-zoom="/assets/img/software/cubi/step-hover.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/step-hover.webp" alt="" loading="lazy" decoding="async"></button>
+            <figcaption><b class="mono">01</b><strong data-en="Hover">Наведи</strong><span data-en="The island at the edge of the screen opens by itself — no clicks, no hunting through the Start menu.">Остров у края экрана раскрывается сам — без кликов и поиска по меню «Пуск».</span></figcaption>
+          </figure>
+          <figure class="cb-step" data-reveal style="--d:120">
+            <button type="button" class="cb-step__img" data-zoom="/assets/img/software/cubi/step-click.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/step-click.webp" alt="" loading="lazy" decoding="async"></button>
+            <figcaption><b class="mono">02</b><strong data-en="Click">Клик</strong><span data-en="The app opens right from its icon. Drag shortcuts in or add them with «+».">Программа открывается прямо из иконки. Ярлыки добавляются перетаскиванием или через «+».</span></figcaption>
+          </figure>
+          <figure class="cb-step" data-reveal style="--d:240">
+            <button type="button" class="cb-step__img" data-zoom="/assets/img/software/cubi/step-groups.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/step-groups.webp" alt="" loading="lazy" decoding="async"></button>
+            <figcaption><b class="mono">03</b><strong data-en="Scroll">Колесо</strong><span data-en="Work, games, creative tools — keep them in groups and flip through with the mouse wheel.">Работа, игры, творчество — держи их в группах и листай колесом мыши.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skins banner ===== -->
+    <section class="cb-sec cb-skins">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Skins">Скины</p>
+          <h2 class="cb-h2" data-en="Skins for <em>any</em> taste.">Скины на <em>любой</em> вкус.</h2>
+        </div>
+      </div>
+      <div class="cb-reel" data-reel="0" aria-hidden="true"><div class="cb-reel__track"></div></div>
+      <div class="cb-reel cb-reel--rev" data-reel="1" aria-hidden="true"><div class="cb-reel__track"></div></div>
+    </section>
+
+    <!-- ===== Playground ===== -->
+    <section class="cb-sec cb-play-sec" id="try">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Try it">Попробуй</p>
+          <h2 class="cb-h2" data-en="Make it <em>yours</em>.">Собери <em>свой</em>.</h2>
+          <p class="cb-sub" data-en="This is a live copy of the island. Pick a theme, a material and a character — then hover it.">Это живая копия острова. Выбери тему, материал и характер — и наведи курсор.</p>
+        </div>
+        <div class="cb-lab" data-reveal>
+          <div class="cb-lab__stage" data-lab>
+            <div class="cb-type" aria-hidden="true"><span>CUBI CUBI CUBI CUBI CUBI CUBI </span><span>CUBI CUBI CUBI CUBI CUBI CUBI </span></div>
+            <div class="cb-island cb-island--lab" data-island data-skin="dark" data-style="gradient"></div>
+            <p class="cb-hint mono" data-en="hover the island ↑">наведи на остров ↑</p>
+          </div>
+          <div class="cb-lab__ctrl">
+            <div class="cb-opt">
+              <span class="cb-opt__label mono" data-en="Theme">Тема</span>
+              <div class="cb-seg" data-opt="skin">
+                <button type="button" data-v="dark" aria-pressed="true"><i style="--sw:#25282c"></i><span data-en="Dark">Тёмная</span></button>
+                <button type="button" data-v="light" aria-pressed="false"><i style="--sw:#eef0f3"></i><span data-en="Light">Светлая</span></button>
+                <button type="button" data-v="lime" aria-pressed="false"><i style="--sw:#c8f03c"></i><span data-en="Lime">Салатовая</span></button>
+                <button type="button" data-v="custom" aria-pressed="false"><i class="cb-rainbow"></i><span data-en="Custom">Свой</span></button>
+              </div>
+            </div>
+            <div class="cb-opt">
+              <span class="cb-opt__label mono" data-en="Material">Материал</span>
+              <div class="cb-seg" data-opt="style">
+                <button type="button" data-v="gradient" aria-pressed="true"><span data-en="Gradient">Градиент</span></button>
+                <button type="button" data-v="solid" aria-pressed="false"><span data-en="Solid">Однотонный</span></button>
+                <button type="button" data-v="glass" aria-pressed="false"><span data-en="Glass">Стекло</span></button>
+                <button type="button" data-v="matte" aria-pressed="false"><span data-en="Frosted">Матовый</span></button>
+              </div>
+            </div>
+            <div class="cb-opt">
+              <span class="cb-opt__label mono" data-en="Character">Характер</span>
+              <div class="cb-seg" data-opt="motion">
+                <button type="button" data-v="smooth" aria-pressed="true"><span data-en="Smooth">Плавная</span></button>
+                <button type="button" data-v="jelly" aria-pressed="false"><span data-en="Jelly">Желе</span></button>
+                <button type="button" data-v="robot" aria-pressed="false"><span data-en="Robot">Робот</span></button>
+              </div>
+            </div>
+            <button class="btn btn--ghost btn--sm cb-replay" type="button" data-replay><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg><span data-en="Show the animation">Показать анимацию</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Glass ===== -->
+    <section class="cb-sec">
+      <div class="wrap">
+        <div class="cb-glass">
+          <figure data-reveal>
+            <button type="button" data-zoom="/assets/img/software/cubi/glass.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/glass.webp" alt="" loading="lazy" decoding="async"></button>
+            <figcaption><strong data-en="Liquid <em>glass</em>.">Жидкое <em>стекло</em>.</strong><span data-en="Real refraction and a rainbow dispersion on the edge — rendered by a shader, not faked with a picture.">Настоящее преломление и радужная дисперсия по краю — считает шейдер, а не картинка.</span></figcaption>
+          </figure>
+          <figure data-reveal style="--d:120">
+            <button type="button" data-zoom="/assets/img/software/cubi/matte.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/matte.webp" alt="" loading="lazy" decoding="async"></button>
+            <figcaption><strong data-en="Or <em>frosted</em>.">Или <em>матовое</em>.</strong><span data-en="Soft frosted glass for a calm desktop. Or a solid colour — your choice.">Мягкое матовое стекло для спокойного рабочего стола. Или сплошной цвет — как больше нравится.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Lightness ===== -->
+    <section class="cb-sec cb-light">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Performance">Производительность</p>
+          <h2 class="cb-h2" data-en="Lighter than <em>light</em>.">Легче <em>лёгкого</em>.</h2>
+          <p class="cb-sub" data-en="CUBI sleeps almost all the time and wakes up only when you need it. In a game it frees up resources by itself.">CUBI почти всё время спит и просыпается, только когда нужен. В игре сам освобождает ресурсы.</p>
+        </div>
+        <div class="cb-stats">
+          <div class="cb-stat" data-reveal><b><span data-num="0.2" data-dec="1">0</span><small>%</small></b><span data-en="CPU at idle">CPU в покое</span><i class="cb-spark"></i></div>
+          <div class="cb-stat" data-reveal style="--d:120"><b><span data-num="22">0</span><small data-en="MB">МБ</small></b><span data-en="of memory">оперативной памяти</span><i class="cb-spark"></i></div>
+          <div class="cb-stat" data-reveal style="--d:240"><b><span data-num="10">0</span><small data-en="MB">МБ</small></b><span data-en="in game mode — turns on by itself">в игровом режиме — включается сам</span><i class="cb-spark"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="cb-sec">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Everything inside">Всё внутри</p>
+          <h2 class="cb-h2" data-en="Small island. <em>Lots</em> inside.">Маленький остров. <em>Много</em> внутри.</h2>
+        </div>
+        <div class="cb-feat">
+          <figure class="cb-feat__shot" data-reveal>
+            <button type="button" data-zoom="/assets/img/software/cubi/settings.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/settings.webp" alt="Настройки CUBI" loading="lazy" decoding="async"></button>
+            <figcaption class="mono" data-en="Settings: themes, materials, animation, groups">Настройки: темы, материалы, анимация, группы</figcaption>
+          </figure>
+          <ul class="cb-feat__list">
+            <li data-reveal><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><div><strong data-en="Groups">Группы</strong><span data-en="Work, games, creativity — flip with the mouse wheel.">Работа, игры, творчество — листай колесом.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4h6"/></svg><div><strong data-en="Any screen edge">Любой край экрана</strong><span data-en="Top, bottom, left or right.">Сверху, снизу, слева или справа.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><div><strong data-en="Clock on the pill">Часы на пилюле</strong><span data-en="The folded island can show the time.">Свёрнутый остров может показывать время.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M15.5 12.5h.01M17.5 14.5h.01"/></svg><div><strong data-en="Game mode">Игровой режим</strong><span data-en="Turns on by itself and frees up resources.">Включается сам и освобождает ресурсы.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><div><strong data-en="Drag &amp; drop">Перетаскивание</strong><span data-en="Drop a shortcut onto the island — done.">Брось ярлык на остров — готово.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><path d="M4 18c3-8 13-8 16 0"/><circle cx="12" cy="8" r="3"/></svg><div><strong data-en="Animation character">Характер анимации</strong><span data-en="Smooth, Jelly, Robot — or tune your own.">Плавная, Желе, Робот — или настрой свою.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><path d="M4 6h9M8.5 4v2c0 4-2 7-4.5 8M6 10c1.5 2 4 3.5 6 4M13 20l4-9 4 9M14.5 17h5"/></svg><div><strong data-en="Russian &amp; English">Русский и английский</strong><span data-en="The interface speaks both.">Интерфейс на двух языках.</span></div></li>
+            <li data-reveal><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><div><strong data-en="No admin rights">Без прав администратора</strong><span data-en="Installs for you only, in under a minute.">Ставится только для тебя, меньше чем за минуту.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Download ===== -->
+    <section class="cb-sec cb-get" id="download">
+      <div class="wrap">
+        <div class="cb-get__card" data-reveal="scale">
+          <div class="cb-get__glow" aria-hidden="true"></div>
+          <img class="cb-get__icon" src="/assets/img/software/cubi/cubi-icon.svg" alt="" width="120" height="120" loading="lazy">
+          <h2 class="cb-h2" data-en="Everything you need — <em>at hand</em>.">Всё нужное — <em>под рукой</em>.</h2>
+          <p class="cb-sub" data-en="CUBI is free. Install it, drop in your favourite apps — and forget about the cluttered desktop.">CUBI бесплатный. Установи, закинь любимые программы — и забудь про заваленный рабочий стол.</p>
+          <div class="cb-actions cb-actions--center">
+            <a class="btn cb-btn" href="https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe" data-magnetic>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>
+              <span data-en="Download CUBI 1.0.0">Скачать CUBI 1.0.0</span>
+            </a>
+            <a class="btn btn--ghost" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+          </div>
+          <dl class="cb-spec">
+            <div><dt data-en="System">Система</dt><dd>Windows 11 · x64</dd></div>
+            <div><dt data-en="Size">Размер</dt><dd>74 <span data-en="MB">МБ</span></dd></div>
+            <div><dt data-en="Version">Версия</dt><dd>1.0.0</dd></div>
+            <div><dt data-en="Price">Цена</dt><dd data-en="Free">Бесплатно</dd></div>
+          </dl>
+          <p class="cb-note" data-en="The installer is not code-signed yet, so Windows SmartScreen may ask to confirm: «More info» → «Run anyway».">Установщик пока без цифровой подписи, поэтому Windows SmartScreen может переспросить: «Подробнее» → «Выполнить в любом случае».</p>
+        </div>
+        <div class="cb-back"><a class="link-arrow" href="/software/"><span data-en="All software">Весь софт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- partial:footer -->
+  <section class="boosty" id="support" aria-label="Поддержка" data-en-label="Support">
+    <div class="wrap">
+      <div class="boosty__card">
+        <div class="boosty__glow" aria-hidden="true"></div>
+        <div class="boosty__text">
+          <span class="boosty__badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support">Поддержка</span></span>
+          <h2 class="boosty__title" data-en="Support my tools<br>on <span>Boosty</span>">Поддержи мои<br>инструменты на <span>Boosty</span></h2>
+          <p class="boosty__lead" data-en="Most of my plugins and apps are free. If one of them saved you time — support the work on new plugins, updates and FLECT. Any amount helps.">Большинство моих плагинов и программ бесплатные. Если какой-то из них сэкономил тебе время — поддержи работу над новыми плагинами, обновлениями и FLECT. Любая сумма помогает.</p>
+        </div>
+        <div class="boosty__cta">
+          <a class="btn boosty__btn" href="https://boosty.to/malikjan/donate" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+          <a class="link-arrow" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><span data-en="Open my Boosty page">Моя страница на Boosty</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="link-arrow" href="https://buymeacoffee.com/maxbobi" target="_blank" rel="noopener"><span>Buy me a coffee</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot" id="contact">
+    <div class="wrap">
+      <div class="site-foot__cta">
+        <div>
+          <div class="eyebrow"><span class="idx">✦</span><span class="bar"></span><span data-en="Contact">Контакт</span></div>
+          <h2 class="site-foot__title" data-en="Questions?<br><span class=&quot;grad-text&quot;>Write to me.</span>">Есть вопросы?<br><span class="grad-text">Напиши мне.</span></h2>
+          <p class="site-foot__lead" data-en="Questions about the plugins and apps or access to TVR CRM — message me on Telegram.">Вопросы по плагинам и программам или доступ к TVR CRM — пиши в Telegram.</p>
+          <a class="mail" href="https://t.me/Malik_anim" target="_blank" rel="noopener">t.me/Malik_anim<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@maxart8531" target="_blank" rel="noopener">YouTube<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://www.instagram.com/mr.myorser.art" target="_blank" rel="noopener">Instagram<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://www.artstation.com/maxbobi66" target="_blank" rel="noopener">ArtStation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://github.com/MalikMorser" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="site-foot__bar mono">
+        <span class="footer__brand"><img src="/assets/img/brand/mark-gradient.svg" alt="" width="34" height="18">© <span data-year>2026</span> Malik Boboev · Mr.Myorser</span>
+        <nav class="site-foot__nav">
+          <a href="/plugins/" data-en="Plugins">Плагины</a>
+          <a href="/software/" data-en="Software">Софт</a>
+          <a href="/games/" data-en="Games">Игры</a>
+        </nav>
+        <a class="totop" href="#top" data-top><span data-en="Back to top">Наверх</span> ↑</a>
+      </div>
+    </div>
+  </footer>
+  <!-- /partial:footer -->
+
+  <!-- partial:overlays -->
+  <div class="sheet" aria-hidden="true">
+    <div class="sheet__backdrop"></div>
+    <article class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" data-lenis-prevent>
+      <button class="sheet__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="sheet__content"></div>
+    </article>
+  </div>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="lightbox__body"></div>
+    <div class="lightbox__cap mono"></div>
+  </div>
+  <!-- /partial:overlays -->
+
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/assets/js/details.js" defer></script>
+  <script src="/assets/js/cubi.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
