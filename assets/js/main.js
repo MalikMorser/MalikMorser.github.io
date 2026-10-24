@@ -375,6 +375,8 @@
       : '';
     const meta = `<dl class="dt__meta">${t.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>`;
     const feats = `<h3 class="dt__h">${lang === 'en' ? 'Features' : 'Возможности'}</h3><ul class="dt__features">${t.features.map(([b, s]) => `<li><b>${esc(b)}</b>${esc(s)}</li>`).join('')}</ul>`;
+    // Optional extra sections: [title, items, ordered?] — e.g. release notes and update steps.
+    const blocks = (t.blocks || []).map(([title, items, ordered]) => `<h3 class="dt__h">${esc(title)}</h3><${ordered ? 'ol class="dt__steps"' : 'ul class="dt__news"'}>${items.map((i) => `<li>${esc(i)}</li>`).join('')}</${ordered ? 'ol' : 'ul'}>`).join('');
     const steps = t.steps ? `<h3 class="dt__h">${esc(t.stepsTitle)}</h3><ol class="dt__steps">${t.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>` : '';
     const actions = (d.links || []).map((l) => {
       const ext = /^https?:/.test(l.href) && l.icon !== 'download' ? ' target="_blank" rel="noopener"' : '';
@@ -397,7 +399,7 @@
           <h2 class="dt__name" id="sheet-title">${esc(d.name)}<sup>${esc(d.version)}</sup></h2>
           <p class="dt__short">${esc(t.short)}</p>
           <div class="dt__desc">${t.desc.map((p) => `<p>${esc(p)}</p>`).join('')}</div>
-          ${meta}${feats}${steps}
+          ${meta}${blocks}${feats}${steps}
           <div class="dt__actions">${soon}${actions}</div>${d.dl ? `<p class="dlcount" data-dl-count="${esc(d.dl)}" hidden></p>` : ''}${note}
         </div>
       </div>`;

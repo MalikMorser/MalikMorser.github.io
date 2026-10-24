@@ -445,3 +445,4 @@
   .ticker__item { font-size: 14px; }
 }
 }
+.chip--new { border-color: rgba(255, 181, 71, 0.45); color: var(--warn); background: rgba(255, 181, 71, 0.08); }

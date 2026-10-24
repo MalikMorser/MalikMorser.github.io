@@ -1,0 +1,78 @@
+﻿RIG CONTROLLERS 2.1 for Moho Pro 14.4 (Windows) — HOW TO INSTALL THE UPDATE
+===========================================================================
+
+This folder contains:
+  Rig_Controllers_2.1_EN_for_Moho_14.4.zip   — English edition
+  Rig_Controllers_2.1_for_Moho_14.4.zip      — Russian edition
+Install ONE of them: they use the same files, so the second one simply
+replaces the first. Rigs, animation and data are fully compatible.
+
+
+1. BEFORE UPDATING
+------------------
+1. Save and close all projects in Moho.
+2. Back up your important projects with controllers (just in case).
+3. If Windows marked the archive as downloaded from the internet:
+   right-click the archive → Properties → tick "Unblock" → OK.
+4. Unpack the archive: right-click → "Extract All…" → "Extract".
+
+
+2. INSTALL OVER THE OLD VERSION
+-------------------------------
+Method 1 — Moho's installer:
+1. Start Moho Pro 14.4.
+2. Scripts → Install Script…
+3. Choose the scripts folder inside the unpacked
+   "Rig Controllers 2.1 (English)" folder.
+4. When Moho asks about replacing files, answer "Yes".
+5. You MUST quit Moho completely and start it again: Moho loads new icons
+   and new code only at startup.
+
+Method 2 — manually:
+1. In Moho: File → Open Custom Content Folder, then quit Moho.
+2. Copy the scripts folder from "Rig Controllers 2.1 (English)" into the
+   folder that opened, merging folders and replacing files.
+3. Start Moho.
+
+Check: Tools → group Other → Rig Controllers. The tool panel now has a group
+list next to the controller list and small buttons (+, arrows, pencil, trash).
+
+
+3. UPGRADING OLD RIGS (1.x–2.0)
+-------------------------------
+Old rigs open and work as before. To move them to the new diamond bones:
+1. Open the project, select the bone layer with controllers and the
+   Rig Controllers tool.
+2. Smart Bones (lightning button) → "Upgrade Controllers to 2.1
+   (Control Bones)".
+3. The whole animation moves onto the diamonds: same frames, values and
+   interpolation. The drivers become hidden. One Ctrl+Z undoes it.
+4. Save the project.
+Upgrade each bone layer with controllers separately.
+
+
+4. TROUBLESHOOTING
+------------------
+• Old icons or no new buttons — Moho was not restarted.
+• A "module not found" error or missing buttons — the scripts folder was
+  not installed completely; install the whole folder again.
+• Projects upgraded to 2.1 still open in older versions of the plugin, but
+  there the diamonds are ordinary bones and groups are not shown. Update the
+  plugin on every computer where you work on the project.
+
+
+WHAT'S NEW IN 2.1
+-----------------
+• The controller diamond is a real Moho bone (a zero-length point bone).
+  Animation keys are its translation keys on the Timeline: move, copy and
+  delete them and change their interpolation with the standard tools.
+• A selected controller is red, like a selected Moho bone.
+• Driver bones are internal and always hidden — only the diamonds are on the
+  canvas. The tool builds their keys from the diamond's keys, so the file
+  works even without the plugin.
+• Controller groups (Head, Body…): only the controllers of the chosen group
+  are shown on the canvas. Buttons: + new group, add to group, remove from
+  group, rename, delete. Ctrl+A selects the whole group.
+• An upgrade command for old rigs that moves the whole animation.
+• Fixed: with hidden driver bones, a controller's keys were not visible on
+  the Timeline.

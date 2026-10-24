@@ -1121,3 +1121,6 @@ button.tool { text-align: left; width: 100%; font: inherit; color: inherit; curs
 @keyframes dl-pulse { 50% { box-shadow: 0 0 0 7px transparent; } }
 .dt .dlcount { margin-top: 14px; }
 @media (prefers-reduced-motion: reduce) { .dlcount i { animation: none; } }
+.dt__news { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.dt__news li { position: relative; padding: 12px 14px 12px 38px; border-radius: 12px; background: color-mix(in srgb, var(--c) 6%, transparent); border: 1px solid color-mix(in srgb, var(--c) 18%, transparent); font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+.dt__news li::before { content: "✦"; position: absolute; left: 14px; top: 12px; color: var(--c); font-size: 12px; }
