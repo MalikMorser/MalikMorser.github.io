@@ -93,6 +93,7 @@ window.DETAILS = {
 
   'show-all-layers': {
     name: 'Show All Layers', version: '1.0', accent: '#2fe0a6',
+    image: '/assets/img/work/show-all-layers.webp',
     links: [
       { href: 'https://github.com/MalikMorser/Show-All-Layers-Moho/archive/refs/heads/main.zip', icon: 'download', primary: true, ru: 'Скачать бесплатно', en: 'Download free' },
       { href: 'https://github.com/MalikMorser/Show-All-Layers-Moho', icon: 'github', ru: 'GitHub', en: 'GitHub' },
@@ -234,15 +235,15 @@ window.DETAILS = {
   },
 
   /* ======================= SOFTWARE ======================= */
-  'flect': {
-    name: 'FLECT', version: '0.1', accent: '#8f7bff',
-    image: '/assets/img/software/flect/ui-clean.webp',
-    gallery: ['/assets/img/software/flect/panel-timeline.webp', '/assets/img/software/flect/panel-bones.webp', '/assets/img/software/flect/panel-props.webp'],
-    links: [{ href: 'https://t.me/Malik_anim', icon: 'tg', primary: true, ru: 'Следить в Telegram', en: 'Follow on Telegram' }],
+  'pix': {
+    name: 'Pix', version: '0.1', accent: '#8f7bff',
+    image: '/assets/img/software/pix/ui-clean.webp',
+    gallery: ['/assets/img/software/pix/panel-timeline.webp', '/assets/img/software/pix/panel-bones.webp', '/assets/img/software/pix/panel-props.webp'],
+    links: [{ href: '/software/pix/', icon: 'site', primary: true, ru: 'Страница Pix', en: 'Pix page' }, { href: 'https://t.me/Malik_anim', icon: 'tg', ru: 'Следить в Telegram', en: 'Follow on Telegram' }],
     ru: {
       kind: 'Программа · Windows', status: 'В разработке', soon: 'Релиз — позже',
       short: '2D-анимация нового поколения.',
-      desc: ['FLECT — профессиональная программа для 2D-анимации: векторное рисование, кости и риггинг, таймлайн и редактор графиков в одном окне. Мощь риггинга в духе Moho и скорость работы в духе Blender.', 'Написана с нуля на C++23 и рисует всё на видеокарте через Direct3D 12 — поэтому быстрая даже на сложных персонажах.'],
+      desc: ['Pix — программа для 2D-анимации с открытым кодом: векторное рисование, кости и риггинг, таймлайн и редактор графиков в одном окне. Мощь риггинга в духе Moho и скорость работы в духе Blender.', 'Написана с нуля на C++23 и рисует всё на видеокарте через Direct3D 12 — поэтому быстрая даже на сложных персонажах.'],
       meta: [['Платформа', 'Windows 10/11'], ['Технологии', 'C++23 · Direct3D 12 · ImGui'], ['Версия', '0.1 · в разработке'], ['Релиз', 'Позже']],
       features: [['Векторный движок', 'Сваренные точки, кривые Безье, MSAA на GPU'], ['Кисть и перо', 'Нажим пера, сглаживание кривых'], ['Кости и smart bones', 'Гибкая и жёсткая привязка, IK с полюсами'], ['Стек ограничений', 'IK, Track To, Copy и Limit — с влиянием'], ['Таймлайн и графики', 'Безье, Ease, Bounce, Elastic, циклы'], ['Слои', 'Вектор, картинки, группы, Switch, звук, камера'], ['Маски и смешивание', 'Живые маски слоями, 8 режимов смешивания'], ['Экспорт', 'MP4 H.264 и PNG-секвенция']],
       note: 'Скачать пока нельзя — программа в активной разработке.',
@@ -250,7 +251,7 @@ window.DETAILS = {
     en: {
       kind: 'Application · Windows', status: 'In development', soon: 'Release — later',
       short: '2D animation software of a new generation.',
-      desc: ['FLECT is a professional 2D animation application: vector drawing, bones and rigging, timeline and graph editor in one window. Moho-style rigging power with Blender-style speed.', 'Written from scratch in C++23 and rendered entirely on the GPU via Direct3D 12 — fast even on complex characters.'],
+      desc: ['Pix is an open-source 2D animation application: vector drawing, bones and rigging, timeline and graph editor in one window. Moho-style rigging power with Blender-style speed.', 'Written from scratch in C++23 and rendered entirely on the GPU via Direct3D 12 — fast even on complex characters.'],
       meta: [['Platform', 'Windows 10/11'], ['Stack', 'C++23 · Direct3D 12 · ImGui'], ['Version', '0.1 · in development'], ['Release', 'Later']],
       features: [['Vector engine', 'Welded points, Bezier curves, GPU MSAA'], ['Brush & pen', 'Pen pressure, curve fitting'], ['Bones & smart bones', 'Flexible and rigid binding, IK with poles'], ['Constraints stack', 'IK, Track To, Copy and Limit — with influence'], ['Timeline & graphs', 'Bezier, Ease, Bounce, Elastic, cycles'], ['Layers', 'Vector, images, groups, Switch, audio, camera'], ['Masks & blending', 'Live layer masks, 8 blend modes'], ['Export', 'MP4 H.264 and PNG sequence']],
       note: 'Not available for download yet — in active development.',

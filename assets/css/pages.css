@@ -85,7 +85,7 @@
 .btn--yt:hover { border-color: #ff4d4d; color: #ff6b6b; }
 .btn--yt svg { color: #ff4d4d; }
 
-/* Flagship showcase (FLECT etc.) */
+/* Flagship showcase (Pix etc.) */
 .showcase {
   --c: #8f7bff;
   position: relative; overflow: hidden; border-radius: clamp(22px, 3vw, 36px);
@@ -147,8 +147,8 @@
 
 /* ---------- Software: flagship + icon posters ---------- */
 .flagship { padding: 0 0 clamp(56px, 7vw, 100px); }
-.flect-brand { display: flex; align-items: center; gap: 14px; margin-top: 26px; color: var(--ink-2); font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
-.flect-brand img { width: 52px; height: 52px; border-radius: 14px; box-shadow: 0 12px 40px -10px rgba(143, 123, 255, 0.6); }
+.pix-brand { display: flex; align-items: center; gap: 14px; margin-top: 26px; color: var(--ink-2); font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+.pix-brand img { width: 52px; height: 52px; border-radius: 14px; box-shadow: 0 12px 40px -10px rgba(143, 123, 255, 0.6); }
 .pcard__poster--icon { align-items: center; gap: 22px; }
 .pcard__poster--icon img { width: 30%; max-width: 150px; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 22%; box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.8); transition: transform 0.8s var(--ease); }
 .pcard:hover .pcard__poster--icon img { transform: rotate(-4deg) scale(1.04); }
@@ -222,12 +222,12 @@
 .dir__card:hover .dir__go { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); transform: translateX(4px); }
 .btn--violet { background: #8f7bff; color: #0d0a1c; box-shadow: 0 10px 40px -12px rgba(143, 123, 255, 0.5); }
 .btn--violet::before { background: #b9adff; }
-.home-flect { padding-top: clamp(24px, 4vw, 56px); }
+.home-pix { padding-top: clamp(24px, 4vw, 56px); }
 @media (max-width: 900px) { .dir { grid-template-columns: 1fr; } }
 .pcard--wide .pcard__cover img { position: absolute; inset: 0; }
 @media (max-width: 1000px) { .pcard--wide .pcard__cover img { position: static; } }
 
-/* ---------- FLECT stage: product-style presentation of the interface ---------- */
+/* ---------- Pix stage: product-style presentation of the interface ---------- */
 .fstage { position: relative; padding: 4% 7% 13% 0; perspective: 1800px; }
 .fstage__glow {
   position: absolute; inset: 8% 4% 12% 8%; z-index: 0; filter: blur(70px); opacity: 0.55;
@@ -367,3 +367,7 @@
   .newband { grid-template-columns: 1fr; }
   .newband__art { transform: none; order: -1; }
 }
+.pcard__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 14px; color: var(--ink-2); }
+.pcard__list li { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; padding: 10px 14px; border: 1px solid var(--line, rgba(255,255,255,.08)); border-radius: 12px; }
+.pcard__list b { color: var(--ink); font-weight: 600; }
+.pcard__list s { margin-left: auto; color: var(--ink-3); font-family: var(--f-mono); font-size: 12px; }

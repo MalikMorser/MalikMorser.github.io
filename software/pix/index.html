@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pix — 2D-анимация с открытым кодом · Mr.Myorser</title>
+  <meta name="description" content="Pix — программа для 2D-анимации: векторное рисование, кости и риггинг в духе Moho, режимы и горячие клавиши Blender, таймлайн, Dope Sheet и редактор графиков. Написана на C++23, рисует на видеокарте через Direct3D 12. В разработке.">
+  <meta name="theme-color" content="#0e0f1a">
+  <meta property="og:title" content="Pix — риггинг как в Moho, скорость как в Blender">
+  <meta property="og:description" content="Программа для 2D-анимации с открытым кодом: вектор, кости, smart bones, жидкие фигуры, таймлайн и графики. В разработке.">
+  <meta property="og:image" content="https://myorser.com/assets/img/software/pix/og.jpg">
+  <meta property="og:url" content="https://myorser.com/software/pix/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://myorser.com/software/pix/">
+  <link rel="icon" href="/assets/img/software/pix/icon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <link rel="stylesheet" href="/assets/css/pix.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="software" class="pix">
+
+  <!-- partial:header -->
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="Mr.Myorser — на главную" data-en-label="Mr.Myorser — home">
+        <img class="brand__mark" src="/assets/img/brand/mark-gradient.svg" alt="" width="46" height="25">
+        <span class="brand__word">MR<span>.</span>MYORSER</span>
+      </a>
+      <nav class="nav__links" aria-label="Разделы" data-en-label="Sections">
+        <a class="nav__link" href="/" data-nav="home"><span data-en="Home">Главная</span></a>
+        <a class="nav__link" href="/plugins/" data-nav="plugins"><span data-en="Plugins">Плагины</span></a>
+        <a class="nav__link" href="/software/" data-nav="software" aria-current="page"><span data-en="Software">Софт</span></a>
+        <a class="nav__link" href="/games/" data-nav="games"><span data-en="Games">Игры</span></a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--sm nav__boosty" href="https://boosty.to/malikjan/donate" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support">Поддержать</span></a>
+        <a class="btn btn--primary btn--sm" href="#contact" data-magnetic><span data-en="Contact">Связаться</span></a>
+        <button class="burger" type="button" aria-label="Меню" data-en-label="Menu" aria-expanded="false"><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" aria-label="Меню" data-en-label="Menu">
+    <a href="/" data-nav="home"><span data-en="Home">Главная</span></a>
+    <a href="/plugins/" data-nav="plugins"><span data-en="Plugins">Плагины</span></a>
+    <a href="/software/" data-nav="software" aria-current="page"><span data-en="Software">Софт</span></a>
+    <a href="/games/" data-nav="games"><span data-en="Games">Игры</span></a>
+    <a href="#contact"><span data-en="Contact">Контакт</span></a>
+    <a href="#support" class="menu__boosty"><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+    <div class="menu__foot">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+  <!-- /partial:header -->
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="px-hero">
+      <div class="px-hero__glow" aria-hidden="true"></div>
+      <div class="wrap px-hero__grid">
+        <div class="px-hero__copy">
+          <p class="px-kicker" data-hero style="--d:0"><span class="px-dot"></span><span data-en="In development · version 0.1">В разработке · версия 0.1</span></p>
+          <h1 class="px-title" data-hero style="--d:120"><img src="/assets/img/software/pix/icon-512.webp" alt="" width="96" height="96">Pix</h1>
+          <p class="px-tagline" data-hero style="--d:240" data-en="Rigging like <em>Moho</em>.<br>Speed like <em>Blender</em>.">Риггинг как в <em>Moho</em>.<br>Скорость как в <em>Blender</em>.</p>
+          <p class="px-lead" data-hero style="--d:360" data-en="An open-source 2D animation application for animators, illustrators and studios: vector drawing, bones and rigging, timeline animation. Written from scratch in C++ and drawn on the GPU — with a fast, modern interface built around Blender's workflow.">Программа для 2D-анимации с открытым кодом — для аниматоров, иллюстраторов и студий: векторное рисование, кости и риггинг, анимация на таймлайне. Написана с нуля на C++ и рисует всё на видеокарте — в быстром современном интерфейсе по логике Blender.</p>
+          <div class="px-actions" data-hero style="--d:480">
+            <a class="btn px-btn" href="https://t.me/Malik_anim" target="_blank" rel="noopener" data-magnetic>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m21 4-18 7.5 6.5 2L12 20l3-5 5 4z"/></svg>
+              <span data-en="Follow on Telegram">Следить в Telegram</span>
+            </a>
+            <a class="btn btn--ghost" href="#demos"><span data-en="What it can do">Что уже умеет</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></a>
+          </div>
+          <p class="px-meta mono" data-hero style="--d:600">Windows 10/11 · C++23 · Direct3D 12 · <span data-en="open source">open source</span></p>
+        </div>
+
+        <div class="px-hero__stage" data-hero style="--d:300" aria-hidden="true">
+          <div class="px-art">
+            <div class="px-art__grid"></div>
+            <svg class="px-art__path" viewBox="0 0 600 600" preserveAspectRatio="none"><path d="M60 560 C 120 470, 170 420, 230 390 S 320 320, 330 290" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/></svg>
+            <i class="px-art__key" style="--k:0"></i><i class="px-art__key" style="--k:1"></i><i class="px-art__key" style="--k:2"></i><i class="px-art__key" style="--k:3"></i>
+            <div class="px-art__fly">
+              <span class="px-mark px-mark--ghost" style="--g:4"></span>
+              <span class="px-mark px-mark--ghost" style="--g:3"></span>
+              <span class="px-mark px-mark--ghost" style="--g:2"></span>
+              <span class="px-mark px-mark--ghost" style="--g:1"></span>
+              <span class="px-mark"></span>
+            </div>
+            <p class="px-art__cap mono"><b>Pix</b> · open-source 2D animation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <figure class="px-window" data-reveal="scale">
+          <div class="px-window__bar"><i></i><i></i><i></i><span class="mono">Pix 0.1.0</span></div>
+          <button type="button" class="px-window__img" data-zoom="/assets/img/software/pix/welcome.webp" data-caption="Pix — экран приветствия" data-cursor="VIEW"><img src="/assets/img/software/pix/welcome.webp" alt="Pix: экран приветствия с шаблонами и последними файлами" decoding="async"></button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Pillars ===== -->
+    <section class="px-sec">
+      <div class="wrap">
+        <div class="px-head" data-reveal>
+          <p class="px-eyebrow mono" data-en="The idea">Идея</p>
+          <h2 class="px-h2" data-en="The best of two worlds. <em>In one window</em>.">Лучшее из двух миров. <em>В одном окне</em>.</h2>
+          <p class="px-sub" data-en="Moho is loved for its rigging, Blender — for its speed and hotkeys. Pix takes both and builds them on a modern GPU engine.">Moho любят за риггинг, Blender — за скорость и горячие клавиши. Pix берёт и то, и другое и строит это на современном движке для видеокарты.</p>
+        </div>
+        <div class="px-pillars">
+          <article class="px-pillar" data-reveal>
+            <span class="px-pillar__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="19" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><path d="m6.5 17.5 4-4m3-3 4-4"/></svg></span>
+            <h3 data-en="Moho's power">Сила Moho</h3>
+            <p data-en="Bones and smart bones, Switch layers, masks, liquid shapes, Line Width, noisy lines and shape styles — the rigging tools animators already know.">Кости и smart bones, Switch-слои, маски, жидкие фигуры, Line Width, «шумные» линии и стили фигур — инструменты риггинга, которые аниматоры уже знают.</p>
+          </article>
+          <article class="px-pillar" data-reveal style="--d:120">
+            <span class="px-pillar__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M7 10h1m3 0h1m3 0h1M7 14h10"/></svg></span>
+            <h3 data-en="Blender's workflow">Логика Blender</h3>
+            <p data-en="Edit and Object Mode on Tab, G / R / S everywhere, F3 command search, pie menus, splittable areas, the N sidebar, Preferences and an add-on manager.">Edit и Object Mode по Tab, G / R / S везде, поиск команд по F3, пай-меню, делящиеся области, боковая панель N, настройки и менеджер аддонов.</p>
+          </article>
+          <article class="px-pillar" data-reveal style="--d:240">
+            <span class="px-pillar__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <h3 data-en="GPU speed">Скорость GPU</h3>
+            <p data-en="Written from scratch in C++23. Fills, strokes, masks and layer blending are drawn by the graphics card through Direct3D 12 with antialiasing.">Написана с нуля на C++23. Заливки, линии, маски и смешивание слоёв рисует видеокарта через Direct3D 12 со сглаживанием.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Live demos ===== -->
+    <section class="px-sec" id="demos">
+      <div class="wrap">
+        <div class="px-head" data-reveal>
+          <p class="px-eyebrow mono" data-en="Try it right here">Попробуй прямо здесь</p>
+          <h2 class="px-h2" data-en="How Pix <em>thinks</em>.">Как <em>думает</em> Pix.</h2>
+          <p class="px-sub" data-en="Three small live demos of what is already working in the program.">Три маленьких живых демо того, что уже работает в программе.</p>
+        </div>
+
+        <div class="px-demos">
+          <article class="px-demo px-demo--wide" data-reveal>
+            <div class="px-demo__stage px-ik" data-ik>
+              <svg viewBox="0 0 800 420" aria-hidden="true">
+                <defs><linearGradient id="pxStem" x1="0" x2="1"><stop offset="0" stop-color="#5b43d6"/><stop offset="1" stop-color="#b9a8ff"/></linearGradient></defs>
+                <path class="px-ik__skin" d="" fill="url(#pxStem)"/>
+                <g class="px-ik__bones"></g>
+                <circle class="px-ik__target" r="12"/>
+              </svg>
+              <p class="px-demo__hint mono" data-en="move the cursor — the chain follows">води курсором — цепочка тянется</p>
+            </div>
+            <div class="px-demo__copy">
+              <p class="px-demo__no mono">01</p>
+              <h3 data-en="Bones & IK">Кости и IK</h3>
+              <p data-en="A Bone layer moves every layer inside it. The artwork bends smoothly around the joints, and inverse kinematics turns a whole chain toward one target — as in Pix's Manipulate Bones.">Костный слой двигает все слои внутри себя. Рисунок плавно гнётся на суставах, а обратная кинематика поворачивает всю цепочку к одной цели — как в инструменте Manipulate Bones в Pix.</p>
+              <ul class="px-demo__list">
+                <li data-en="Smart bones, constraints stack, IK with poles">Smart bones, стек ограничений, IK с полюсами</li>
+                <li data-en="B-Bones with 1–32 segments, smooth joints">B-Bones на 1–32 сегмента, плавные суставы</li>
+              </ul>
+              <label class="px-toggle"><input type="checkbox" data-ik-bones checked><span></span><b data-en="Show bones">Показывать кости</b></label>
+            </div>
+          </article>
+
+          <article class="px-demo" data-reveal>
+            <div class="px-demo__stage px-graph" data-graph>
+              <svg viewBox="0 0 400 260" aria-hidden="true">
+                <g class="px-graph__grid"></g>
+                <path class="px-graph__curve" d=""/>
+                <line class="px-graph__head" x1="0" x2="0" y1="20" y2="240"/>
+                <circle class="px-graph__dot" r="7"/>
+              </svg>
+              <div class="px-graph__track"><i></i></div>
+            </div>
+            <div class="px-demo__copy">
+              <p class="px-demo__no mono">02</p>
+              <h3 data-en="Keys & curves">Ключи и кривые</h3>
+              <p data-en="Every channel is a curve in the Graph Editor. Pick an interpolation and watch how the motion changes.">Каждый канал — кривая в редакторе графиков. Выбери интерполяцию и посмотри, как меняется движение.</p>
+              <div class="px-seg" role="group" aria-label="Интерполяция" data-en-label="Interpolation">
+                <button type="button" data-ease="linear">Linear</button>
+                <button type="button" data-ease="bezier" aria-pressed="true">Bezier</button>
+                <button type="button" data-ease="bounce">Bounce</button>
+                <button type="button" data-ease="elastic">Elastic</button>
+                <button type="button" data-ease="back">Back</button>
+                <button type="button" data-ease="step">Stepped</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="px-demo" data-reveal style="--d:120">
+            <div class="px-demo__stage px-liquid" data-liquid data-mode="combine">
+              <svg viewBox="0 0 400 260" aria-hidden="true">
+                <defs>
+                  <filter id="pxGoo"><feGaussianBlur in="SourceGraphic" stdDeviation="9"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -11"/></filter>
+                  <mask id="pxCut"><rect width="400" height="260" fill="#fff"/><circle class="px-liq-b" r="48" fill="#000"/></mask>
+                  <clipPath id="pxClip"><circle class="px-liq-b" r="48"/></clipPath>
+                </defs>
+                <g class="px-liq px-liq--normal"><circle cx="165" cy="130" r="56" fill="#8f7bff"/><circle class="px-liq-b" r="48" fill="#ff7aa8"/></g>
+                <g class="px-liq px-liq--combine"><circle cx="165" cy="130" r="56" fill="#8f7bff"/><circle class="px-liq-b" r="48" fill="#8f7bff"/></g>
+                <g class="px-liq px-liq--blend" filter="url(#pxGoo)"><circle cx="165" cy="130" r="56" fill="#8f7bff"/><circle class="px-liq-b" r="48" fill="#8f7bff"/></g>
+                <g class="px-liq px-liq--subtract"><circle cx="165" cy="130" r="56" fill="#8f7bff" mask="url(#pxCut)"/><circle class="px-liq-b px-liq-ghost" r="48"/></g>
+                <g class="px-liq px-liq--intersect"><circle cx="165" cy="130" r="56" fill="#8f7bff" clip-path="url(#pxClip)"/><circle cx="165" cy="130" r="56" class="px-liq-ghost"/><circle class="px-liq-b px-liq-ghost" r="48"/></g>
+              </svg>
+            </div>
+            <div class="px-demo__copy">
+              <p class="px-demo__no mono">03</p>
+              <h3 data-en="Liquid shapes">Жидкие фигуры</h3>
+              <p data-en="Live booleans between shapes of a layer — they keep working while the shapes move with bones and keys. Blend adds soft fillets where shapes meet.">Живые булевы операции между фигурами слоя — работают, пока фигуры двигаются костями и ключами. Blend добавляет мягкие скругления на стыках.</p>
+              <div class="px-seg" role="group" aria-label="Режим" data-en-label="Mode">
+                <button type="button" data-liq="normal">Normal</button>
+                <button type="button" data-liq="combine" aria-pressed="true">Combine</button>
+                <button type="button" data-liq="blend">Blend</button>
+                <button type="button" data-liq="subtract">Subtract</button>
+                <button type="button" data-liq="intersect">Intersect</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Gallery ===== -->
+    <section class="px-sec">
+      <div class="wrap">
+        <div class="px-head" data-reveal>
+          <p class="px-eyebrow mono" data-en="Interface">Интерфейс</p>
+          <h2 class="px-h2" data-en="Dark, calm, <em>fast</em>.">Тёмный, спокойный, <em>быстрый</em>.</h2>
+          <p class="px-sub" data-en="Windows 11 design, Lucide icons and Blender's areas: drag a border to resize, right-click to split, join or swap — the layout is remembered.">Дизайн Windows 11, иконки Lucide и области как в Blender: тяни границу — меняешь размер, правый клик — делишь, объединяешь или меняешь местами. Раскладка запоминается.</p>
+        </div>
+        <div class="px-bento">
+          <figure class="px-shot px-shot--wide" data-reveal data-zoom="/assets/img/software/pix/ui-clean.webp" data-caption="Pix — рабочее окно" data-cursor="VIEW">
+            <img src="/assets/img/software/pix/ui-clean.webp" alt="" loading="lazy" decoding="async">
+            <figcaption><b data-en="The workspace">Рабочее окно</b><span data-en="Viewport, Outliner, Properties and Timeline">Вьюпорт, Outliner, свойства и таймлайн</span></figcaption>
+          </figure>
+          <figure class="px-shot px-shot--tall" data-reveal style="--d:100" data-zoom="/assets/img/software/pix/panel-bones.webp" data-caption="Pix — кости и Outliner" data-cursor="VIEW">
+            <img src="/assets/img/software/pix/panel-bones.webp" alt="" loading="lazy" decoding="async">
+            <figcaption><b data-en="Outliner & bones">Outliner и кости</b><span data-en="Bone layers, Switch layers, label colors">Костные слои, Switch-слои, цвета меток</span></figcaption>
+          </figure>
+          <figure class="px-shot px-shot--wide" data-reveal data-zoom="/assets/img/software/pix/panel-timeline.webp" data-caption="Pix — таймлайн и графики" data-cursor="VIEW">
+            <img src="/assets/img/software/pix/panel-timeline.webp" alt="" loading="lazy" decoding="async" style="object-fit:contain;background:#1b1b1f">
+            <figcaption><b data-en="Timeline in graph mode">Таймлайн в режиме графиков</b><span data-en="Bone Angle curves with Bezier keys">Кривые Bone Angle с ключами Безье</span></figcaption>
+          </figure>
+          <figure class="px-shot px-shot--wide" data-reveal data-zoom="/assets/img/software/pix/styles.webp" data-caption="Pix — стили фигур (экспорт)" data-cursor="VIEW">
+            <img src="/assets/img/software/pix/styles.webp" alt="" loading="lazy" decoding="async">
+            <figcaption><b data-en="Shape styles">Стили фигур</b><span data-en="Gradients, Halo, Shaded, Crayon, dashes — a real export">Градиенты, Halo, Shaded, Crayon, пунктир — настоящий экспорт</span></figcaption>
+          </figure>
+          <figure class="px-shot" data-reveal style="--d:200" data-zoom="/assets/img/software/pix/panel-props.webp" data-caption="Pix — свойства" data-cursor="VIEW">
+            <img src="/assets/img/software/pix/panel-props.webp" alt="" loading="lazy" decoding="async" style="object-position:50% 0">
+            <figcaption><b data-en="Properties">Свойства</b><span data-en="Shapes, appearance, transform">Фигуры, вид, трансформации</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="px-sec">
+      <div class="wrap">
+        <div class="px-head" data-reveal>
+          <p class="px-eyebrow mono" data-en="Already working">Уже работает</p>
+          <h2 class="px-h2" data-en="Version 0.1 — and it's <em>a lot</em>.">Версия 0.1 — и это <em>много</em>.</h2>
+        </div>
+        <div class="px-feats">
+          <article class="px-feat" data-reveal>
+            <h3><span class="mono">✦</span><span data-en="Vector drawing">Векторное рисование</span></h3>
+            <ul>
+              <li data-en="Moho-style welded points, curves and shapes">Сваренные точки, кривые и фигуры как в Moho</li>
+              <li data-en="Pen, Brush with pressure, Shape and Fill tools">Перо, кисть с нажимом, фигуры и заливка</li>
+              <li data-en="Line Width tool, Sketchy noisy lines">Line Width и «шумные» линии Sketchy</li>
+              <li data-en="Styles: gradients, textures, Halo, Shaded, Crayon">Стили: градиенты, текстуры, Halo, Shaded, Crayon</li>
+            </ul>
+          </article>
+          <article class="px-feat" data-reveal style="--d:80">
+            <h3><span class="mono">✦</span><span data-en="Bones & rigging">Кости и риггинг</span></h3>
+            <ul>
+              <li data-en="Bone layers, smart bones, bone lock">Костные слои, smart bones, блокировка костей</li>
+              <li data-en="Constraints stack like Blender's, Follow Path">Стек ограничений как в Blender, Follow Path</li>
+              <li data-en="Professional IK, control bones without Deform">Профессиональный IK, управляющие кости без Deform</li>
+              <li data-en="B-Bones and smooth joints">B-Bones и плавные суставы</li>
+            </ul>
+          </article>
+          <article class="px-feat" data-reveal style="--d:160">
+            <h3><span class="mono">✦</span><span data-en="Animation">Анимация</span></h3>
+            <ul>
+              <li data-en="Timeline, Dope Sheet, Action Editor, Graph Editor">Таймлайн, Dope Sheet, Action Editor, редактор графиков</li>
+              <li data-en="Bezier, Ease, Bounce, Elastic, Back, Noisy, Cycle">Bezier, Ease, Bounce, Elastic, Back, Noisy, Cycle</li>
+              <li data-en="Blender's and Maya's key tools: handles, tangents, sliders">Инструменты ключей Blender и Maya: ручки, касательные, слайдеры</li>
+              <li data-en="Point motion, copy keys between characters by bone name">Анимация точек, копирование ключей между персонажами по именам костей</li>
+            </ul>
+          </article>
+          <article class="px-feat" data-reveal>
+            <h3><span class="mono">✦</span><span data-en="Layers">Слои</span></h3>
+            <ul>
+              <li data-en="Vector, Image, Image Sequence, Group, Switch, Audio, Camera">Вектор, картинка, секвенция, группа, Switch, звук, камера</li>
+              <li data-en="Switch layers with smooth morphs between keys">Switch-слои с плавным переходом между ключами</li>
+              <li data-en="Moho masking and live boolean masks">Маски Moho и живые булевы маски</li>
+              <li data-en="8 blend modes, opacity, modifiers stack">8 режимов смешивания, прозрачность, стек модификаторов</li>
+            </ul>
+          </article>
+          <article class="px-feat" data-reveal style="--d:80">
+            <h3><span class="mono">✦</span><span data-en="Sound & lip sync">Звук и липсинк</span></h3>
+            <ul>
+              <li data-en="WAV, MP3, OGG, FLAC, AIFF, M4A — waveform on the timeline">WAV, MP3, OGG, FLAC, AIFF, M4A — волна на таймлайне</li>
+              <li data-en="Frame-exact start so lip sync stays on the frame">Точный старт звука, чтобы липсинк не съезжал</li>
+              <li data-en="Lip Sync template with Preston Blair's ten mouths">Шаблон Lip Sync с десятью ртами Престона Блэра</li>
+              <li data-en="Drop a sound file — it becomes an Audio layer">Перетащил звук в окно — получил звуковой слой</li>
+            </ul>
+          </article>
+          <article class="px-feat" data-reveal style="--d:160">
+            <h3><span class="mono">✦</span><span data-en="Files & output">Файлы и вывод</span></h3>
+            <ul>
+              <li data-en="Readable .pix format (versioned JSON)">Понятный формат .pix (JSON с версиями)</li>
+              <li data-en="Autosave, crash recovery, Recover Last Session">Автосохранение, восстановление после сбоя и последней сессии</li>
+              <li data-en="Templates: HD, 4K, square, vertical, rigged character">Шаблоны: HD, 4K, квадрат, вертикаль, готовый персонаж</li>
+              <li data-en="Export to MP4 (H.264) and PNG sequence with alpha">Экспорт в MP4 (H.264) и PNG-секвенцию с прозрачностью</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="px-icons" data-reveal>
+          <div class="px-icons__set">
+            <img src="/assets/img/software/pix/icon-black.webp" alt="" width="96" height="96" loading="lazy">
+            <img src="/assets/img/software/pix/icon.webp" alt="" width="96" height="96" loading="lazy">
+            <img src="/assets/img/software/pix/icon-red.webp" alt="" width="96" height="96" loading="lazy">
+          </div>
+          <p data-en="<b>Pick your icon.</b> Black, Gradient or Red — chosen in Preferences, it changes the window, the taskbar and the badge in the menu bar."><b>Выбери свою иконку.</b> Чёрная, градиентная или красная — меняется в настройках: в окне, на панели задач и в значке меню.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Roadmap ===== -->
+    <section class="px-sec">
+      <div class="wrap">
+        <div class="px-head" data-reveal>
+          <p class="px-eyebrow mono" data-en="Roadmap">Дорожная карта</p>
+          <h2 class="px-h2" data-en="Small steps. <em>Each one works</em>.">Маленькие шаги. <em>Каждый работает</em>.</h2>
+          <p class="px-sub" data-en="Pix grows in milestones — every one ends with a working build.">Pix растёт этапами — каждый заканчивается рабочей сборкой.</p>
+        </div>
+        <ol class="px-road">
+          <li class="is-done" data-reveal><b class="mono">M1</b><strong data-en="Application shell">Оболочка программы</strong><span data-en="Window, Direct3D 12, areas, Outliner, Preferences, welcome screen">Окно, Direct3D 12, области, Outliner, настройки, экран приветствия</span><em data-en="Done">Готово</em></li>
+          <li class="is-done" data-reveal><b class="mono">M2</b><strong data-en="Vector drawing">Векторное рисование</strong><span data-en="Points, curves, shapes, masks, liquid shapes, styles">Точки, кривые, фигуры, маски, жидкие фигуры, стили</span><em data-en="Done">Готово</em></li>
+          <li class="is-work" data-reveal><b class="mono">M3</b><strong data-en="Bones & Moho tools">Кости и инструменты Moho</strong><span data-en="Layer types, Switch, audio, smart bones, B-Bones">Типы слоёв, Switch, звук, smart bones, B-Bones</span><em data-en="In progress">В работе</em></li>
+          <li class="is-work" data-reveal><b class="mono">M4</b><strong data-en="Animation">Анимация</strong><span data-en="Timeline, Dope Sheet, Graph Editor, 2D camera">Таймлайн, Dope Sheet, редактор графиков, 2D-камера</span><em data-en="In progress">В работе</em></li>
+          <li class="is-work" data-reveal><b class="mono">M5</b><strong data-en="Pro rigging">Профессиональный риггинг</strong><span data-en="Constraints, IK, Follow Path, modifiers">Ограничения, IK, Follow Path, модификаторы</span><em data-en="In progress">В работе</em></li>
+          <li class="is-work" data-reveal><b class="mono">M6</b><strong data-en="Files & output">Файлы и вывод</strong><span data-en="Next: SVG / PSD import, GIF export">Дальше: импорт SVG / PSD, экспорт GIF</span><em data-en="In progress">В работе</em></li>
+          <li class="is-work" data-reveal><b class="mono">M7</b><strong data-en="Extensibility">Расширяемость</strong><span data-en="Add-on manager ready; next — Python add-ons, asset library">Менеджер аддонов готов; дальше — аддоны на Python, библиотека ассетов</span><em data-en="In progress">В работе</em></li>
+          <li class="is-plan" data-reveal><b class="mono">M8</b><strong data-en="Camera in 3D">Камера в 3D</strong><span data-en="Layer depth, perspective camera, parallax, glTF export">Глубина слоёв, перспективная камера, параллакс, экспорт glTF</span><em data-en="Planned">В планах</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Stack + CTA ===== -->
+    <section class="px-sec px-end">
+      <div class="wrap">
+        <div class="px-cta" data-reveal="scale">
+          <div class="px-cta__glow" aria-hidden="true"></div>
+          <img class="px-cta__icon" src="/assets/img/software/pix/icon-512.webp" alt="" width="120" height="120" loading="lazy">
+          <h2 class="px-h2" data-en="Pix is coming. <em>Follow along</em>.">Pix уже в пути. <em>Следи за ним</em>.</h2>
+          <p class="px-sub" data-en="It can't be downloaded yet — the program is in active development. News, builds and behind-the-scenes go to Telegram first. Support on Boosty speeds up the release.">Скачать пока нельзя — программа в активной разработке. Новости, сборки и закулисье сначала появляются в Telegram. Поддержка на Boosty приближает релиз.</p>
+          <div class="px-actions px-actions--center">
+            <a class="btn px-btn" href="https://t.me/Malik_anim" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m21 4-18 7.5 6.5 2L12 20l3-5 5 4z"/></svg><span data-en="Follow on Telegram">Следить в Telegram</span></a>
+            <a class="btn btn--ghost" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+          </div>
+          <ul class="px-stack mono">
+            <li>C++23</li><li>Direct3D 12</li><li>SDL3</li><li>Dear ImGui</li><li>FreeType</li><li>Clipper2</li><li>Lucide</li><li>.pix · JSON</li><li>MP4 · H.264</li>
+          </ul>
+        </div>
+        <div class="px-back"><a class="link-arrow" href="/software/"><span data-en="All software">Весь софт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- partial:footer -->
+  <section class="boosty" id="support" aria-label="Поддержка" data-en-label="Support">
+    <div class="wrap">
+      <div class="boosty__card">
+        <div class="boosty__glow" aria-hidden="true"></div>
+        <div class="boosty__text">
+          <span class="boosty__badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support">Поддержка</span></span>
+          <h2 class="boosty__title" data-en="Support my tools<br>on <span>Boosty</span>">Поддержи мои<br>инструменты на <span>Boosty</span></h2>
+          <p class="boosty__lead" data-en="Most of my plugins and apps are free. If one of them saved you time — support the work on new plugins, updates and Pix. Any amount helps.">Большинство моих плагинов и программ бесплатные. Если какой-то из них сэкономил тебе время — поддержи работу над новыми плагинами, обновлениями и Pix. Любая сумма помогает.</p>
+        </div>
+        <div class="boosty__cta">
+          <a class="btn boosty__btn" href="https://boosty.to/malikjan/donate" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+          <a class="link-arrow" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><span data-en="Open my Boosty page">Моя страница на Boosty</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="link-arrow" href="https://buymeacoffee.com/maxbobi" target="_blank" rel="noopener"><span>Buy me a coffee</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot" id="contact">
+    <div class="wrap">
+      <div class="site-foot__cta">
+        <div>
+          <div class="eyebrow"><span class="idx">✦</span><span class="bar"></span><span data-en="Contact">Контакт</span></div>
+          <h2 class="site-foot__title" data-en="Questions?<br><span class=&quot;grad-text&quot;>Write to me.</span>">Есть вопросы?<br><span class="grad-text">Напиши мне.</span></h2>
+          <p class="site-foot__lead" data-en="Questions about the plugins and apps or access to TVR CRM — message me on Telegram.">Вопросы по плагинам и программам или доступ к TVR CRM — пиши в Telegram.</p>
+          <a class="mail" href="https://t.me/Malik_anim" target="_blank" rel="noopener">t.me/Malik_anim<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@maxart8531" target="_blank" rel="noopener">YouTube<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://www.instagram.com/mr.myorser.art" target="_blank" rel="noopener">Instagram<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://www.artstation.com/maxbobi66" target="_blank" rel="noopener">ArtStation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://github.com/MalikMorser" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="site-foot__bar mono">
+        <span class="footer__brand"><img src="/assets/img/brand/mark-gradient.svg" alt="" width="34" height="18">© <span data-year>2026</span> Malik Boboev · Mr.Myorser</span>
+        <nav class="site-foot__nav">
+          <a href="/plugins/" data-en="Plugins">Плагины</a>
+          <a href="/software/" data-en="Software">Софт</a>
+          <a href="/games/" data-en="Games">Игры</a>
+        </nav>
+        <a class="totop" href="#top" data-top><span data-en="Back to top">Наверх</span> ↑</a>
+      </div>
+    </div>
+  </footer>
+  <!-- /partial:footer -->
+
+  <!-- partial:overlays -->
+  <div class="sheet" aria-hidden="true">
+    <div class="sheet__backdrop"></div>
+    <article class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" data-lenis-prevent>
+      <button class="sheet__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="sheet__content"></div>
+    </article>
+  </div>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" type="button" aria-label="Закрыть" data-en-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="lightbox__body"></div>
+    <div class="lightbox__cap mono"></div>
+  </div>
+  <!-- /partial:overlays -->
+
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/assets/js/details.js" defer></script>
+  <script src="/assets/js/pix.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
