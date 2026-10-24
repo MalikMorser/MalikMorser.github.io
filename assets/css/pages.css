@@ -69,6 +69,7 @@
 .pcard__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 10px; }
 .pcard__actions .btn { --h: 46px; padding: 0 18px; font-size: 12px; }
 .pcard__fine { color: var(--ink-3); font-size: 12.5px; margin: 0; }
+.pcard__fine a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .pcard--wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr 1fr; }
 .pcard--wide .pcard__cover { aspect-ratio: auto; min-height: 100%; }
 
