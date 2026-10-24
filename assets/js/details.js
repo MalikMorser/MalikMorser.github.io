@@ -116,6 +116,7 @@ window.DETAILS = {
 
   /* ======================= BLENDER ======================= */
   'mrm-metrics': {
+    dl: 'mrm-metrics-pro-',
     name: 'MRM Metrics Pro', version: '10.1', accent: '#ff9a3c', video: 'jzIKiHBdppc',
     image: '/assets/img/work/mrm-banner.webp',
     links: [
@@ -140,6 +141,7 @@ window.DETAILS = {
   },
 
   'piano-rig-pro': {
+    dl: 'piano-rig-pro-',
     name: 'Piano Rig Pro', version: '0.14', accent: '#ff9a3c', video: 'HVE_EVkQ3ec',
     image: '/assets/img/work/piano-banner.webp',
     links: [
@@ -168,6 +170,7 @@ window.DETAILS = {
   },
 
   'texture-scatter': {
+    dl: 'texture-scatter-',
     name: 'Texture Scatter', version: '0.1 α', accent: '#d6b46a',
     image: '/assets/img/work/scatter-leaf.webp',
     links: [{ href: DL + 'texture-scatter-0.1.0-alpha.1/texture_scatter-0.1.0-alpha.1.zip', icon: 'download', primary: true, ru: 'Скачать альфу · 62 KB', en: 'Download alpha · 62 KB' }],
@@ -193,6 +196,7 @@ window.DETAILS = {
   },
 
   'material-cleaner': {
+    dl: 'material-cleaner-',
     name: 'Material Cleaner', version: '1.0', accent: '#7ab8ff',
     links: [{ href: DL + 'material-cleaner-1.0.0/material_cleaner_1.0.0.zip', icon: 'download', primary: true, ru: 'Скачать бесплатно', en: 'Download free' }],
     ru: {
@@ -259,6 +263,7 @@ window.DETAILS = {
   },
 
   'playtime': {
+    dl: 'playtime-pro-',
     name: 'PlayTime Pro', version: '10.2', accent: '#5fb7ff',
     links: [{ href: DL + 'playtime-pro-10.2.0/PlayTime-Pro-10.2.0.exe', icon: 'download', primary: true, ru: 'Скачать · 99 MB', en: 'Download · 99 MB' }],
     ru: {
@@ -278,6 +283,7 @@ window.DETAILS = {
   },
 
   'niceshoots': {
+    dl: 'niceshoots-',
     name: 'NiceShoot', version: '1.0', accent: '#ff5d5d',
     links: [{ href: DL + 'niceshoots-1.0.0/NiceShoot.Setup.1.0.0.exe', icon: 'download', primary: true, ru: 'Скачать · 78 MB', en: 'Download · 78 MB' }],
     ru: {
@@ -297,6 +303,7 @@ window.DETAILS = {
   },
 
   'prisma': {
+    dl: 'prisma-demo-',
     name: 'Prisma', version: 'demo', accent: '#2fe0a6', keys: ['G', 'R', 'S'],
     image: '/assets/img/software/prisma-banner.webp',
     links: [{ href: DL + 'prisma-demo-0.1.0/Prisma-Setup-0.1.0-demo.exe', icon: 'download', primary: true, ru: 'Скачать демо · 75 MB', en: 'Download demo · 75 MB' }],

@@ -120,52 +120,76 @@
       </div>
     </section>
 
-    <!-- ============ Pix (flagship promo) ============ -->
-    <section class="section section--tight home-pix" id="pix">
-      <div class="wrap">
-        <article class="showcase" data-reveal="scale">
-          <div class="showcase__grid">
-            <div>
-              <div class="pcard__chips">
-                <span class="chip chip--dev"><i></i><span data-en="In development">В разработке</span></span>
-                <span class="chip chip--plain" data-en="My biggest project">Мой главный проект</span>
-              </div>
-              <h2 class="showcase__name">Pix<span>.</span></h2>
-              <p class="showcase__tag" data-en="2D animation software of a new generation.">2D-анимация нового поколения.</p>
-              <p class="showcase__text" data-en="Vector drawing, bones and rigging, timeline and graph editor — Moho-style rigging power with Blender-style speed. Written from scratch in C++, rendered on the GPU.">Векторное рисование, кости и риггинг, таймлайн и редактор графиков — мощь риггинга в духе Moho и скорость в духе Blender. Написана с нуля на C++, рисует на видеокарте.</p>
-              <div class="showcase__cta">
-                <a class="btn btn--primary btn--violet" href="/software/pix/" data-magnetic><span data-en="Discover Pix">Узнать о Pix</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-                <button class="btn btn--ghost" type="button" data-detail="pix"><span data-en="Details">Подробнее</span></button>
-              </div>
-            </div>
-            <div class="fstage" aria-label="Интерфейс Pix" data-en-label="Pix interface">
-              <div class="fstage__glow" aria-hidden="true"></div>
-              <figure class="fstage__main" data-zoom="/assets/img/software/pix/ui-clean.webp" data-caption="Pix" data-cursor="VIEW"><img src="/assets/img/software/pix/ui-clean.webp" alt="Pix: интерфейс программы" loading="lazy"></figure>
-              <figure class="fstage__tile fstage__tile--timeline" data-zoom="/assets/img/software/pix/panel-timeline.webp" data-caption="Pix — таймлайн и графики" data-cursor="VIEW"><img src="/assets/img/software/pix/panel-timeline.webp" alt="" loading="lazy"><figcaption class="mono" data-en="Timeline · graph editor">Таймлайн · графики</figcaption></figure>
-              <figure class="fstage__tile fstage__tile--bones" data-zoom="/assets/img/software/pix/panel-bones.webp" data-caption="Pix — кости и риггинг" data-cursor="VIEW"><img src="/assets/img/software/pix/panel-bones.webp" alt="" loading="lazy"><figcaption class="mono" data-en="Bones · rigging">Кости · риггинг</figcaption></figure>
-            </div>
-          </div>
-        </article>
+    <!-- ============ NEWS ticker ============ -->
+    <div class="ticker" aria-label="Новости" data-en-label="News">
+      <div class="ticker__track">
+        <div class="ticker__row"><a class="ticker__item" href="/software/pix/"><b class="mono" data-en="New">Новое</b><span data-en="Pix — a new 2D animation app">Pix — новая программа для 2D-анимации</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/software/cubi/"><b class="mono" data-en="New · free">Новинка</b><span data-en="CUBI — an island launcher for Windows 11">CUBI — лаунчер-остров для Windows 11</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/plugins/#moho-bundle"><b class="mono" data-en="Deal">Скидка</b><span data-en="Pose Library + Rig Controllers — $19 instead of $25">Pose Library + Rig Controllers — $19 вместо $25</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/plugins/"><b class="mono" data-en="Moho">Moho</b><span data-en="TGS Exporter — Telegram stickers right from Moho">TGS Exporter — стикеры Telegram прямо из Moho</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/plugins/"><b class="mono" data-en="Free">Бесплатно</b><span data-en="Show All Layers — every Moho layer in one click">Show All Layers — все слои Moho в один клик</span><i aria-hidden="true">✦</i></a></div>
+        <div class="ticker__row" aria-hidden="true"><a class="ticker__item" href="/software/pix/" tabindex="-1"><b class="mono" data-en="New">Новое</b><span data-en="Pix — a new 2D animation app">Pix — новая программа для 2D-анимации</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/software/cubi/" tabindex="-1"><b class="mono" data-en="New · free">Новинка</b><span data-en="CUBI — an island launcher for Windows 11">CUBI — лаунчер-остров для Windows 11</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/plugins/#moho-bundle" tabindex="-1"><b class="mono" data-en="Deal">Скидка</b><span data-en="Pose Library + Rig Controllers — $19 instead of $25">Pose Library + Rig Controllers — $19 вместо $25</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/plugins/" tabindex="-1"><b class="mono" data-en="Moho">Moho</b><span data-en="TGS Exporter — Telegram stickers right from Moho">TGS Exporter — стикеры Telegram прямо из Moho</span><i aria-hidden="true">✦</i></a><a class="ticker__item" href="/plugins/" tabindex="-1"><b class="mono" data-en="Free">Бесплатно</b><span data-en="Show All Layers — every Moho layer in one click">Show All Layers — все слои Moho в один клик</span><i aria-hidden="true">✦</i></a></div>
       </div>
-    </section>
+    </div>
 
-    <!-- ============ NEW: CUBI ============ -->
-    <section class="section section--tight" id="cubi">
+    <!-- ============ NEW: Pix, CUBI, Moho bundle ============ -->
+    <section class="section section--tight home-new" id="new">
       <div class="wrap">
-        <article class="newband" data-reveal="scale">
-          <div class="newband__glow" aria-hidden="true"></div>
-          <div class="newband__copy">
-            <span class="newband__chip mono"><i></i><span data-en="New · free">Новинка · бесплатно</span></span>
-            <h2 class="newband__name"><img src="/assets/img/software/cubi/cubi-icon.svg" alt="" width="64" height="64" loading="lazy">CUBI</h2>
-            <p class="newband__tag" data-en="All your apps — in <em>one</em> island.">Все программы — в <em>одном</em> острове.</p>
-            <p class="newband__text" data-en="A pocket launcher for Windows 11: hover the little island at the edge of the screen and it opens with your apps and games. Liquid glass, skins and animations with character.">Карманный лаунчер для Windows 11: наведи на маленький остров у края экрана — и он раскроется с твоими программами и играми. Жидкое стекло, скины и анимации с характером.</p>
-            <div class="newband__cta">
-              <a class="btn newband__btn" href="/software/cubi/" data-magnetic><span data-en="Discover CUBI">Узнать о CUBI</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              <a class="btn btn--ghost" href="https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download · 74 MB">Скачать · 74 МБ</span></a>
-            </div>
+        <div class="section__head">
+          <div>
+            <div class="eyebrow" data-reveal><span class="idx">✦</span><span class="bar"></span><span data-en="What's new">Новое</span></div>
+            <h2 class="h-lg" data-reveal data-en="Fresh projects &amp; news.">Свежие проекты и новости.</h2>
           </div>
-          <a class="newband__art" href="/software/cubi/" data-cursor="OPEN" aria-label="CUBI"><img src="/assets/img/software/cubi/poster.webp" alt="CUBI — лаунчер для Windows 11" loading="lazy"></a>
-        </article>
+        </div>
+
+        <div class="news">
+          <!-- Pix -->
+          <article class="news__tile news__tile--pix" id="pix" data-reveal="scale">
+            <div class="news__glow" aria-hidden="true"></div>
+            <div class="news__copy">
+              <div class="news__chips">
+                <span class="news__chip mono"><i></i><span data-en="In development">В разработке</span></span>
+                <span class="news__chip news__chip--ghost mono" data-en="My biggest project">Мой главный проект</span>
+              </div>
+              <h3 class="news__name news__name--xl"><img src="/assets/img/software/pix/icon-512.webp" alt="" width="96" height="96" loading="lazy">Pix</h3>
+              <p class="news__tag" data-en="Rigging like <em>Moho</em>. Speed like <em>Blender</em>.">Риггинг как в <em>Moho</em>. Скорость как в <em>Blender</em>.</p>
+              <p class="news__text" data-en="My own open-source 2D animation app: vector drawing, bones and smart bones, liquid shapes, timeline, Dope Sheet and Graph Editor. Written from scratch in C++ and drawn on the GPU.">Моя программа для 2D-анимации с открытым кодом: векторное рисование, кости и smart bones, жидкие фигуры, таймлайн, Dope Sheet и редактор графиков. Написана с нуля на C++ и рисует на видеокарте.</p>
+              <div class="news__cta">
+                <a class="btn btn--primary btn--violet" href="/software/pix/" data-magnetic><span data-en="Discover Pix">Узнать о Pix</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--ghost" href="https://t.me/+v9CN3awe4Dc0NzIy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m21 4-18 7.5 6.5 2L12 20l3-5 5 4z"/></svg><span data-en="Follow on Telegram">Следить в Telegram</span></a>
+              </div>
+            </div>
+            <a class="news__shot" href="/software/pix/" data-cursor="OPEN" aria-label="Pix"><img src="/assets/img/software/pix/welcome.webp" alt="Pix: экран приветствия" loading="lazy"></a>
+          </article>
+
+          <!-- CUBI -->
+          <article class="news__tile news__tile--cubi" id="cubi" data-reveal="scale" style="--d:120">
+            <div class="news__glow" aria-hidden="true"></div>
+            <div class="news__copy">
+              <div class="news__chips"><span class="news__chip mono"><i></i><span data-en="New · free">Новинка · бесплатно</span></span></div>
+              <h3 class="news__name"><img src="/assets/img/software/cubi/cubi-icon.svg" alt="" width="64" height="64" loading="lazy">CUBI</h3>
+              <p class="news__tag" data-en="All your apps — in <em>one</em> island.">Все программы — в <em>одном</em> острове.</p>
+              <p class="news__text" data-en="A pocket launcher for Windows 11: liquid glass, skins and animations with character.">Карманный лаунчер для Windows 11: жидкое стекло, скины и анимации с характером.</p>
+              <div class="news__cta">
+                <a class="btn news__btn news__btn--lime" href="/software/cubi/" data-magnetic><span data-en="Discover CUBI">Узнать о CUBI</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--ghost" href="https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="74 MB">74 МБ</span></a>
+              </div>
+              <p class="dlcount" data-dl-count="cubi-" hidden></p>
+            </div>
+            <a class="news__art" href="/software/cubi/" data-cursor="OPEN" aria-label="CUBI"><img src="/assets/img/software/cubi/poster.webp" alt="" loading="lazy"></a>
+          </article>
+
+          <!-- Moho bundle deal -->
+          <article class="news__tile news__tile--deal" data-reveal="scale" style="--d:240">
+            <div class="news__glow" aria-hidden="true"></div>
+            <div class="news__copy">
+              <div class="news__chips"><span class="news__chip mono"><i></i><span data-en="Deal · Moho">Скидка · Moho</span></span></div>
+              <h3 class="news__name news__name--deal"><span data-en="2 plugins">2 плагина</span> <span class="news__price"><s>$25</s><b>$19</b></span></h3>
+              <p class="news__text" data-en="Pose Library 3.0 + Rig Controllers 2.0 in one purchase: joysticks drive the face, the library keeps the poses. RU and EN editions inside.">Pose Library 3.0 + Rig Controllers 2.0 одной покупкой: джойстики управляют лицом, библиотека хранит позы. Внутри RU и EN версии.</p>
+              <div class="news__cta">
+                <a class="btn news__btn news__btn--warn" href="https://boosty.to/malikjan/posts/e7882a09-32d4-4024-b8e4-2e66bbfc6201" target="_blank" rel="noopener" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span data-en="Buy the bundle · $19">Купить комплект · $19</span></a>
+                <a class="btn btn--ghost" href="/plugins/#moho-bundle"><span data-en="Details">Подробнее</span></a>
+              </div>
+            </div>
+            <a class="news__art news__art--deal" href="/plugins/#moho-bundle" data-cursor="OPEN" aria-label="Комплект для Moho" data-en-label="Moho bundle"><img src="/assets/img/work/moho-bundle.webp" alt="" loading="lazy"><span class="news__off mono">−24%</span></a>
+          </article>
+        </div>
       </div>
     </section>
 

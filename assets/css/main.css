@@ -1112,3 +1112,12 @@ button.tool { text-align: left; width: 100%; font: inherit; color: inherit; curs
 @media (max-width: 860px) {
   .site-foot__cta { grid-template-columns: 1fr; }
 }
+
+/* ---------- Live download counter ---------- */
+.dlcount { display: inline-flex; align-items: center; gap: 8px; margin: 0; font-size: 13px; color: var(--ink-2); }
+.dlcount[hidden] { display: none; }
+.dlcount i { width: 7px; height: 7px; border-radius: 50%; background: var(--c, var(--accent)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c, var(--accent)) 18%, transparent); animation: dl-pulse 2.2s ease-in-out infinite; }
+.dlcount b { color: var(--ink); font-weight: 800; font-variant-numeric: tabular-nums; }
+@keyframes dl-pulse { 50% { box-shadow: 0 0 0 7px transparent; } }
+.dt .dlcount { margin-top: 14px; }
+@media (prefers-reduced-motion: reduce) { .dlcount i { animation: none; } }

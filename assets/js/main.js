@@ -28,6 +28,7 @@
     splitManifesto();
     updateManifesto();
     refreshSheet();
+    renderDl();
   }
   $$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
 
@@ -297,6 +298,42 @@
     }
   });
 
+  /* ---------- Live download counters: GitHub release download counts ---------- */
+  // <p class="dlcount" data-dl-count="lumelo-" hidden></p> shows the downloads of every release
+  // whose tag starts with that prefix. One request per visit, cached for 5 minutes.
+
+  let dlData = null;
+  let dlWait = null;
+  function dlLoad() {
+    if (!dlWait) {
+      dlWait = (async () => {
+        try { const c = JSON.parse(store.sget('dl-counts') || 'null'); if (c && Date.now() - c.t < 5 * 60e3) return c.r; } catch (e) { /* bad cache */ }
+        const r = await fetch('https://api.github.com/repos/MalikMorser/downloads/releases?per_page=100', { headers: { Accept: 'application/vnd.github+json' } });
+        if (!r.ok) throw new Error(r.status);
+        const rel = (await r.json()).map((x) => [x.tag_name, x.assets.reduce((n, a) => n + a.download_count, 0)]);
+        store.sset('dl-counts', JSON.stringify({ t: Date.now(), r: rel }));
+        return rel;
+      })().then((r) => { dlData = r; return r; });
+    }
+    return dlWait;
+  }
+  function dlWord(n, lang) {
+    if (lang === 'en') return n === 1 ? 'download' : 'downloads';
+    const a = n % 10, b = n % 100;
+    return a === 1 && b !== 11 ? 'скачивание' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'скачивания' : 'скачиваний';
+  }
+  function renderDl(root = document) {
+    if (!dlData) return;
+    const lang = doc.lang === 'en' ? 'en' : 'ru';
+    $$('[data-dl-count]', root).forEach((el) => {
+      const n = dlData.filter(([t]) => t.startsWith(el.dataset.dlCount)).reduce((s, [, c]) => s + c, 0);
+      if (!n) return;
+      el.innerHTML = `<i aria-hidden="true"></i><b>${n.toLocaleString('ru-RU')}</b> ${dlWord(n, lang)}`;
+      el.hidden = false;
+    });
+  }
+  if ($('[data-dl-count]')) dlLoad().then(() => renderDl()).catch(() => {});
+
   /* ---------- Detail sheet (cards grow into a full panel) ---------- */
 
   const sheet = $('.sheet');
@@ -347,7 +384,7 @@
     // Optional per-product extras: a disabled "not yet" button, a fine-print note and the archive checksum.
     const soon = t.soon ? `<span class="btn btn--disabled" aria-disabled="true">${esc(t.soon)}</span>` : '';
     const notes = [];
-    if (d.pro) notes.push(lang === 'en' ? 'Paid · write to me on Telegram, I send the plugin after payment' : 'Платно · напиши мне в Telegram, пришлю плагин после оплаты');
+    if (d.pro) notes.push(lang === 'en' ? 'Paid · pay on Boosty, the archive opens right after purchase' : 'Платно · оплата на Boosty, архив откроется сразу после покупки');
     if (t.note) notes.push(t.note);
     if (d.sha) notes.push('SHA-256 ' + d.sha);
     const note = notes.map((n) => `<p class="dt__note mono">${esc(n)}</p>`).join('');
@@ -361,9 +398,10 @@
           <p class="dt__short">${esc(t.short)}</p>
           <div class="dt__desc">${t.desc.map((p) => `<p>${esc(p)}</p>`).join('')}</div>
           ${meta}${feats}${steps}
-          <div class="dt__actions">${soon}${actions}</div>${note}
+          <div class="dt__actions">${soon}${actions}</div>${d.dl ? `<p class="dlcount" data-dl-count="${esc(d.dl)}" hidden></p>` : ''}${note}
         </div>
       </div>`;
+    if (d.dl) dlLoad().then(() => renderDl(sheetBody)).catch(() => {});
   }
   function refreshSheet() { if (sheetId) renderSheet(); }
 
