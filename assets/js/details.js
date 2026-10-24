@@ -239,7 +239,7 @@ window.DETAILS = {
     name: 'Pix', version: '0.1', accent: '#8f7bff',
     image: '/assets/img/software/pix/ui-clean.webp',
     gallery: ['/assets/img/software/pix/panel-timeline.webp', '/assets/img/software/pix/panel-bones.webp', '/assets/img/software/pix/panel-props.webp'],
-    links: [{ href: '/software/pix/', icon: 'site', primary: true, ru: 'Страница Pix', en: 'Pix page' }, { href: 'https://t.me/Malik_anim', icon: 'tg', ru: 'Следить в Telegram', en: 'Follow on Telegram' }],
+    links: [{ href: '/software/pix/', icon: 'site', primary: true, ru: 'Страница Pix', en: 'Pix page' }, { href: 'https://t.me/+v9CN3awe4Dc0NzIy', icon: 'tg', ru: 'Следить в Telegram', en: 'Follow on Telegram' }],
     ru: {
       kind: 'Программа · Windows', status: 'В разработке', soon: 'Релиз — позже',
       short: '2D-анимация нового поколения.',
