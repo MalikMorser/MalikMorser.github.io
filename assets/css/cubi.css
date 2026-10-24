@@ -280,3 +280,13 @@ body.cubi em { font-style: normal; color: var(--lime); }
 @media (prefers-reduced-motion: reduce) {
   .cb-reel__track, .cb-type, .cb-get__icon, .cb-play, .cb-dot { animation: none; }
 }
+
+/* ---------- Live download counter ---------- */
+.cb-dl { display: inline-flex; align-items: center; gap: 10px; margin: 26px 0 0; padding: 10px 16px 10px 14px; border-radius: 99px; background: var(--lime-a12); border: 1px solid var(--lime-a30); color: var(--ink-2); font-size: 14px; }
+.cb-dl[hidden] { display: none; }
+.cb-dl b { font-size: 18px; font-weight: 800; color: var(--lime); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.cb-dl__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 4px var(--lime-a12); animation: cb-pulse 2s ease-in-out infinite; }
+.cb-dl__live { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); padding-left: 10px; margin-left: 2px; border-left: 1px solid var(--line-2); }
+.cb-spec div[hidden] { display: none; }
+.cb-spec [data-dl] dd { color: var(--lime); font-variant-numeric: tabular-nums; }
+@media (max-width: 480px) { .cb-dl__live { display: none; } }

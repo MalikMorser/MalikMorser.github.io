@@ -252,6 +252,49 @@
   }), { threshold: 0.6 });
   $$('[data-num]').forEach((el) => nio.observe(el));
 
+  /* ---------- Live download counter: GitHub release download counts of every CUBI version ---------- */
+  const dlEls = $$('[data-dl]');
+  if (dlEls.length) {
+    const API = 'https://api.github.com/repos/MalikMorser/downloads/releases?per_page=100';
+    const KEY = 'cubi-downloads';
+    const plural = (n) => {
+      const a = n % 10, b = n % 100;
+      const ru = a === 1 && b !== 11 ? 'скачивание' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'скачивания' : 'скачиваний';
+      return { ru, en: n === 1 ? 'download' : 'downloads' };
+    };
+    const show = (total) => {
+      const w = plural(total);
+      $$('[data-dl-word]').forEach((el) => { el.dataset.ru = w.ru; el.dataset.en = w.en; el.innerHTML = document.documentElement.lang === 'en' ? w.en : w.ru; });
+      dlEls.forEach((el) => { el.hidden = false; });
+      $$('[data-dl-num]').forEach((el) => {
+        if (reduced) { el.textContent = total.toLocaleString('ru-RU'); return; }
+        const t0 = performance.now(), dur = 1400;
+        const step = (t) => {
+          const k = Math.min(1, (t - t0) / dur), v = Math.round(total * (1 - Math.pow(1 - k, 3)));
+          el.textContent = v.toLocaleString('ru-RU');
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    };
+    const load = async () => {
+      try {
+        const c = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+        if (c && Date.now() - c.t < 5 * 60e3) return c.n;
+      } catch (e) { /* storage blocked */ }
+      const r = await fetch(API, { headers: { Accept: 'application/vnd.github+json' } });
+      if (!r.ok) throw new Error(r.status);
+      const n = (await r.json())
+        .filter((rel) => /^cubi-/.test(rel.tag_name))
+        .reduce((sum, rel) => sum + rel.assets.filter((a) => /\.exe$/i.test(a.name)).reduce((s2, a) => s2 + a.download_count, 0), 0);
+      try { sessionStorage.setItem(KEY, JSON.stringify({ t: Date.now(), n })); } catch (e) { /* storage blocked */ }
+      return n;
+    };
+    // main.js (loaded after this file) captures the RU text of [data-en] elements, so update the label only after it ran.
+    const start = () => load().then((n) => { if (n > 0) show(n); }).catch(() => {});
+    if (document.readyState === 'loading') addEventListener('DOMContentLoaded', () => setTimeout(start, 0)); else setTimeout(start, 0);
+  }
+
   /* ---------- Film: load YouTube only on click ---------- */
   $$('[data-yt]').forEach((b) => b.addEventListener('click', () => {
     const f = document.createElement('iframe');
