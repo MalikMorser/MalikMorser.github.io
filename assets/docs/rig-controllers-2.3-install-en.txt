@@ -1,0 +1,85 @@
+Rig Controllers 2.3.0 — installation
+Moho Pro 14.4, Windows
+==================================================
+
+WHAT IS IN THE ARCHIVE
+
+  scripts\tool\mk_rig_controllers.lua            the tool itself (one file)
+  scripts\tool\mk_rig_controllers*.png           the tool icon
+  scripts\ScriptResources\MK_RigControllers\icons\  icons of the bar buttons
+  README_EN.md, README_RU.md                     description and guide
+  docs\img\                                      pictures for the guide
+  INSTALL_EN.txt, INSTALL_RU.txt                 this instruction
+
+
+FRESH INSTALLATION
+
+  1. Save your work and close Moho.
+  2. Open the Moho custom content folder.
+     In Moho: Help → Open Custom Content Folder.
+     If no folder is set yet: Help → Set Custom Content Folder.
+  3. Copy the scripts folder from the archive into the custom content folder.
+     It may already contain a Scripts folder. Agree to merge the folders.
+  4. Start Moho.
+  5. Select a bone layer. A joystick icon appears in the Tools panel,
+     group Other. That is Rig Controllers.
+
+  To check: Rig → Settings and help… shows “Rig Controllers 2.3.0” at the bottom.
+
+
+UPDATING FROM 2.0, 2.1 OR 2.2
+
+  1. Save your work and close Moho.
+  2. Copy the old files to any place OUTSIDE the Scripts folder:
+       Scripts\Tool\mk_rig_controllers.lua
+       Scripts\ScriptResources\MK_RigControllers\
+     Do not keep the copy inside Scripts: Moho would load it as a second tool.
+  3. Copy the scripts folder from the archive, replacing the files.
+  4. After version 2.2 only: delete three files that are no longer used.
+       Scripts\ScriptResources\MK_RigControllers\mk_rig_workspace.lua
+       Scripts\ScriptResources\MK_RigControllers\mk_rig_corrections.lua
+       Scripts\ScriptResources\MK_RigControllers\mk_rig_en.lua
+     Leaving them in place breaks nothing.
+  5. Start Moho.
+
+  Old documents open without any conversion.
+  A document from version 2.0: Rig → Upgrade legacy controllers (2.0).
+  Save a copy of an important project before you continue working on it.
+
+
+INTERFACE LANGUAGE
+
+  Rig → Settings and help… → Interface language.
+  “Same as Moho” follows the language of the application. After a change,
+  pick another tool and come back to Rig Controllers.
+
+
+REMOVAL
+
+  Close Moho and delete:
+    Scripts\Tool\mk_rig_controllers.lua and the three mk_rig_controllers*.png files
+    Scripts\ScriptResources\MK_RigControllers\
+  Documents with controllers keep playing and rendering.
+
+
+TROUBLESHOOTING
+
+  The tool icon is missing.
+    Select a bone layer or a layer inside one. The tool is shown only there.
+    Check that the file is in Scripts\Tool of the custom content folder.
+
+  The bar shows text buttons instead of icons.
+    The icons folder was not found. Copy the ScriptResources folder from the archive again.
+    The tool works with text buttons too.
+
+  The bar does not fit the window.
+    Make the Moho window wider. Every command is also in the Poses, Group and Rig menus.
+
+  There are two Rig Controllers in the tool list.
+    A copy of the old file is still inside Scripts. Move it out of Scripts.
+
+  The helper bones are not visible.
+    That is intended. To see them: Rig → Show helper bones.
+
+
+Website: https://myorser.com/      Boosty: https://boosty.to/malikjan

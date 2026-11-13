@@ -376,7 +376,10 @@
     const meta = `<dl class="dt__meta">${t.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>`;
     const feats = `<h3 class="dt__h">${lang === 'en' ? 'Features' : 'Возможности'}</h3><ul class="dt__features">${t.features.map(([b, s]) => `<li><b>${esc(b)}</b>${esc(s)}</li>`).join('')}</ul>`;
     // Optional extra sections: [title, items, ordered?] — e.g. release notes and update steps.
-    const blocks = (t.blocks || []).map(([title, items, ordered]) => `<h3 class="dt__h">${esc(title)}</h3><${ordered ? 'ol class="dt__steps"' : 'ul class="dt__news"'}>${items.map((i) => `<li>${esc(i)}</li>`).join('')}</${ordered ? 'ol' : 'ul'}>`).join('');
+    const blocks = (t.blocks || []).map(([title, items, kind]) => {
+      if (kind === 'shots') return `<h3 class="dt__h">${esc(title)}</h3><div class="dt__shots">${items.map(([src, cap]) => `<figure><button type="button" data-zoom="${src}" data-caption="${esc(cap)}" data-cursor="VIEW"><img src="${src}" alt="${esc(cap)}" loading="lazy"></button><figcaption>${esc(cap)}</figcaption></figure>`).join('')}</div>`;
+      return `<h3 class="dt__h">${esc(title)}</h3><${kind ? 'ol class="dt__steps"' : 'ul class="dt__news"'}>${items.map((i) => `<li>${esc(i)}</li>`).join('')}</${kind ? 'ol' : 'ul'}>`;
+    }).join('');
     const steps = t.steps ? `<h3 class="dt__h">${esc(t.stepsTitle)}</h3><ol class="dt__steps">${t.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>` : '';
     const actions = (d.links || []).map((l) => {
       const ext = /^https?:/.test(l.href) && l.icon !== 'download' ? ' target="_blank" rel="noopener"' : '';

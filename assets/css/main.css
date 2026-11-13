@@ -1124,3 +1124,10 @@ button.tool { text-align: left; width: 100%; font: inherit; color: inherit; curs
 .dt__news { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .dt__news li { position: relative; padding: 12px 14px 12px 38px; border-radius: 12px; background: color-mix(in srgb, var(--c) 6%, transparent); border: 1px solid color-mix(in srgb, var(--c) 18%, transparent); font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
 .dt__news li::before { content: "✦"; position: absolute; left: 14px; top: 12px; color: var(--c); font-size: 12px; }
+.dt__shots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dt__shots figure { margin: 0; border-radius: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.025); border: 1px solid var(--line); }
+.dt__shots figure:first-child { grid-column: 1 / -1; }
+.dt__shots button { display: block; width: 100%; padding: 0; border: 0; background: #efeee6; cursor: zoom-in; aspect-ratio: 16 / 9; }
+.dt__shots img { width: 100%; height: 100%; object-fit: contain; }
+.dt__shots figcaption { padding: 9px 12px 11px; font-size: 12.5px; color: var(--ink-2); line-height: 1.4; }
+@media (max-width: 560px) { .dt__shots { grid-template-columns: 1fr; } }
