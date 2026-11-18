@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>CUBI — лаунчер-остров для Windows 11 · Mr.Myorser</title>
-  <meta name="description" content="CUBI — карманный лаунчер для Windows 11. Маленький остров у края экрана: наведи курсор — он раскрывается и показывает твои программы и игры. Жидкое стекло, скины, анимации с характером, игровой режим. Бесплатно.">
+  <title>CUBI 2 — остров у края экрана для Windows 11 · Mr.Myorser</title>
+  <meta name="description" content="CUBI 2 — бесплатный остров у верхнего края экрана Windows 11: карман для программ и игр, быстрые настройки, стекло, помощник Куби, снимки и запись экрана, заметки, календарь, часы, калькулятор, музыка и монитор в пилюле. Написан заново на C++.">
   <meta name="theme-color" content="#111315">
-  <meta property="og:title" content="CUBI — все программы в одном острове">
-  <meta property="og:description" content="Карманный лаунчер для Windows 11: жидкое стекло, скины, анимации с характером и игровой режим. Бесплатно.">
-  <meta property="og:image" content="https://myorser.com/assets/img/software/cubi/og.jpg">
+  <meta property="og:title" content="CUBI 2 — всё под рукой, в одном острове">
+  <meta property="og:description" content="Бесплатный остров для Windows 11: карман для программ, быстрые настройки, помощник Куби, снимки и запись экрана, органайзер и музыка. Обновляется сам.">
+  <meta property="og:image" content="https://myorser.com/assets/img/software/cubi/v2/og.jpg">
   <meta property="og:url" content="https://myorser.com/software/cubi/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://myorser.com/software/cubi/">
@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/assets/css/pages.css">
   <link rel="stylesheet" href="/assets/css/cubi.css">
   <script>document.documentElement.classList.add('js');</script>
+  <!-- cubi:ld --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CUBI", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows 11 (x64)", "softwareVersion": "2.0.0", "datePublished": "2026-11-18", "fileSize": "6778289 B", "downloadUrl": "https://github.com/MalikMorser/downloads/releases/download/cubi-2.0.0/CUBI-Setup-2.0.0.exe", "url": "https://myorser.com/software/cubi/", "image": "https://myorser.com/assets/img/software/cubi/v2/og.jpg", "author": {"@type": "Person", "name": "Malik Boboev", "url": "https://myorser.com/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><!-- /cubi:ld -->
 </head>
 <body data-page="software" class="cubi">
 
@@ -71,198 +72,305 @@
     <!-- ===== Hero ===== -->
     <section class="cb-hero">
       <div class="cb-hero__glow" aria-hidden="true"></div>
-      <div class="wrap cb-hero__grid">
-        <div class="cb-hero__copy">
-          <p class="cb-kicker" data-hero style="--d:0"><span class="cb-dot"></span><span data-en="New · for Windows 11">Новинка · для Windows 11</span></p>
-          <h1 class="cb-title" data-hero style="--d:120"><img src="/assets/img/software/cubi/cubi-icon.svg" alt="" width="88" height="88">CUBI</h1>
-          <p class="cb-tagline" data-hero style="--d:240" data-en="All your apps — in <em>one</em> island.">Все программы — в <em>одном</em> острове.</p>
-          <p class="cb-lead" data-hero style="--d:360" data-en="A pocket launcher for Windows 11. A little island lives at the edge of the screen: hover it and it smoothly opens with your apps and games. Move the cursor away — it folds back and stays out of the way.">Карманный лаунчер для Windows 11. У края экрана живёт маленький остров: наведи курсор — он плавно раскрывается и показывает твои программы и игры. Убрал курсор — снова свернулся и не мешает.</p>
-          <div class="cb-actions" data-hero style="--d:480">
-            <a class="btn cb-btn" href="https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe" data-magnetic>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>
-              <span data-en="Download for Windows 11">Скачать для Windows 11</span>
-            </a>
-            <a class="btn btn--ghost" href="#video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span data-en="Watch the film">Смотреть ролик</span></a>
-          </div>
-          <p class="cb-dl" data-dl data-hero style="--d:540" hidden><span class="cb-dl__dot" aria-hidden="true"></span><b data-dl-num>0</b> <span data-dl-word data-en="downloads">скачиваний</span><span class="cb-dl__live mono" data-en="live from GitHub">в реальном времени</span></p>
-          <p class="cb-meta mono" data-hero style="--d:600"><span data-en="Free">Бесплатно</span> · v1.0.0 · 74 <span data-en="MB">МБ</span> · <span data-en="no admin rights">без прав администратора</span></p>
+      <div class="wrap cb-hero__in">
+        <p class="cb-kicker" data-hero style="--d:0"><span class="cb-dot"></span><span data-en="New · CUBI 2 · Windows 11">Новинка · CUBI 2 · Windows 11</span></p>
+        <h1 class="cb-title" data-hero style="--d:120"><img src="/assets/img/software/cubi/cubi-icon.svg" alt="" width="88" height="88">CUBI<span class="cb-title__v">2</span></h1>
+        <p class="cb-tagline" data-hero style="--d:240" data-en="Everything at hand — in <em>one</em> island.">Всё под рукой — в <em>одном</em> острове.</p>
+        <p class="cb-lead" data-hero style="--d:360" data-en="A small island at the top edge of the screen. Hover it and it opens: your apps and games, quick settings, music, notes and Cubi, a little robot assistant. Written again from scratch in C++ — light and instant.">Маленький остров у верхнего края экрана. Наведи курсор — он раскрывается: твои программы и игры, быстрые настройки, музыка, заметки и Куби — маленький робот-помощник. Написан заново на C++: лёгкий и мгновенный.</p>
+        <div class="cb-actions cb-actions--center" data-hero style="--d:480">
+          <!-- cubi:hero-dl --><a class="btn cb-btn" href="https://github.com/MalikMorser/downloads/releases/download/cubi-2.0.0/CUBI-Setup-2.0.0.exe" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download for Windows 11">Скачать для Windows 11</span></a><!-- /cubi:hero-dl -->
+          <a class="btn btn--ghost" href="/software/cubi/versions/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-en="All versions">Все версии</span></a>
         </div>
+        <p class="cb-meta mono" data-hero style="--d:560"><!-- cubi:hero-meta --><span data-en="Free">Бесплатно</span> · v2.0.0 · <span data-en="6.5 MB">6,5 МБ</span> · Windows 11<!-- /cubi:hero-meta --> · <span data-en="no admin rights">без прав администратора</span></p>
+        <p class="cb-dl" data-dl data-hero style="--d:600" hidden><span class="cb-dl__dot" aria-hidden="true"></span><b data-dl-num>0</b> <span data-dl-word data-en="downloads">скачиваний</span><span class="cb-dl__live mono" data-en="live from GitHub">в реальном времени</span></p>
 
-        <div class="cb-hero__stage" data-hero style="--d:300">
-          <div class="cb-screen" data-demo>
-            <div class="cb-wall" aria-hidden="true"><i></i><i></i></div>
-            <div class="cb-island" data-island data-skin="dark" data-style="gradient"></div>
-            <div class="cb-win" aria-hidden="true">
-              <div class="cb-win__bar"><span>Музыка</span><b></b><b></b><b></b></div>
-              <div class="cb-win__body">
-                <div class="cb-win__art"></div>
-                <div class="cb-win__list"><strong>Midnight Drive</strong><small>Neon Waves · 2026</small><i></i><i></i><i></i><i></i></div>
-              </div>
-              <div class="cb-win__prog"><i></i></div>
-            </div>
-            <div class="cb-group-tag mono" aria-hidden="true"></div>
-            <div class="cb-taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <svg class="cb-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6.2 1.6L10 19z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
-            <p class="cb-hint mono" aria-hidden="true" data-en="hover the island">наведи на остров</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Film ===== -->
-    <section class="cb-sec cb-film" id="video">
-      <div class="wrap">
-        <div class="cb-head" data-reveal>
-          <p class="cb-eyebrow mono" data-en="Film · 48 seconds">Ролик · 48 секунд</p>
-          <h2 class="cb-h2" data-en="See it <em>live</em>.">Посмотри <em>вживую</em>.</h2>
-        </div>
-        <div class="cb-player" data-reveal="scale">
-          <button class="cb-player__poster" type="button" data-yt="lxHR4iR8bY4" aria-label="Смотреть ролик CUBI" data-en-label="Watch the CUBI film">
-            <img src="/assets/img/software/cubi/poster.webp" alt="" loading="lazy" decoding="async">
-            <span class="cb-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <figure class="cb-stage" data-hero style="--d:420">
+          <button type="button" data-zoom="/assets/img/software/cubi/v2/hero.webp" data-caption="CUBI 2: панель управления" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture">
+            <img src="/assets/img/software/cubi/v2/hero.webp" srcset="/assets/img/software/cubi/v2/hero-sm.webp 700w, /assets/img/software/cubi/v2/hero.webp 1400w" sizes="(max-width: 1000px) 100vw, 980px" width="1400" height="728" alt="Открытый остров CUBI: музыка, Wi-Fi, Bluetooth, громкость и ряд инструментов" fetchpriority="high" decoding="async">
           </button>
-        </div>
-        <p class="cb-film__alt"><a class="link-arrow" href="https://youtu.be/lxHR4iR8bY4" target="_blank" rel="noopener"><span data-en="Open on YouTube">Открыть на YouTube</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
+        </figure>
       </div>
     </section>
 
-    <!-- ===== How it works ===== -->
-    <section class="cb-sec">
+    <!-- ===== What is new ===== -->
+    <section class="cb-sec cb-sec--tight" aria-label="Что нового в CUBI 2" data-en-label="What is new in CUBI 2">
       <div class="wrap">
-        <div class="cb-head" data-reveal>
-          <p class="cb-eyebrow mono" data-en="How it works">Как это работает</p>
-          <h2 class="cb-h2" data-en="Three moves. <em>That's it</em>.">Три движения. <em>И всё</em>.</h2>
-        </div>
-        <div class="cb-steps">
-          <figure class="cb-step" data-reveal>
-            <button type="button" class="cb-step__img" data-zoom="/assets/img/software/cubi/step-hover.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/step-hover.webp" alt="" loading="lazy" decoding="async"></button>
-            <figcaption><b class="mono">01</b><strong data-en="Hover">Наведи</strong><span data-en="The island at the edge of the screen opens by itself — no clicks, no hunting through the Start menu.">Остров у края экрана раскрывается сам — без кликов и поиска по меню «Пуск».</span></figcaption>
-          </figure>
-          <figure class="cb-step" data-reveal style="--d:120">
-            <button type="button" class="cb-step__img" data-zoom="/assets/img/software/cubi/step-click.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/step-click.webp" alt="" loading="lazy" decoding="async"></button>
-            <figcaption><b class="mono">02</b><strong data-en="Click">Клик</strong><span data-en="The app opens right from its icon. Drag shortcuts in or add them with «+».">Программа открывается прямо из иконки. Ярлыки добавляются перетаскиванием или через «+».</span></figcaption>
-          </figure>
-          <figure class="cb-step" data-reveal style="--d:240">
-            <button type="button" class="cb-step__img" data-zoom="/assets/img/software/cubi/step-groups.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/step-groups.webp" alt="" loading="lazy" decoding="async"></button>
-            <figcaption><b class="mono">03</b><strong data-en="Scroll">Колесо</strong><span data-en="Work, games, creative tools — keep them in groups and flip through with the mouse wheel.">Работа, игры, творчество — держи их в группах и листай колесом мыши.</span></figcaption>
-          </figure>
-        </div>
+        <ul class="cb-new">
+          <li data-reveal><b class="mono">01</b><strong data-en="Instant">Мгновенный</strong><span data-en="Native C++. Opens at once — even after hours of rest — and at rest barely touches the processor.">Нативный C++. Открывается сразу — даже после долгого простоя, — а в покое почти не тратит процессор.</span></li>
+          <li data-reveal style="--d:80"><b class="mono">02</b><strong data-en="Cubi">Куби</strong><span data-en="A robot assistant: text, pictures, voice, commands. Free connections.">Робот-помощник: текст, картинки, голос, команды. Бесплатные подключения.</span></li>
+          <li data-reveal style="--d:160"><b class="mono">03</b><strong data-en="Organizer">Органайзер</strong><span data-en="Notes with colours, a calendar with birthdays, alarms and timers, a calculator.">Заметки с цветами, календарь с днями рождения, будильники и таймеры, калькулятор.</span></li>
+          <li data-reveal style="--d:240"><b class="mono">04</b><strong data-en="Updates itself">Обновляется сам</strong><span data-en="One button: CUBI downloads, checks the signature, restarts and tells what is new.">Одна кнопка: CUBI скачает, проверит подпись, перезапустится и расскажет, что нового.</span></li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===== Skins banner ===== -->
-    <section class="cb-sec cb-skins">
-      <div class="wrap">
-        <div class="cb-head" data-reveal>
-          <p class="cb-eyebrow mono" data-en="Skins">Скины</p>
-          <h2 class="cb-h2" data-en="Skins for <em>any</em> taste.">Скины на <em>любой</em> вкус.</h2>
-        </div>
-      </div>
-      <div class="cb-reel" data-reel="0" aria-hidden="true"><div class="cb-reel__track"></div></div>
-      <div class="cb-reel cb-reel--rev" data-reel="1" aria-hidden="true"><div class="cb-reel__track"></div></div>
-    </section>
-
-    <!-- ===== Playground ===== -->
-    <section class="cb-sec cb-play-sec" id="try">
-      <div class="wrap">
-        <div class="cb-head" data-reveal>
-          <p class="cb-eyebrow mono" data-en="Try it">Попробуй</p>
-          <h2 class="cb-h2" data-en="Make it <em>yours</em>.">Собери <em>свой</em>.</h2>
-          <p class="cb-sub" data-en="This is a live copy of the island. Pick a theme, a material and a character — then hover it.">Это живая копия острова. Выбери тему, материал и характер — и наведи курсор.</p>
-        </div>
-        <div class="cb-lab" data-reveal>
-          <div class="cb-lab__stage" data-lab>
-            <div class="cb-type" aria-hidden="true"><span>CUBI CUBI CUBI CUBI CUBI CUBI </span><span>CUBI CUBI CUBI CUBI CUBI CUBI </span></div>
-            <div class="cb-island cb-island--lab" data-island data-skin="dark" data-style="gradient"></div>
-            <p class="cb-hint mono" data-en="hover the island ↑">наведи на остров ↑</p>
-          </div>
-          <div class="cb-lab__ctrl">
-            <div class="cb-opt">
-              <span class="cb-opt__label mono" data-en="Theme">Тема</span>
-              <div class="cb-seg" data-opt="skin">
-                <button type="button" data-v="dark" aria-pressed="true"><i style="--sw:#25282c"></i><span data-en="Dark">Тёмная</span></button>
-                <button type="button" data-v="light" aria-pressed="false"><i style="--sw:#eef0f3"></i><span data-en="Light">Светлая</span></button>
-                <button type="button" data-v="lime" aria-pressed="false"><i style="--sw:#c8f03c"></i><span data-en="Lime">Салатовая</span></button>
-                <button type="button" data-v="custom" aria-pressed="false"><i class="cb-rainbow"></i><span data-en="Custom">Свой</span></button>
-              </div>
-            </div>
-            <div class="cb-opt">
-              <span class="cb-opt__label mono" data-en="Material">Материал</span>
-              <div class="cb-seg" data-opt="style">
-                <button type="button" data-v="gradient" aria-pressed="true"><span data-en="Gradient">Градиент</span></button>
-                <button type="button" data-v="solid" aria-pressed="false"><span data-en="Solid">Однотонный</span></button>
-                <button type="button" data-v="glass" aria-pressed="false"><span data-en="Glass">Стекло</span></button>
-                <button type="button" data-v="matte" aria-pressed="false"><span data-en="Frosted">Матовый</span></button>
-              </div>
-            </div>
-            <div class="cb-opt">
-              <span class="cb-opt__label mono" data-en="Character">Характер</span>
-              <div class="cb-seg" data-opt="motion">
-                <button type="button" data-v="smooth" aria-pressed="true"><span data-en="Smooth">Плавная</span></button>
-                <button type="button" data-v="jelly" aria-pressed="false"><span data-en="Jelly">Желе</span></button>
-                <button type="button" data-v="robot" aria-pressed="false"><span data-en="Robot">Робот</span></button>
-              </div>
-            </div>
-            <button class="btn btn--ghost btn--sm cb-replay" type="button" data-replay><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg><span data-en="Show the animation">Показать анимацию</span></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Glass ===== -->
-    <section class="cb-sec">
-      <div class="wrap">
-        <div class="cb-glass">
-          <figure data-reveal>
-            <button type="button" data-zoom="/assets/img/software/cubi/glass.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/glass.webp" alt="" loading="lazy" decoding="async"></button>
-            <figcaption><strong data-en="Liquid <em>glass</em>.">Жидкое <em>стекло</em>.</strong><span data-en="Real refraction and a rainbow dispersion on the edge — rendered by a shader, not faked with a picture.">Настоящее преломление и радужная дисперсия по краю — считает шейдер, а не картинка.</span></figcaption>
-          </figure>
-          <figure data-reveal style="--d:120">
-            <button type="button" data-zoom="/assets/img/software/cubi/matte.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/matte.webp" alt="" loading="lazy" decoding="async"></button>
-            <figcaption><strong data-en="Or <em>frosted</em>.">Или <em>матовое</em>.</strong><span data-en="Soft frosted glass for a calm desktop. Or a solid colour — your choice.">Мягкое матовое стекло для спокойного рабочего стола. Или сплошной цвет — как больше нравится.</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Lightness ===== -->
-    <section class="cb-sec cb-light">
-      <div class="wrap">
-        <div class="cb-head" data-reveal>
-          <p class="cb-eyebrow mono" data-en="Performance">Производительность</p>
-          <h2 class="cb-h2" data-en="Lighter than <em>light</em>.">Легче <em>лёгкого</em>.</h2>
-          <p class="cb-sub" data-en="CUBI sleeps almost all the time and wakes up only when you need it. In a game it frees up resources by itself.">CUBI почти всё время спит и просыпается, только когда нужен. В игре сам освобождает ресурсы.</p>
-        </div>
-        <div class="cb-stats">
-          <div class="cb-stat" data-reveal><b><span data-num="0.2" data-dec="1">0</span><small>%</small></b><span data-en="CPU at idle">CPU в покое</span><i class="cb-spark"></i></div>
-          <div class="cb-stat" data-reveal style="--d:120"><b><span data-num="22">0</span><small data-en="MB">МБ</small></b><span data-en="of memory">оперативной памяти</span><i class="cb-spark"></i></div>
-          <div class="cb-stat" data-reveal style="--d:240"><b><span data-num="10">0</span><small data-en="MB">МБ</small></b><span data-en="in game mode — turns on by itself">в игровом режиме — включается сам</span><i class="cb-spark"></i></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Features ===== -->
-    <section class="cb-sec">
-      <div class="wrap">
-        <div class="cb-head" data-reveal>
-          <p class="cb-eyebrow mono" data-en="Everything inside">Всё внутри</p>
-          <h2 class="cb-h2" data-en="Small island. <em>Lots</em> inside.">Маленький остров. <em>Много</em> внутри.</h2>
-        </div>
-        <div class="cb-feat">
-          <figure class="cb-feat__shot" data-reveal>
-            <button type="button" data-zoom="/assets/img/software/cubi/settings.webp" data-cursor="VIEW"><img src="/assets/img/software/cubi/settings.webp" alt="Настройки CUBI" loading="lazy" decoding="async"></button>
-            <figcaption class="mono" data-en="Settings: themes, materials, animation, groups">Настройки: темы, материалы, анимация, группы</figcaption>
-          </figure>
-          <ul class="cb-feat__list">
-            <li data-reveal><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><div><strong data-en="Groups">Группы</strong><span data-en="Work, games, creativity — flip with the mouse wheel.">Работа, игры, творчество — листай колесом.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4h6"/></svg><div><strong data-en="Any screen edge">Любой край экрана</strong><span data-en="Top, bottom, left or right.">Сверху, снизу, слева или справа.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><div><strong data-en="Clock on the pill">Часы на пилюле</strong><span data-en="The folded island can show the time.">Свёрнутый остров может показывать время.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M15.5 12.5h.01M17.5 14.5h.01"/></svg><div><strong data-en="Game mode">Игровой режим</strong><span data-en="Turns on by itself and frees up resources.">Включается сам и освобождает ресурсы.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><div><strong data-en="Drag &amp; drop">Перетаскивание</strong><span data-en="Drop a shortcut onto the island — done.">Брось ярлык на остров — готово.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><path d="M4 18c3-8 13-8 16 0"/><circle cx="12" cy="8" r="3"/></svg><div><strong data-en="Animation character">Характер анимации</strong><span data-en="Smooth, Jelly, Robot — or tune your own.">Плавная, Желе, Робот — или настрой свою.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><path d="M4 6h9M8.5 4v2c0 4-2 7-4.5 8M6 10c1.5 2 4 3.5 6 4M13 20l4-9 4 9M14.5 17h5"/></svg><div><strong data-en="Russian &amp; English">Русский и английский</strong><span data-en="The interface speaks both.">Интерфейс на двух языках.</span></div></li>
-            <li data-reveal><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><div><strong data-en="No admin rights">Без прав администратора</strong><span data-en="Installs for you only, in under a minute.">Ставится только для тебя, меньше чем за минуту.</span></div></li>
+    <!-- ===== Pocket ===== -->
+    <section class="cb-sec" id="pocket">
+      <div class="wrap cb-row">
+        <div class="cb-copy" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Island &amp; pocket">Остров и карман</p>
+          <h2 class="cb-h2" data-en="Your apps — <em>one hover</em> away.">Программы — <em>в одном наведении</em>.</h2>
+          <p class="cb-sub" data-en="The island sits at the top edge of the screen. Hover it — the pocket opens with your shortcuts; move away — it folds back. Every kind of shortcut starts on the first click: programs, games, Steam links.">Остров живёт у верхнего края экрана. Наведи — раскрывается карман с ярлыками; убери курсор — он снова свернётся. Любой ярлык запускается с первого клика: программы, игры, ссылки Steam.</p>
+          <ul class="cb-list">
+            <li data-en="Groups — Main, Games, Work — flip with the mouse wheel.">Группы — Главная, Игры, Работа — листаются колесом мыши.</li>
+            <li data-en="One row by default; up to four rows in the settings.">По умолчанию один ряд, в настройках — до четырёх.</li>
+            <li data-en="Drop a shortcut onto the island — done. Right click: run as administrator, show in folder, rename, move to a group.">Брось ярлык на остров — готово. Правый клик: от имени администратора, показать в папке, переименовать, в другую группу.</li>
+            <li data-en="Hides over full-screen games and videos; can stay behind active windows.">Прячется над полноэкранными играми и видео; может уступать место активным окнам.</li>
+            <li data-en="Your CUBI 1 groups are imported on the first start.">Группы из CUBI 1 переносятся при первом запуске.</li>
           </ul>
+        </div>
+        <div class="cb-media" data-reveal style="--d:120">
+          <figure class="cb-shot">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/pocket-rows.webp" data-caption="Карман: два ряда ярлыков" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/pocket-rows-sm.webp" srcset="/assets/img/software/cubi/v2/pocket-rows-sm.webp 638w, /assets/img/software/cubi/v2/pocket-rows.webp 1276w" sizes="(max-width: 1000px) 100vw, 640px" width="1276" height="396" alt="Карман CUBI с двумя рядами ярлыков" loading="lazy" decoding="async"></button>
+          </figure>
+          <figure class="cb-shot cb-shot--narrow">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/pocket-menu.webp" data-caption="Меню ярлыка" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/pocket-menu-sm.webp" srcset="/assets/img/software/cubi/v2/pocket-menu-sm.webp 450w, /assets/img/software/cubi/v2/pocket-menu.webp 900w" sizes="(max-width: 1000px) 100vw, 460px" width="900" height="600" alt="Меню ярлыка: открыть, от имени администратора, показать в папке, переименовать, в группу, убрать" loading="lazy" decoding="async"></button>
+            <figcaption class="mono" data-en="Right click on a shortcut">Правый клик по ярлыку</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Control ===== -->
+    <section class="cb-sec" id="control">
+      <div class="wrap cb-row cb-row--flip">
+        <div class="cb-copy" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Control face">Панель управления</p>
+          <h2 class="cb-h2" data-en="Windows quick settings, <em>right here</em>.">Быстрые настройки Windows — <em>прямо здесь</em>.</h2>
+          <p class="cb-sub" data-en="A small arrow turns the pocket into the control face: what you need every day, with the rest one click away under «More».">Маленькая стрелка превращает карман в панель управления: каждый день нужное — сразу, остальное — под кнопкой «Ещё».</p>
+          <ul class="cb-list">
+            <li data-en="Wi-Fi: the list of networks, connect with the password right in the island. Bluetooth: your devices and new ones.">Wi-Fi: список сетей и подключение с паролем прямо в острове. Bluetooth: свои устройства и новые.</li>
+            <li data-en="Volume and the output device.">Громкость и устройство вывода звука.</li>
+            <li data-en="Airplane mode, Energy saver, Night light, Mobile hotspot, Nearby sharing, Cast, Project, Accessibility, Live captions.">Режим «в самолёте», экономия энергии, ночной свет, мобильный хот-спот, обмен с устройствами, трансляция, второй экран, специальные возможности, живые субтитры.</li>
+            <li data-en="A row of tools: screenshot, recording, notes, a calendar leaf that shows today, clock, calculator.">Ряд инструментов: снимок, запись, заметки, листок календаря с сегодняшним днём, часы, калькулятор.</li>
+          </ul>
+        </div>
+        <div class="cb-media" data-reveal style="--d:120">
+          <figure class="cb-shot">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/control.webp" data-caption="Все быстрые настройки" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/control-sm.webp" srcset="/assets/img/software/cubi/v2/control-sm.webp 620w, /assets/img/software/cubi/v2/control.webp 1240w" sizes="(max-width: 1000px) 100vw, 640px" width="1240" height="648" alt="Все быстрые настройки: Wi-Fi, Bluetooth, самолёт, экономия, ночной свет и другие" loading="lazy" decoding="async"></button>
+          </figure>
+          <figure class="cb-shot cb-shot--narrow">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/quick-wifi.webp" data-caption="Сети Wi-Fi в острове" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/quick-wifi-sm.webp" srcset="/assets/img/software/cubi/v2/quick-wifi-sm.webp 620w, /assets/img/software/cubi/v2/quick-wifi.webp 1240w" sizes="(max-width: 1000px) 100vw, 460px" width="1240" height="880" alt="Список сетей Wi-Fi в острове" loading="lazy" decoding="async"></button>
+            <figcaption class="mono" data-en="Wi-Fi networks without leaving the island">Сети Wi-Fi, не выходя из острова</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Look ===== -->
+    <section class="cb-sec" id="look">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Themes &amp; glass">Темы и стекло</p>
+          <h2 class="cb-h2" data-en="Dark, calm — or <em>glass</em>.">Тёмный, спокойный — или <em>стеклянный</em>.</h2>
+          <p class="cb-sub" data-en="Eight themes, your own accent colour, an island attached to the edge or floating. And two kinds of glass.">Восемь тем, свой цвет акцента, остров у края или парящий. И два вида стекла.</p>
+        </div>
+        <div class="cb-glass">
+          <figure class="cb-shot cb-glass__main" data-reveal>
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/glass.webp" data-caption="Стекло: сквозь остров видно то, что за ним" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/glass-sm.webp" srcset="/assets/img/software/cubi/v2/glass-sm.webp 700w, /assets/img/software/cubi/v2/glass.webp 1400w" sizes="(max-width: 1000px) 100vw, 760px" width="1400" height="790" alt="Остров со стеклом: часы, будильники и таймеры поверх обоев" loading="lazy" decoding="async"></button>
+          </figure>
+          <figure class="cb-shot" data-reveal style="--d:120">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/glass-settings.webp" data-caption="Настройки жидкого стекла" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/glass-settings-sm.webp" srcset="/assets/img/software/cubi/v2/glass-settings-sm.webp 580w, /assets/img/software/cubi/v2/glass-settings.webp 1160w" sizes="(max-width: 1000px) 100vw, 500px" width="1160" height="1124" alt="Настройки жидкого стекла: плотность, цвет, размытие, прозрачность, выпуклость, освещение, искажение фона" loading="lazy" decoding="async"></button>
+            <figcaption class="mono" data-en="The settings of liquid glass">Настройки жидкого стекла</figcaption>
+          </figure>
+        </div>
+        <div class="cb-glass__cards">
+            <div class="cb-card" data-reveal>
+              <strong data-en="«Glass»">«Стекло»</strong>
+              <span data-en="Simple and clear, like in the first CUBI: you see what is behind. Transparency and blur go all the way down to zero.">Простое и прозрачное, как в первом CUBI: сзади всё хорошо видно. Прозрачность и размытие — вплоть до нуля.</span>
+            </div>
+            <div class="cb-card" data-reveal style="--d:160">
+              <strong data-en="«Liquid glass»">«Жидкое стекло»</strong>
+              <span data-en="A real lens: at the edge the picture behind really bends. Seven settings — density, colour, blur, transparency, bulge, light and background distortion.">Настоящая линза: по краю картинка за островом по-настоящему изгибается. Семь настроек — плотность, цвет, размытие, прозрачность, выпуклость, освещение и искажение фона.</span>
+            </div>
+            <div class="cb-card" data-reveal style="--d:240">
+              <strong data-en="Text that reads">Текст читается</strong>
+              <span data-en="On light glass the text turns dark by itself, on dark glass — light. When nothing moves behind the island, glass costs nothing.">На светлом стекле текст сам становится тёмным, на тёмном — светлым. Когда за островом ничего не движется, стекло ничего не стоит.</span>
+            </div>
+        </div>
+        <figure class="cb-shot cb-themes" data-reveal>
+          <button type="button" data-zoom="/assets/img/software/cubi/v2/themes.webp" data-caption="Восемь тем" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/themes-sm.webp" srcset="/assets/img/software/cubi/v2/themes-sm.webp 580w, /assets/img/software/cubi/v2/themes.webp 1160w" sizes="(max-width: 860px) 100vw, 820px" width="1160" height="450" alt="Восемь тем: Пустота, Космос, Фиалка, Графит, Океан, Уголь, Ваниль, Лаванда" loading="lazy" decoding="async"></button>
+          <figcaption class="mono" data-en="Eight themes: Void, Cosmos, Violet, Graphite, Ocean, Ember, Vanilla, Lavender">Восемь тем: Пустота, Космос, Фиалка, Графит, Океан, Уголь, Ваниль, Лаванда</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Cubi ===== -->
+    <section class="cb-sec cb-cubi" id="cubi">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="The assistant">Помощник</p>
+          <h2 class="cb-h2" data-en="Meet <em>Cubi</em>.">Знакомься: <em>Куби</em>.</h2>
+          <p class="cb-sub" data-en="A little cube robot lives in the island. Click him — and ask in plain words, type or talk. He watches, listens, thinks, is glad when a thing is done — and changes colour with the theme.">В острове живёт маленький робот-кубик. Кликни по нему — и спроси обычными словами: текстом или голосом. Он смотрит, слушает, думает, радуется, когда дело сделано, — и меняет цвет вместе с темой.</p>
+        </div>
+        <div class="cb-cubi__grid">
+          <figure class="cb-shot cb-cubi__main" data-reveal>
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/cubi-chat.webp" data-caption="Голосовой разговор с Куби" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/cubi-chat-sm.webp" srcset="/assets/img/software/cubi/v2/cubi-chat-sm.webp 612w, /assets/img/software/cubi/v2/cubi-chat.webp 1224w" sizes="(max-width: 1000px) 100vw, 620px" width="1224" height="632" alt="Голосовой разговор: Куби отвечает вслух" loading="lazy" decoding="async"></button>
+            <figcaption class="mono" data-en="Voice chat: Cubi answers aloud until you say «stop»">Голосовой чат: Куби отвечает вслух, пока не скажешь «отключись»</figcaption>
+          </figure>
+          <figure class="cb-shot" data-reveal style="--d:120">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/cubi-answer.webp" data-caption="Ответ Куби" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/cubi-answer-sm.webp" srcset="/assets/img/software/cubi/v2/cubi-answer-sm.webp 612w, /assets/img/software/cubi/v2/cubi-answer.webp 1224w" sizes="(max-width: 1000px) 100vw, 460px" width="1224" height="604" alt="Куби отвечает на вопрос в острове" loading="lazy" decoding="async"></button>
+            <figcaption class="mono" data-en="The answer appears as it comes, with a copy button">Ответ появляется по мере прихода, с кнопкой «Копировать»</figcaption>
+          </figure>
+        </div>
+
+        <div class="cb-feat">
+          <div class="cb-card" data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><strong data-en="Ask anything">Спроси что угодно</strong><span data-en="Answers right in the island. Long answers scroll, code is readable, one click copies.">Ответ прямо в острове. Длинный — прокручивается, код читается, одним кликом копируется.</span></div>
+          <div class="cb-card" data-reveal style="--d:60"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 8"/></svg><strong data-en="Pictures">Картинки</strong><span data-en="Paste with Ctrl+V, drop a file, or take a region of the screen. «Translate», «Explain», «Copy text» — the text is read on your PC, offline.">Вставь через Ctrl+V, перетащи файл или сними часть экрана. «Перевести», «Объяснить», «Копировать текст» — текст распознаётся на компьютере, без интернета.</span></div>
+          <div class="cb-card" data-reveal style="--d:120"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><strong data-en="Voice">Голос</strong><span data-en="Press the microphone and talk: Cubi answers aloud, turn after turn, until you say «stop» or press the cross.">Нажми микрофон и говори: Куби отвечает вслух, реплика за репликой, пока не скажешь «отключись» или не нажмёшь крестик.</span></div>
+          <div class="cb-card" data-reveal style="--d:180"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M4 12h16M4 17h7"/><path d="m17 4 3 3-3 3"/></svg><strong data-en="Commands in words">Команды словами</strong><span data-en="«Open the recordings folder», «pause the music», «quieter», «set an alarm for 7», «mark mum's birthday on 3 March», «new note». Cubi only picks from the app's own list of actions.">«Открой папку записей», «поставь музыку на паузу», «тише», «разбуди в 7», «отметь день рождения мамы 3 марта», «новая заметка». Куби выбирает только из списка действий самой программы.</span></div>
+          <div class="cb-card" data-reveal style="--d:240"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h6l2 2h10v10H3z"/><path d="M8 14h8"/></svg><strong data-en="Tidy a folder">Уборка папки</strong><span data-en="A plan on one screen, then «Run»; «Undo the tidy» puts everything back. Files go to the Recycle Bin only when you ask, with the exact name and path.">План на одном экране, потом «Выполнить»; «Отменить уборку» вернёт всё на места. В корзину — только по прямой просьбе, с точным именем и путём.</span></div>
+          <div class="cb-card" data-reveal style="--d:300"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><strong data-en="Video to text">Видео в текст</strong><span data-en="Transcribes a video or audio file in parts, with progress and cancel; copy, save or translate the text.">Расшифровывает видео или аудио по частям, с прогрессом и отменой; текст можно скопировать, сохранить, перевести.</span></div>
+        </div>
+
+        <div class="cb-ai" data-reveal>
+          <div class="cb-ai__copy">
+            <h3 class="cb-h3" data-en="Free connections">Бесплатные подключения</h3>
+            <p data-en="Cubi works through AI services you connect yourself: free ones first. Each user has his own free quota. When the limit of one runs out, Cubi switches to another connected one and says so in one line.">Куби работает через ИИ-сервисы, которые ты подключаешь сам, — сначала бесплатные. У каждого свой бесплатный лимит. Кончился лимит одного — Куби сам переходит на другое подключение и говорит об этом одной строкой.</p>
+            <ul class="cb-conn">
+              <li><b>Google</b><span data-en="Gemma 4 · free key">Gemma 4 · бесплатный ключ</span></li>
+              <li><b>Groq</b><span data-en="Qwen + Whisper · free key">Qwen + Whisper · бесплатный ключ</span></li>
+              <li><b>OpenRouter</b><span data-en="sign in · 50 requests a day">вход · 50 запросов в день</span></li>
+              <li class="cb-conn--paid"><b data-en="Paid, by your choice">Платные — по выбору</b><span>OpenAI · Claude · Gemini · DeepSeek</span></li>
+            </ul>
+          </div>
+          <figure class="cb-shot cb-ai__shot">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/cubi-connect.webp" data-caption="Подключение Куби к ИИ" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/cubi-connect-sm.webp" srcset="/assets/img/software/cubi/v2/cubi-connect-sm.webp 612w, /assets/img/software/cubi/v2/cubi-connect.webp 1224w" sizes="(max-width: 1000px) 100vw, 520px" width="1224" height="804" alt="Экран подключения: Google, Groq, OpenRouter, поле для ключа" loading="lazy" decoding="async"></button>
+          </figure>
+        </div>
+
+        <div class="cb-privacy" data-reveal>
+          <h3 class="cb-h3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><span data-en="Privacy, honestly">Приватность — честно</span></h3>
+          <ul>
+            <li data-en="Only what you send leaves the PC: the question, an attached picture, your voice after the button, the sound of a video you chose to transcribe. For a tidy — only the file names of one folder.">С компьютера уходит только то, что ты сам отправил: вопрос, приложенная картинка, голос после нажатия кнопки, звук видео, выбранного для расшифровки. Для уборки — только названия файлов одной папки.</li>
+            <li data-en="File contents, the screen without your shot and the clipboard never leave. Keys are kept in the protected storage of Windows, never in files or the log.">Содержимое файлов, экран без твоего снимка и буфер обмена никуда не уходят. Ключи хранятся в защищённом хранилище Windows — не в файлах и не в журнале.</li>
+            <li data-en="Under every connection Cubi says in two short lines what it can do and what happens to the data. The free Google service may use requests for training and people may read them — Cubi warns about it before the first request. Groq does not train on requests and may keep them up to 30 days. Do not send anything personal.">Под каждым подключением Куби в двух строках говорит, что оно умеет и что происходит с данными. Бесплатный Google может использовать запросы для обучения, их могут читать люди — Куби предупредит перед первым запросом. Groq не обучается на запросах и может хранить их до 30 дней. Не отправляй личное.</li>
+            <li data-en="The model cannot delete or move files by itself: deleting and tidying always wait for your button, and deleting goes only to the Recycle Bin.">Модель не может сама удалить или переместить файлы: удаление и уборка всегда ждут твоей кнопки, а удаляет Куби только в корзину.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Capture ===== -->
+    <section class="cb-sec" id="capture">
+      <div class="wrap cb-row">
+        <div class="cb-copy" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Screenshots &amp; recording">Снимки и запись</p>
+          <h2 class="cb-h2" data-en="Shot — and it's <em>already copied</em>.">Снял — и он <em>уже в буфере</em>.</h2>
+          <p class="cb-sub" data-en="Select a part of the screen: the picture is on the clipboard at once — Ctrl+V into Telegram. Draw on top if you want, and the result card says where the file is.">Выдели часть экрана — картинка сразу в буфере: Ctrl+V в Telegram. Захочешь — порисуй поверх, а карточка результата скажет, где лежит файл.</p>
+          <ul class="cb-list">
+            <li data-en="Arrows, frames, marker, text and blur; colours and thickness.">Стрелки, рамки, маркер, текст и размытие; цвета и толщина.</li>
+            <li data-en="Saved to Pictures/CUBI (PNG or JPG) — or only to the clipboard, as you like. Looks right on HDR screens too.">Сохраняется в «Изображения/CUBI» (PNG или JPG) — или только в буфер, как удобнее. Правильные цвета и на HDR-мониторе.</li>
+            <li data-en="Screen recording: a region or the whole monitor; system sound and microphone, quality, 30 or 60 fps, the cursor. 3-2-1 — and the pill shows the time and «Stop».">Запись экрана: область или весь монитор; звук системы и микрофон, качество, 30 или 60 кадров, курсор. 3-2-1 — и в пилюле время и «Стоп».</li>
+          </ul>
+        </div>
+        <div class="cb-media" data-reveal style="--d:120">
+          <figure class="cb-shot">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/snip-edit.webp" data-caption="Редактор снимка" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/snip-edit-sm.webp" srcset="/assets/img/software/cubi/v2/snip-edit-sm.webp 760w, /assets/img/software/cubi/v2/snip-edit.webp 1520w" sizes="(max-width: 1000px) 100vw, 640px" width="1520" height="920" alt="Редактор снимка: выделенная область, стрелки, рамка и панель инструментов" loading="lazy" decoding="async"></button>
+          </figure>
+          <div class="cb-pair">
+            <figure class="cb-shot">
+              <button type="button" data-zoom="/assets/img/software/cubi/v2/rec-panel.webp" data-caption="Запись области экрана" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/rec-panel-sm.webp" srcset="/assets/img/software/cubi/v2/rec-panel-sm.webp 720w, /assets/img/software/cubi/v2/rec-panel.webp 1440w" sizes="(max-width: 760px) 100vw, 320px" width="1440" height="840" alt="Выбор области записи и панель: звук, микрофон, качество, кадры" loading="lazy" decoding="async"></button>
+            </figure>
+            <figure class="cb-shot">
+              <button type="button" data-zoom="/assets/img/software/cubi/v2/shot-card.webp" data-caption="Снимок готов" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/shot-card-sm.webp" srcset="/assets/img/software/cubi/v2/shot-card-sm.webp 600w, /assets/img/software/cubi/v2/shot-card.webp 1200w" sizes="(max-width: 760px) 100vw, 320px" width="1200" height="284" alt="Карточка «Снимок готов»: в буфере, сохранён в Pictures/CUBI" loading="lazy" decoding="async"></button>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Organizer ===== -->
+    <section class="cb-sec" id="organizer">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Organizer">Органайзер</p>
+          <h2 class="cb-h2" data-en="Notes, calendar, clock, <em>calculator</em>.">Заметки, календарь, часы, <em>калькулятор</em>.</h2>
+          <p class="cb-sub" data-en="Four pages inside the island, one tab apart. Cubi uses them too: tell him and he adds a mark, an alarm or a note.">Четыре страницы внутри острова, в одной вкладке друг от друга. Куби тоже ими пользуется: скажи — и он поставит отметку, будильник или заметку.</p>
+        </div>
+        <div class="cb-org">
+          <figure class="cb-org__item" data-reveal>
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/notes.webp" data-caption="Заметки" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/notes-sm.webp" srcset="/assets/img/software/cubi/v2/notes-sm.webp 580w, /assets/img/software/cubi/v2/notes.webp 1160w" sizes="(max-width: 760px) 100vw, 50vw" width="1160" height="792" alt="Заметки с цветными отметками и поиском" loading="lazy" decoding="async"></button>
+            <figcaption><strong data-en="Notes">Заметки</strong><span data-en="Every colour has one meaning — important, task, personal, holiday, work, idea — the same for you and for Cubi. Search, pins, undo.">У каждого цвета один смысл — важное, задача, личное, праздник, работа, идея, — одинаковый для тебя и для Куби. Поиск, закрепление, отмена.</span></figcaption>
+          </figure>
+          <figure class="cb-org__item" data-reveal style="--d:80">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/calendar.webp" data-caption="Календарь" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/calendar-sm.webp" srcset="/assets/img/software/cubi/v2/calendar-sm.webp 580w, /assets/img/software/cubi/v2/calendar.webp 1160w" sizes="(max-width: 760px) 100vw, 50vw" width="1160" height="792" alt="Календарь с днями рождения, важными делами и напоминаниями" loading="lazy" decoding="async"></button>
+            <figcaption><strong data-en="Calendar">Календарь</strong><span data-en="Birthdays every year, holidays, important dates and reminders, each with its own sign. On the day itself the island says so.">Дни рождения каждый год, праздники, важные даты и напоминания — у каждого свой знак. В сам день остров напомнит.</span></figcaption>
+          </figure>
+          <figure class="cb-org__item" data-reveal>
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/clock.webp" data-caption="Будильники и таймеры" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/clock-sm.webp" srcset="/assets/img/software/cubi/v2/clock-sm.webp 580w, /assets/img/software/cubi/v2/clock.webp 1160w" sizes="(max-width: 760px) 100vw, 50vw" width="1160" height="792" alt="Будильники и таймеры" loading="lazy" decoding="async"></button>
+            <figcaption><strong data-en="Alarms &amp; timers">Будильники и таймеры</strong><span data-en="A sound and a card with «Stop» and «Snooze». They survive a restart; the timer runs right in the pill.">Звук и карточка с «Стоп» и «Отложить». Переживают перезапуск; таймер идёт прямо в пилюле.</span></figcaption>
+          </figure>
+          <figure class="cb-org__item" data-reveal style="--d:80">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/calc.webp" data-caption="Калькулятор" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/calc-sm.webp" srcset="/assets/img/software/cubi/v2/calc-sm.webp 580w, /assets/img/software/cubi/v2/calc.webp 1160w" sizes="(max-width: 760px) 100vw, 50vw" width="1160" height="792" alt="Калькулятор с историей" loading="lazy" decoding="async"></button>
+            <figcaption><strong data-en="Calculator">Калькулятор</strong><span data-en="Type a whole expression — «1 250 × 3 + 15 %» — and see the answer as you type. History one click away.">Пиши выражение целиком — «1 250 × 3 + 15 %» — ответ виден сразу. История под рукой.</span></figcaption>
+          </figure>
+        </div>
+        <figure class="cb-shot cb-strip" data-reveal>
+          <img src="/assets/img/software/cubi/v2/alert-sm.webp" srcset="/assets/img/software/cubi/v2/alert-sm.webp 600w, /assets/img/software/cubi/v2/alert.webp 1200w" sizes="(max-width: 760px) 100vw, 600px" width="1200" height="284" alt="Будильник сработал: карточка в острове с кнопками «Отложить» и «Стоп»" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Music ===== -->
+    <section class="cb-sec" id="music">
+      <div class="wrap cb-row cb-row--flip">
+        <div class="cb-copy" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Music">Музыка</p>
+          <h2 class="cb-h2" data-en="Four bars <em>in time</em>.">Четыре полоски — <em>в такт</em>.</h2>
+          <p class="cb-sub" data-en="When music plays — Spotify, a browser, any player Windows knows — four small bars in the pill move with the sound, and Cubi may dance.">Когда играет музыка — Spotify, браузер, любой плеер, который знает Windows, — четыре полоски в пилюле двигаются под звук, а Куби может пританцовывать.</p>
+          <ul class="cb-list">
+            <li data-en="Previous, pause and next appear in the island while music plays — no need to open anything.">Назад, пауза и вперёд появляются в острове, пока играет музыка, — ничего не надо открывать.</li>
+            <li data-en="In the open panel the track has a timeline: drag it to any place.">В открытой панели у трека есть шкала: перетащи на любое место.</li>
+            <li data-en="By voice: quieter, louder, next, previous, from the beginning.">Голосом: тише, громче, следующая, предыдущая, сначала.</li>
+          </ul>
+        </div>
+        <div class="cb-media cb-media--stack" data-reveal style="--d:120">
+          <figure class="cb-shot">
+            <img src="/assets/img/software/cubi/v2/music-card-sm.webp" srcset="/assets/img/software/cubi/v2/music-card-sm.webp 584w, /assets/img/software/cubi/v2/music-card.webp 1168w" sizes="(max-width: 1000px) 100vw, 600px" width="1168" height="216" alt="Карточка музыки: трек, полоски, кнопки и шкала" loading="lazy" decoding="async">
+          </figure>
+          <figure class="cb-shot">
+            <img src="/assets/img/software/cubi/v2/music-mini-sm.webp" srcset="/assets/img/software/cubi/v2/music-mini-sm.webp 492w, /assets/img/software/cubi/v2/music-mini.webp 984w" sizes="(max-width: 1000px) 100vw, 500px" width="984" height="336" alt="Мини-кнопки музыки в шапке острова" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pill ===== -->
+    <section class="cb-sec" id="pill">
+      <div class="wrap">
+        <div class="cb-head" data-reveal>
+          <p class="cb-eyebrow mono" data-en="The pill">Пилюля</p>
+          <h2 class="cb-h2" data-en="Folded, it still <em>tells you things</em>.">Свёрнутый — и всё равно <em>подсказывает</em>.</h2>
+          <p class="cb-sub" data-en="The resting pill shows the clock and, if you want, the date, seconds, the weather outside, the network and the battery on a laptop. For gamers and for everyone who likes to watch the PC — a monitor.">В спокойной пилюле — часы, а по желанию дата, секунды, погода за окном, сеть и заряд на ноутбуке. Для геймеров и всех, кто любит следить за компьютером, — монитор.</p>
+        </div>
+        <div class="cb-pills">
+          <figure class="cb-pills__item" data-reveal><img src="/assets/img/software/cubi/v2/pill-status-sm.webp" srcset="/assets/img/software/cubi/v2/pill-status-sm.webp 560w, /assets/img/software/cubi/v2/pill-status.webp 1120w" sizes="(max-width: 760px) 100vw, 560px" width="1120" height="100" alt="Пилюля: время с секундами, дата, погода, сеть, заряд" loading="lazy" decoding="async"><figcaption class="mono" data-en="Clock, date, weather, network, battery">Часы, дата, погода, сеть, заряд</figcaption></figure>
+          <figure class="cb-pills__item" data-reveal style="--d:80"><img src="/assets/img/software/cubi/v2/pill-monitor-sm.webp" srcset="/assets/img/software/cubi/v2/pill-monitor-sm.webp 640w, /assets/img/software/cubi/v2/pill-monitor.webp 1280w" sizes="(max-width: 760px) 100vw, 640px" width="1280" height="160" alt="Монитор в пилюле: процессор, видеокарта, память, кадры, пинг" loading="lazy" decoding="async"><figcaption class="mono" data-en="Processor, graphics card, memory, frames per second, ping">Процессор, видеокарта, память, кадры в секунду, пинг</figcaption></figure>
+          <figure class="cb-pills__item" data-reveal style="--d:160"><img src="/assets/img/software/cubi/v2/pill-timer-sm.webp" srcset="/assets/img/software/cubi/v2/pill-timer-sm.webp 520w, /assets/img/software/cubi/v2/pill-timer.webp 1040w" sizes="(max-width: 760px) 100vw, 520px" width="1040" height="140" alt="Таймер в пилюле" loading="lazy" decoding="async"><figcaption class="mono" data-en="A running timer">Идущий таймер</figcaption></figure>
+        </div>
+        <p class="cb-note cb-note--center" data-reveal data-en="Each monitor readout has its own switch and is off by default: switched off, it costs nothing. The numbers never jump in width, and colour appears only when it means something.">Каждый показатель монитора включается отдельно и по умолчанию выключен: выключенный — ничего не стоит. Цифры не прыгают по ширине, а цвет появляется, только когда что-то значит.</p>
+      </div>
+    </section>
+
+    <!-- ===== Updates ===== -->
+    <section class="cb-sec" id="updates">
+      <div class="wrap cb-row">
+        <div class="cb-copy" data-reveal>
+          <p class="cb-eyebrow mono" data-en="Updates">Обновления</p>
+          <h2 class="cb-h2" data-en="New version — <em>one button</em>.">Новая версия — <em>одной кнопкой</em>.</h2>
+          <p class="cb-sub" data-en="In the «About CUBI» tab: the app checks for a new version once a day (only the version number is sent) and shows what is new before you update.">Во вкладке «О CUBI»: раз в день программа проверяет, вышла ли новая версия (отправляется только номер версии), и до обновления показывает, что нового.</p>
+          <ul class="cb-list">
+            <li data-en="«Update»: CUBI downloads the new version and checks the author's signature — nothing else can be slipped in.">«Обновить»: CUBI скачает новую версию и проверит подпись автора — ничего чужого подсунуть нельзя.</li>
+            <li data-en="It replaces itself, restarts without losing anything and tells you what was added.">Заменит себя, перезапустится, ничего не потеряв, и расскажет, что добавилось.</li>
+            <li data-en="Need a particular version? Every release stays on the site.">Нужна именно определённая версия? Все выпуски остаются на сайте.</li>
+          </ul>
+          <a class="link-arrow cb-more" href="/software/cubi/versions/"><span data-en="All versions of CUBI">Все версии CUBI</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="cb-media" data-reveal style="--d:120">
+          <figure class="cb-shot">
+            <button type="button" data-zoom="/assets/img/software/cubi/v2/about.webp" data-caption="Вкладка «О CUBI»: что нового" data-cursor="VIEW" aria-label="Увеличить снимок" data-en-label="Enlarge the picture"><img src="/assets/img/software/cubi/v2/about-sm.webp" srcset="/assets/img/software/cubi/v2/about-sm.webp 580w, /assets/img/software/cubi/v2/about.webp 1160w" sizes="(max-width: 1000px) 100vw, 640px" width="1160" height="730" alt="Вкладка «О CUBI» после обновления: что нового в версии" loading="lazy" decoding="async"></button>
+          </figure>
         </div>
       </div>
     </section>
@@ -276,22 +384,37 @@
           <h2 class="cb-h2" data-en="Everything you need — <em>at hand</em>.">Всё нужное — <em>под рукой</em>.</h2>
           <p class="cb-sub" data-en="CUBI is free. Install it, drop in your favourite apps — and forget about the cluttered desktop.">CUBI бесплатный. Установи, закинь любимые программы — и забудь про заваленный рабочий стол.</p>
           <div class="cb-actions cb-actions--center">
-            <a class="btn cb-btn" href="https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe" data-magnetic>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>
-              <span data-en="Download CUBI 1.0.0">Скачать CUBI 1.0.0</span>
-            </a>
-            <a class="btn btn--ghost" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+            <!-- cubi:get-dl --><a class="btn cb-btn" href="https://github.com/MalikMorser/downloads/releases/download/cubi-2.0.0/CUBI-Setup-2.0.0.exe" data-magnetic><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg><span data-en="Download CUBI 2.0.0">Скачать CUBI 2.0.0</span></a><!-- /cubi:get-dl -->
+            <a class="btn btn--ghost" href="/software/cubi/versions/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-en="Older versions">Старые версии</span></a>
           </div>
-          <dl class="cb-spec">
-            <div><dt data-en="System">Система</dt><dd>Windows 11 · x64</dd></div>
-            <div><dt data-en="Size">Размер</dt><dd>74 <span data-en="MB">МБ</span></dd></div>
-            <div><dt data-en="Version">Версия</dt><dd>1.0.0</dd></div>
-            <div><dt data-en="Price">Цена</dt><dd data-en="Free">Бесплатно</dd></div>
-            <div data-dl hidden><dt data-en="Downloads">Скачиваний</dt><dd data-dl-num>0</dd></div>
-          </dl>
+          <dl class="cb-spec"><!-- cubi:get-spec --><div><dt data-en="Version">Версия</dt><dd>2.0.0</dd></div><div><dt data-en="Released">Вышла</dt><dd><span data-en="18 November 2026">18 ноября 2026</span></dd></div><div><dt data-en="Size">Размер</dt><dd><span data-en="6.5 MB">6,5 МБ</span></dd></div><div><dt data-en="System">Система</dt><dd>Windows 11 · x64</dd></div><div><dt data-en="Price">Цена</dt><dd data-en="Free">Бесплатно</dd></div><!-- /cubi:get-spec --><div data-dl hidden><dt data-en="Downloads">Скачиваний</dt><dd data-dl-num>0</dd></div></dl>
           <p class="cb-note" data-en="The installer is not code-signed yet, so Windows SmartScreen may ask to confirm: «More info» → «Run anyway».">Установщик пока без цифровой подписи, поэтому Windows SmartScreen может переспросить: «Подробнее» → «Выполнить в любом случае».</p>
         </div>
-        <div class="cb-back"><a class="link-arrow" href="/software/"><span data-en="All software">Весь софт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+
+        <div class="cb-req">
+          <div class="cb-req__col" data-reveal>
+            <h3 class="cb-h3" data-en="System requirements">Системные требования</h3>
+            <dl>
+              <div><dt data-en="System">Система</dt><dd data-en="Windows 11, 64-bit">Windows 11, 64-бит</dd></div>
+              <div><dt data-en="Rights">Права</dt><dd data-en="No administrator rights: installs for you only, into your user folder">Без прав администратора: ставится только для тебя, в папку пользователя</dd></div>
+              <div><dt data-en="Internet">Интернет</dt><dd data-en="Only for Cubi, the weather and updates; everything else works offline">Только для Куби, погоды и обновлений; остальное работает без сети</dd></div>
+              <div><dt data-en="Microphone">Микрофон</dt><dd data-en="Optional, for voice">По желанию, для голоса</dd></div>
+              <div><dt data-en="Cubi">Куби</dt><dd data-en="A free key from Google or Groq, or signing in to OpenRouter">Бесплатный ключ Google или Groq либо вход в OpenRouter</dd></div>
+              <div><dt data-en="CUBI 1">CUBI 1</dt><dd data-en="If it is installed, the installer offers to remove it: two islands never run together">Если стоит, установщик предложит его удалить: два острова вместе не работают</dd></div>
+            </dl>
+          </div>
+          <div class="cb-req__col cb-author" data-reveal style="--d:120">
+            <h3 class="cb-h3" data-en="The author">Автор</h3>
+            <p class="cb-author__name">Malik Boboev <span class="mono">· Mr.Myorser</span></p>
+            <p data-en="I make CUBI on my own and give it away for free. If it saves you time every day — support the work on new versions.">Я делаю CUBI сам и раздаю бесплатно. Если он каждый день экономит тебе время — поддержи работу над новыми версиями.</p>
+            <div class="cb-author__links">
+              <a class="link-arrow" href="https://myorser.com/"><span>myorser.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              <a class="link-arrow" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><span>boosty.to/malikjan</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+            <a class="btn btn--ghost cb-author__btn" href="https://boosty.to/malikjan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.6C12 6.2 13.6 5 15.6 5 19 5 20.9 8.4 19.5 11.7 17.5 16.4 12 21 12 21Z"/></svg><span data-en="Support on Boosty">Поддержать на Boosty</span></a>
+          </div>
+        </div>
+        <div class="cb-back"><a class="link-arrow" href="/software/"><span data-en="All software">Весь софт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
       </div>
     </section>
 
@@ -362,7 +485,6 @@
   <!-- /partial:overlays -->
 
   <script src="/assets/vendor/lenis.min.js" defer></script>
-  <script src="/assets/js/details.js" defer></script>
   <script src="/assets/js/cubi.js" defer></script>
   <script src="/assets/js/main.js" defer></script>
 </body>

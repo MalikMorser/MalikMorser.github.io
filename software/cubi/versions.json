@@ -1,0 +1,55 @@
+{
+  "product": "CUBI",
+  "latest": "2.0.0",
+  "versions": [
+    {
+      "version": "2.0.0",
+      "date": "2026-11-18",
+      "os": "Windows 11",
+      "setup": {
+        "file": "CUBI-Setup-2.0.0.exe",
+        "url": "https://github.com/MalikMorser/downloads/releases/download/cubi-2.0.0/CUBI-Setup-2.0.0.exe",
+        "size": 6778289,
+        "sha256": "b57ee4629a05f2c04b83f5c44c9b074426833b763e2b207466da1dff9f363f4b"
+      },
+      "notes": {
+        "ru": [
+          "CUBI написан заново на C++: остров открывается мгновенно и в покое почти не тратит ресурсы.",
+          "Карман для программ и игр, панель быстрых настроек с Wi-Fi и Bluetooth, громкость, музыка с кнопками и перемоткой.",
+          "Куби — помощник с бесплатным ИИ: отвечает текстом и голосом, понимает картинки и команды, ведёт голосовой разговор.",
+          "Заметки с цветами, календарь с днями рождения, будильники и таймеры, калькулятор.",
+          "Снимки и запись экрана, стекло (простое и жидкое), новые темы, монитор процессора и видеокарты в пилюле.",
+          "Обновления прямо из программы: сначала «Что нового», потом одна кнопка."
+        ],
+        "en": [
+          "CUBI rewritten from scratch in C++: the island opens instantly and costs almost nothing at rest.",
+          "A pocket for apps and games, quick settings with Wi-Fi and Bluetooth, volume, music with buttons and seeking.",
+          "Cubi, an assistant with free AI: answers in text and by voice, understands pictures and commands, holds a voice chat.",
+          "Notes with colours, a calendar with birthdays, alarms and timers, a calculator.",
+          "Screenshots and screen recording, glass (plain and liquid), new themes, a CPU and GPU monitor in the pill.",
+          "Updates from inside the app: \"What's new\" first, then one button."
+        ]
+      }
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-10-24",
+      "os": "Windows 11",
+      "legacy": true,
+      "setup": {
+        "file": "CUBI-Setup-1.0.0.exe",
+        "url": "https://github.com/MalikMorser/downloads/releases/download/cubi-1.0.0/CUBI-Setup-1.0.0.exe",
+        "size": 77267969,
+        "sha256": "ec70af595f1ba905c9487ad2d4f8297c18ab3c50ce8bf7beda2a9bcb9f53bbf7"
+      },
+      "notes": {
+        "ru": [
+          "Первая версия: остров-лаунчер на C# / WinUI 3, жидкое стекло, скины, анимации Плавная / Желе / Робот, игровой режим."
+        ],
+        "en": [
+          "The first version: an island launcher in C# / WinUI 3, liquid glass, skins, Smooth / Jelly / Robot animations, game mode."
+        ]
+      }
+    }
+  ]
+}
