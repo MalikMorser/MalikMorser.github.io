@@ -1,7 +1,28 @@
 {
   "product": "CUBI",
-  "latest": "2.0.0",
+  "latest": "2.0.1",
   "versions": [
+    {
+      "version": "2.0.1",
+      "date": "2026-11-18",
+      "os": "Windows 11",
+      "setup": {
+        "file": "CUBI-Setup-2.0.1.exe",
+        "url": "https://github.com/MalikMorser/downloads/releases/download/cubi-2.0.1/CUBI-Setup-2.0.1.exe",
+        "size": 6779175,
+        "sha256": "1b0b602ed384e270f4d0ee9f798e4615b0c52889885c0afd1403e940e71d4efb"
+      },
+      "notes": {
+        "ru": [
+          "Первое обновление через само приложение: проверка того, что CUBI обновляется сам и сохраняет все настройки.",
+          "Новых функций нет."
+        ],
+        "en": [
+          "The first update from inside the app: it checks that CUBI updates itself and keeps every setting.",
+          "No new features."
+        ]
+      }
+    },
     {
       "version": "2.0.0",
       "date": "2026-11-18",
