@@ -1,7 +1,42 @@
 {
   "product": "CUBI",
-  "latest": "2.0.1",
+  "latest": "2.1.0",
   "versions": [
+    {
+      "version": "2.1.0",
+      "date": "2026-11-20",
+      "os": "Windows 11",
+      "setup": {
+        "file": "CUBI-Setup-2.1.0.exe",
+        "url": "https://github.com/MalikMorser/downloads/releases/download/cubi-2.1.0/CUBI-Setup-2.1.0.exe",
+        "size": 7222183,
+        "sha256": "23e6fa4247dfd72a1967cc509eaaf7f87f5ac81570099bad1601c643220503e9"
+      },
+      "notes": {
+        "ru": [
+          "Музыка сама становится тише, пока вы говорите с Куби, а после разговора возвращается как было.",
+          "«Куби, поставь песню …» — открывает её в Spotify или на YouTube; остаётся нажать «играть».",
+          "Куби умеет больше: очистить корзину, расставить значки на рабочем столе, дать папкам понятные имена.",
+          "Ещё на компьютере: место на диске и память, блокировка, сон и выключение, окна, параметры Windows, поиск в интернете.",
+          "Куби знает свои настройки: «покажи FPS», «тема графит» — и меняет их после слова «подтверждаю» или кнопки.",
+          "То, что нельзя отменить, голосом подтверждается только словом «подтверждаю»: случайное «да» из песни не сработает.",
+          "Если Куби чего-то не делает сам, он говорит, где это делается, и открывает нужное место.",
+          "Игровой режим: в играх CUBI не реагирует на горячие клавиши и слово «Куби», уведомления ждут конца игры.",
+          "Режим включается сам. В меню значка в трее: «Игровой режим сейчас» и «Не игра» для программы, принятой за игру по ошибке."
+        ],
+        "en": [
+          "Music gets quieter by itself while you talk with Cubi and returns to what it was afterwards.",
+          "\"Cubi, play the song …\" opens it in Spotify or on YouTube; you press play.",
+          "Cubi can do more: empty the Recycle Bin, arrange the desktop icons, give folders clear names.",
+          "Also on the PC: disk space and memory, lock, sleep and shut down, windows, Windows settings, web search.",
+          "Cubi knows his own settings (\"show FPS\", \"theme graphite\") and changes them after \"confirm\" or the button.",
+          "What cannot be undone is confirmed by voice only with the word \"confirm\": a stray \"yes\" from a song does nothing.",
+          "When Cubi does not do something himself, he says where it is done and opens the right place.",
+          "Game mode: in games CUBI does not react to hot keys or the word \"Cubi\", and notices wait until you leave the game.",
+          "It turns on by itself. The tray icon's menu has \"Game mode now\" and \"Not a game\" for a program taken for a game by mistake."
+        ]
+      }
+    },
     {
       "version": "2.0.1",
       "date": "2026-11-18",
