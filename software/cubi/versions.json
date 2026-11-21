@@ -1,7 +1,30 @@
 {
   "product": "CUBI",
-  "latest": "2.1.0",
+  "latest": "2.1.1",
   "versions": [
+    {
+      "version": "2.1.1",
+      "date": "2026-11-21",
+      "os": "Windows 11",
+      "setup": {
+        "file": "CUBI-Setup-2.1.1.exe",
+        "url": "https://github.com/MalikMorser/downloads/releases/download/cubi-2.1.1/CUBI-Setup-2.1.1.exe",
+        "size": 7316414,
+        "sha256": "fdb346d15a47462e312e394d02dfb1d79108cf6e98f19a45bb272e17f171f7ce"
+      },
+      "notes": {
+        "ru": [
+          "Куби понимает команды, набранные с опечатками: «очисти карзину», «покожи фпс», «заблакируй компьютер» — и с «пожалуйста», «можешь», «куби» в любом месте.",
+          "«Да» значит «да»: после вопроса Куби написанное «да», «ага», «давай», «ок» выполняет то, о чём он спросил.",
+          "Вопрос «вы уверены?» задаёт карточка CUBI, а не сам Куби, и он не отвечает «нет функции» о том, что CUBI умеет."
+        ],
+        "en": [
+          "Cubi understands commands typed with typos (\"empty the recyle bin\", \"lock the computr\"), with \"please\", \"can you\" or \"Cubi\" anywhere in them.",
+          "\"Yes\" means yes: after Cubi's question a typed \"yes\", \"ok\" or \"sure\" does what he asked about.",
+          "\"Are you sure?\" is asked by CUBI's card, not by Cubi himself, and he no longer says he has no function for something CUBI can do."
+        ]
+      }
+    },
     {
       "version": "2.1.0",
       "date": "2026-11-21",
@@ -22,10 +45,7 @@
           "То, что нельзя отменить, голосом подтверждается только словом «подтверждаю»: случайное «да» из песни не сработает.",
           "Если Куби чего-то не делает сам, он говорит, где это делается, и открывает нужное место.",
           "Игровой режим: в играх CUBI не реагирует на горячие клавиши и слово «Куби», уведомления ждут конца игры.",
-          "Режим включается сам. В меню значка в трее: «Игровой режим сейчас» и «Не игра» для программы, принятой за игру по ошибке.",
-          "Куби понимает команды, набранные с опечатками: «очисти карзину», «покожи фпс», «заблакируй компьютер» — и с «пожалуйста», «можешь», «куби» в любом месте.",
-          "«Да» значит «да»: после вопроса Куби написанное «да», «ага», «давай», «ок» выполняет то, о чём он спросил.",
-          "Вопрос «вы уверены?» задаёт карточка CUBI, а не сам Куби, и он не отвечает «нет функции» о том, что CUBI умеет."
+          "Режим включается сам. В меню значка в трее: «Игровой режим сейчас» и «Не игра» для программы, принятой за игру по ошибке."
         ],
         "en": [
           "Music gets quieter by itself while you talk with Cubi and returns to what it was afterwards.",
@@ -36,10 +56,7 @@
           "What cannot be undone is confirmed by voice only with the word \"confirm\": a stray \"yes\" from a song does nothing.",
           "When Cubi does not do something himself, he says where it is done and opens the right place.",
           "Game mode: in games CUBI does not react to hot keys or the word \"Cubi\", and notices wait until you leave the game.",
-          "It turns on by itself. The tray icon's menu has \"Game mode now\" and \"Not a game\" for a program taken for a game by mistake.",
-          "Cubi understands commands typed with typos (\"empty the recyle bin\", \"lock the computr\"), with \"please\", \"can you\" or \"Cubi\" anywhere in them.",
-          "\"Yes\" means yes: after Cubi's question a typed \"yes\", \"ok\" or \"sure\" does what he asked about.",
-          "\"Are you sure?\" is asked by CUBI's card, not by Cubi himself, and he no longer says he has no function for something CUBI can do."
+          "It turns on by itself. The tray icon's menu has \"Game mode now\" and \"Not a game\" for a program taken for a game by mistake."
         ]
       }
     },
